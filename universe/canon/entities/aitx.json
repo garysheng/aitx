@@ -1,0 +1,17 @@
+{
+  "id": "aitx",
+  "kind": "group",
+  "originStory": "origin-of-aitx",
+  "authority": { "lockedBy": "gary", "lockedOn": "2026-07-18" },
+  "structured": {
+    "brand": {
+      "palette": { "orange": "#ff4201", "black": "#010101", "white": "#ffffff" },
+      "mark": "aitx-mark"
+    },
+    "invariants": ["logo-sacred-never-redrawn", "exact-palette-only", "warm-human-not-sci-fi"]
+  },
+  "prose": {
+    "lore": "AITX is the largest in-person AI community in Texas. Austin home base, expanding to Houston and Dallas. Monthly meetups, hackathons, workshops. Warm, human, energetic, community-first: a place where AI builders actually meet in person.",
+    "rules": "The brand feeling is warm and bold, never cold or sci-fi. The mark is sacred (see aitx-mark)."
+  }
+}

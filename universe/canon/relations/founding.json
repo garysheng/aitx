@@ -1,0 +1,4 @@
+[
+  { "from": "michael-daigler", "rel": "founder-of", "to": "aitx", "source": "PRM: michael-daigler", "note": "co-founder and lead organizer" },
+  { "from": "aitx-mark", "rel": "identifies", "to": "aitx", "source": "brand", "note": "the sacred mark of the community" }
+]

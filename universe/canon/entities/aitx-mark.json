@@ -1,0 +1,16 @@
+{
+  "id": "aitx-mark",
+  "kind": "motif",
+  "originStory": "origin-of-aitx",
+  "status": "locked",
+  "authority": { "lockedBy": "gary", "lockedOn": "2026-07-18" },
+  "structured": {
+    "sheets": { "logo": "reference/aitx-mark/aitx-logo.png" },
+    "requiredForRender": ["logo"],
+    "invariants": ["never-redrawn", "never-recolored", "never-misspelled", "orange-ff4201-mark"]
+  },
+  "prose": {
+    "lore": "The AITX mark: an orange figure with open arms (a person reaching out) beside the lowercase 'aitx' wordmark. It means connection and welcome, the community's whole posture in one glyph.",
+    "rules": "SACRED. Composited deterministically from the real file; never drawn by a model. Orange #ff4201, black #010101, white #ffffff."
+  }
+}

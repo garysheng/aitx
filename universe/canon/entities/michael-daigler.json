@@ -1,0 +1,28 @@
+{
+  "id": "michael-daigler",
+  "kind": "character",
+  "originStory": "origin-of-aitx",
+  "fictional": false,
+  "status": "unlocked",
+  "authority": { "lockedBy": "gary", "lockedOn": null },
+  "structured": {
+    "sheets": {
+      "sheet": "reference/michael-daigler/gabr-michael.png",
+      "face": "reference/michael-daigler/gabr-michael-face.png"
+    },
+    "requiredForRender": ["sheet"],
+    "invariants": ["one-face-across-eras", "real-likeness-from-photo-stack"]
+  },
+  "realPerson": {
+    "photoStack": ["reference/michael-daigler/photos/01.jpg"],
+    "canonicalPhotos": { "face": null, "fit": null },
+    "approval": { "state": "gated", "by": "michael-daigler", "on": null },
+    "sensitiveList": "RESEARCH.md#sensitive",
+    "groupCount": null
+  },
+  "prose": {
+    "voice": "warm, energetic, generous; a connector who wants to empower human creativity",
+    "lore": "Founder and lead organizer of AITX, Austin's AI community. Developer Advocate at Apify. Runs monthly meetups and hackathons; building the Houston and Dallas chapters. Content creator (@heymichaeldaigler).",
+    "rules": "Real person: likeness comes from his photo stack (multi-ref), never invented. Any property featuring him stays GATED until he blesses the words and the art. Nothing from his private life ships (see sensitiveList)."
+  }
+}
