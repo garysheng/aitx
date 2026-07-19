@@ -252,6 +252,12 @@ export default function AgentPage() {
                 Run a few tasks to see the before-and-after climb.
               </p>
             )}
+            <p className="mt-3 text-xs leading-relaxed text-[color:var(--muted)]">
+              Honest note: in this live demo the knowledge base lives in your browser session, so it
+              sharpens as you use it and resets on refresh. In the real system these rules are a
+              version-controlled file a human blesses and commits, so the whole team&apos;s agent gets
+              sharper and you can see every rule it learned as a git diff. No model retraining, ever.
+            </p>
           </div>
         </div>
 
