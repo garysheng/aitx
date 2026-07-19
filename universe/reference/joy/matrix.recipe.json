@@ -1,0 +1,13 @@
+{
+  "entity": "joy",
+  "note": "Joy's locked reference matrix — the angles that instill the split two-piece construction so scenes hold it. Gary-approved 2026-07-19.",
+  "model": "openai:gpt-image-2", "size": "1024x1024", "quality": "high",
+  "hard_rule": "Joy's lower body is the AITX mark's TWO rigid arrowhead legs with a vertical split. They are LOGO shapes, never anatomical legs (no knees, feet, or bending). Dynamic 'walking/jumping' poses break this — avoid them.",
+  "angles": {
+    "joy-master.png": "front, blessed hero (the animated logo)",
+    "joy-3q-left.png": "three-quarter turned left",
+    "joy-3q-right.png": "three-quarter turned right",
+    "joy-turn.png": "deeper three-quarter turn (more dimensional depth)"
+  },
+  "references_used": ["joy-master.png", "_ref-aitx-mark-clean.png"]
+}

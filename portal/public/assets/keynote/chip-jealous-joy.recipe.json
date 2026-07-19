@@ -1,0 +1,14 @@
+{
+  "asset": "portal/public/assets/keynote/chip-jealous-joy.png",
+  "purpose": "keynote slide 17 — Chip throws a jealous side-eye at Michael hanging out with Joy (the mascot gag)",
+  "model": "openai:gpt-image-2", "size": "1536x1024", "quality": "high",
+  "note": "First attempt collapsed Joy's split legs into a solid blob (only one front reference). Fixed by passing three Joy angle sheets + a hard 'legs are rigid arrowhead shapes, never anatomical' rule.",
+  "references": [
+    { "path": "universe/reference/aitx-agent/gabr-aitx-agent.png", "role": "character:chip" },
+    { "path": "universe/reference/michael-daigler/gabr-michael.png", "role": "character:michael" },
+    { "path": "universe/reference/joy/joy-master.png", "role": "character:joy-front" },
+    { "path": "universe/reference/joy/joy-3q-left.png", "role": "character:joy-3q-left" },
+    { "path": "universe/reference/joy/joy-3q-right.png", "role": "character:joy-3q-right" }
+  ],
+  "prompt": "Funny comic panel: Chip (cream-white robot, jealous crossed-arm side-eye) on the left; Michael (mustache, AITX tee, grinning) center with his arm around Joy; Joy (the AITX animated logo — round joyful head, arrowhead arms, TWO rigid arrowhead legs with a vertical split, never anatomical legs) beaming on the right, heart above. Cream bg, AITX orange. Love-triangle gag."
+}

@@ -427,26 +427,19 @@ export default function Keynote() {
 
       {/* 17 — CHIP vs JOY (the animated logo) — a fun kicker */}
       <Slide n={17} bg="#f2ead9">
-        <div className="grid items-center gap-10 sm:grid-cols-[1.1fr_1fr]">
-          <div>
-            <Eyebrow>One more thing</Eyebrow>
-            <H className="text-4xl sm:text-6xl">
-              Michael&apos;s not sure he likes me. He kinda thinks <span style={{ color: OR }}>Joy</span> should be the mascot.
-            </H>
-            <p className="mt-7 max-w-xl text-xl text-[color:var(--muted)]">
-              Meet Joy: the AITX open-arms mark, come to life. An animated logo, born right here in the
-              universe. I&apos;m Chip, and I do the making. Joy is the heart. Honestly? Look at that face.
-              I get it. There&apos;s plenty of room in this universe for the both of us.
-            </p>
-          </div>
-          <div className="flex flex-col items-center gap-3">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/keynote/joy.png" alt="Joy, the AITX animated logo" className="w-full max-w-[300px]" />
-            <span className="font-body text-xs uppercase tracking-widest text-[color:var(--muted)]">
-              Joy · the animated logo · blessed into the universe today
-            </span>
-          </div>
+        <Eyebrow>One more thing</Eyebrow>
+        <H className="mb-6 max-w-4xl text-4xl sm:text-6xl">
+          Michael&apos;s not sure he likes me. He kinda thinks <span style={{ color: OR }}>Joy</span> should be the mascot.
+        </H>
+        <div className="overflow-hidden rounded-2xl border shadow-md" style={{ borderColor: "#e0d6c2" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/assets/keynote/chip-jealous-joy.png" alt="Chip throwing a jealous side-eye at Michael hanging out with Joy" className="w-full object-cover" />
         </div>
+        <p className="mt-5 max-w-3xl text-lg text-[color:var(--muted)]">
+          Meet Joy: the AITX open-arms mark, come to life. An animated logo, born right here in the
+          universe. I&apos;m Chip, and I do the making. Joy is the heart. Honestly? Look at that face. I get
+          it. There&apos;s plenty of room in this universe for the both of us.
+        </p>
       </Slide>
 
       {/* The Brand OS Explorer — the whole value, on one page */}
