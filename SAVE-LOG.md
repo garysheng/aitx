@@ -120,3 +120,35 @@ Delta since 0322509. All committed. This session turned the submission from "a k
 4. Gary's pro voice clone: swap Chip (or add a Gary-narrated track) once `yffqtNJ84E8Jjz7BeGaF` finishes fine-tuning.
 5. `/meta-coherence-check` was requested at the end of this session — run it as the next task.
 2026-07-19T18:33:16Z · ccf22dd · session 4: 2 studios + self-serve Chip-narrated keynote + provenance gallery/sidebar + Chip files real PRs (verified) + README refresh. Resume: /meta-coherence-check, /thanks logo, story sub-agent link.
+
+---
+
+## 2026-07-19 (session 5) — the ontology clicks + three original works born
+
+Delta since c8fd6ef. This stretch reframed the whole thing and spun up three new artifacts (via sub-agents), plus a keynote tie-in.
+
+**The ontology, locked** (now in VISION.md, to propagate to the agenticstory SPEC):
+- **Agentic Brand Universe** = the CARTRIDGE (data): a portable, version-controlled brand (canon + goldens + rules). What the standard/spec defines.
+- **Agentic Brand OS** = the CONSOLE/runtime (software): loads a universe, generates any on-brand deliverable with provenance. The "AITX Brand OS" IS this. (Gary was right to name it that.)
+- **Projection/deliverable** = the OUTPUT (book, flyer, merch, meme, thank-you). Agentic storytelling is ONE projection; agentic brand management is the rest.
+- Cartridge + console → anything. Chip = the agent persona of an OS instance.
+
+**Chip files real pull requests — verified live.** Opened + closed test PR #1 against garysheng/aitx. GITHUB_TOKEN set on Vercel (encrypted) + portal/.env.local (gitignored). The honest persistence path: agent proposes rule → PR → human merges (golden gate) → `universe/brand-os/LEARNED-RULES.md`.
+
+**Keynote closing "open standard" band** (`7f06faf`): AITX framed as one Agentic Brand Universe (cartridge) + Agentic Brand OS (console), with the universe→OS→deliverables diagram, linking agenticbranduniverse.com.
+
+**Three original works born this session (all grounded, none faked):**
+1. **"Every Brand, Alive"** — LIVE at books.garysheng.com/every-brand-alive. A warm fable (Rosa the lantern-maker) rendering the anti-slop thesis; 12 spreads, narrated, 193/193 tests green. (garysheng-books repo, by sub-agent.)
+2. **soulsoftech.com** — LIVE at soulsoftech.vercel.app. Landing site for the Souls of Tech micro-bios (Mark Heaps + Michael), "demo of agentic brand universe power" framing. (souls-of-tech repo.) DNS: A `@`→76.76.21.21, CNAME `www`→cname.vercel-dns.com.
+3. **Loom-feedback comic** (aitx/explorations/comics) for Gary's LinkedIn.
+
+**README refreshed** (last save) + VISION.md ontology (this save). Loom comic saved.
+
+**Tribal knowledge → global AGENTS.md:** parallelize image jobs but NOT sub-agents editing the same repo (git collisions — use one sequential agent or worktree isolation); use SendMessage to refine a running sub-agent's brief; don't rename/move a repo while a sub-agent is pushing/Vercel-linking it.
+
+**Resume-here (open threads):**
+1. **RENAME the agenticstory repo → `agentic-brand-universe`** — QUEUED, blocked on the running sub-agent (which is pushing + Vercel-linking garysheng/agenticstory). Do it the moment that agent reports done: `gh repo rename`, fix the local remote, re-point the Vercel git connection.
+2. Two sub-agents still running: **agenticbranduniverse.com** (build + push + make public + git-link Vercel) and **Jordan Hill + Will Preble** Souls of Tech books. Surface their URLs + DNS when they land.
+3. Propagate the ontology (cartridge/console/projection) into the agenticstory `SPEC.md` framing once that repo is free of the sub-agent.
+4. Still un-built: `/thanks` sponsor-logo option; Gary's pro voice clone (`yffqtNJ84E8Jjz7BeGaF`) once fine-tuning completes; `/meta-coherence-check` (requested twice).
+5. Gary to add DNS at Namecheap for soulsoftech.com (+ agenticbranduniverse.com when it lands).

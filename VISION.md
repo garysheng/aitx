@@ -4,6 +4,20 @@
 of truth for a brand, editable in plain language, and a fun engine for
 generating consistent assets from it.*
 
+> **The ontology (locked 2026-07-19).** Three distinct things, cartridge + console + output:
+> - **Agentic Brand Universe** = the *cartridge* (data). A portable, version-controlled brand: its
+>   canon (characters, settings, motifs, rules) + its blessed golden assets. Forkable, rentable. This
+>   is what the standard/spec defines. Home of the standard: **agenticbranduniverse.com**.
+> - **Agentic Brand OS** = the *console/runtime* (software). A deployed engine that loads a brand
+>   universe and generates any on-brand deliverable from it, in plain language, with provenance, held
+>   to the rules. The "AITX Brand OS" is exactly this — an Agentic Brand OS running the AITX universe.
+> - **Projection / deliverable** = the *output*. A book, flyer, merch, meme, thank-you. Medium-neutral.
+>   Agentic *storytelling* (picture books) is one projection; agentic brand *management* is the rest.
+>
+> Analogy: **cartridge (universe) + console (OS) → anything you want (deliverables).** Chip is the
+> agent persona of an Agentic Brand OS instance (the brand czar). This ontology should propagate into
+> the agenticstory SPEC (the cartridge format) as its framing.
+
 This is the spec behind the AITX universe. It is deliberately broader than a
 "brand guide": the **story** encapsulates everything you would want in one
 place — the canon, the voice, the generation skills, the asset library, and the
