@@ -1,0 +1,26 @@
+{
+  "id": "jake-oshea",
+  "kind": "character",
+  "originStory": "origin-of-aitx",
+  "fictional": false,
+  "status": "locked",
+  "authority": { "lockedBy": "gary", "lockedOn": "2026-07-18" },
+  "structured": {
+    "sheets": { "sheet": "reference/jake-oshea/gabr-jake.png" },
+    "requiredForRender": ["sheet"],
+    "heightNote": "6 foot 4 (tall); Michael Daigler is 5 foot 4. A full foot taller. Honor this in any two-shot with Michael.",
+    "invariants": ["one-face-across-eras", "real-likeness-from-photo-stack", "reads-tall-next-to-michael"]
+  },
+  "realPerson": {
+    "photoStack": ["reference/jake-oshea/photos/01.jpg", "reference/jake-oshea/photos/02.jpg"],
+    "canonicalPhotos": { "face": null, "fit": null },
+    "approval": { "state": "gated", "by": "jake-oshea", "on": null },
+    "sensitiveList": "RESEARCH.md#sensitive",
+    "groupCount": null
+  },
+  "prose": {
+    "voice": "warm, easygoing, steady; the taller, clean-cut cofounder",
+    "lore": "Jake O'Shea, Michael's cofounder at AITX. Tall (6 foot 4), athletic, short dark-brown hair, a short well-groomed beard, warm friendly presence.",
+    "rules": "Real person: likeness from his photo stack, never invented. Any property featuring him stays GATED until he blesses words + art. Reads a full foot taller than Michael in two-shots."
+  }
+}

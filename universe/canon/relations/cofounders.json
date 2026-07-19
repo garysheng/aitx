@@ -1,0 +1,6 @@
+[
+  { "from": "jake-oshea", "rel": "founder-of", "to": "aitx", "source": "PRM/Gary", "note": "cofounder with Michael" },
+  { "from": "jake-oshea", "rel": "crossover-with", "to": "michael-daigler", "story": "origin-of-aitx", "note": "cofounders; a full foot apart in height (6'4 vs 5'4)" },
+  { "from": "antler-venue", "rel": "appears-in", "to": "origin-of-aitx", "note": "the home venue" },
+  { "from": "aitx-skylark", "rel": "identifies", "to": "aitx", "note": "AITX branded merch" }
+]

@@ -1,0 +1,26 @@
+{
+  "id": "antler-venue",
+  "kind": "setting",
+  "originStory": "origin-of-aitx",
+  "status": "unlocked",
+  "authority": { "lockedBy": "gary", "lockedOn": null },
+  "contract": {
+    "turnaround": null,
+    "emptyPlates": [
+      "reference/antler/signin-1.png",
+      "reference/antler/signin-2.png",
+      "reference/antler/signin-3.png",
+      "reference/antler/alcove-1.png",
+      "reference/antler/alcove-2.png",
+      "reference/antler/alcove-3.png"
+    ],
+    "blueprint": null,
+    "map": null,
+    "blocking": null,
+    "dressing": "SIGN-IN: dark wood-plank wall with 'ANTLER' in white capitals; white AITX pull-up banner ('Building AI's future in Texas', QR, twilight skyline); white check-in desk with orange flowers, orange lanyards + 'aitx Guest' name tags, sticker bowl, laptop; glass entrance doors + green EXIT; AITX A-frame ('AI that works'). ALCOVE: ANTLER + AITX step-and-repeat (coral-red ANTLER on white); NVIDIA-logo monitor; brown tan-leather loveseat (fireside-chat speaking spot); rows of black event chairs + white folding chairs; concrete kitchen/bar counter; papel-picado banners overhead; warm-wood + polished-concrete floors; exposed industrial ceiling. The ANTLER wall is BEHIND the check-in greeter (not visible in the greeter POV)."
+  },
+  "prose": {
+    "lore": "Antler VC's Austin venue, the home base for AITX events (monthly meetups, the NVIDIA hackathon). Two named zones: the SIGN-IN area and the SPEAKING ALCOVE.",
+    "rules": "Unlocked: has empty-plate references (6 angles across the two zones) and a dressing spec, but no formal turnaround/blueprint/blocking/map yet, so the resolver still refuses a full spread render here until those are locked. Comic-book register, matching the character art."
+  }
+}

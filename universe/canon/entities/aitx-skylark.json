@@ -1,0 +1,24 @@
+{
+  "id": "aitx-skylark",
+  "kind": "prop",
+  "originStory": "origin-of-aitx",
+  "status": "locked",
+  "authority": { "lockedBy": "gary", "lockedOn": "2026-07-18" },
+  "structured": {
+    "sheets": {
+      "slide-black": "reference/products/skylark/opt-1-black.png",
+      "slide-orange": "reference/products/skylark/opt-2-orange.png",
+      "slide-white": "reference/products/skylark/opt-3-white.png",
+      "slide-twotone": "reference/products/skylark/opt-4-twotone.png",
+      "clog-black": "reference/products/skylark/closed-1-black.png",
+      "clog-orange": "reference/products/skylark/closed-2-orange.png",
+      "clog-white": "reference/products/skylark/closed-3-white.png",
+      "clog-twotone": "reference/products/skylark/closed-4-twotone.png"
+    },
+    "invariants": ["aitx-mark-and-wordmark-on-strap-and-footbed", "exact-palette-only", "chunky-sculpted-eva-foam-silhouette"]
+  },
+  "prose": {
+    "lore": "The AITX Skylark: a custom AITX-branded chunky molded-EVA-foam recovery shoe. Two silhouettes (open-toe slide, closed-toe clog/mule) in four colorways (black, orange #ff4201, white, black/orange two-tone). AITX merch designed with Michael.",
+    "rules": "The AITX mark + 'aitx' wordmark always appear correctly. Only brand colors."
+  }
+}

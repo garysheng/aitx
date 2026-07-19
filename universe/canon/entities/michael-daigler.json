@@ -3,20 +3,56 @@
   "kind": "character",
   "originStory": "origin-of-aitx",
   "fictional": false,
-  "status": "unlocked",
-  "authority": { "lockedBy": "gary", "lockedOn": null },
+  "status": "locked",
+  "authority": {
+    "lockedBy": "gary",
+    "lockedOn": null
+  },
   "structured": {
     "sheets": {
       "sheet": "reference/michael-daigler/gabr-michael.png",
-      "face": "reference/michael-daigler/gabr-michael-face.png"
+      "face": "reference/michael-daigler/gabr-michael-face.png",
+      "mic-speaking": "reference/michael-daigler/poses/mic-speaking.png",
+      "open-arms": "reference/michael-daigler/poses/open-arms.png",
+      "presenting": "reference/michael-daigler/poses/presenting.png",
+      "candid-laugh": "reference/michael-daigler/poses/candid-laugh.png"
     },
-    "requiredForRender": ["sheet"],
-    "invariants": ["one-face-across-eras", "real-likeness-from-photo-stack"]
+    "requiredForRender": [
+      "sheet"
+    ],
+    "invariants": [
+      "one-face-across-eras",
+      "real-likeness-from-photo-stack"
+    ],
+    "promptCraft": "Likeness locked from the 15-photo stack + gabr-michael master. Pass gabr-michael + gabr-michael-face on every render. Poses available as sheets. Real person: any PROPERTY featuring him stays gated on subject-approval (realPerson.approval) until Michael blesses the words + art, even though the art references now resolve."
   },
   "realPerson": {
-    "photoStack": ["reference/michael-daigler/photos/01.jpg"],
-    "canonicalPhotos": { "face": null, "fit": null },
-    "approval": { "state": "gated", "by": "michael-daigler", "on": null },
+    "photoStack": [
+      "reference/michael-daigler/photos/01.jpg",
+      "reference/michael-daigler/photos/02.jpg",
+      "reference/michael-daigler/photos/03.jpg",
+      "reference/michael-daigler/photos/04.jpg",
+      "reference/michael-daigler/photos/05.jpg",
+      "reference/michael-daigler/photos/06.jpg",
+      "reference/michael-daigler/photos/07.jpg",
+      "reference/michael-daigler/photos/08.jpg",
+      "reference/michael-daigler/photos/09.jpg",
+      "reference/michael-daigler/photos/10.jpg",
+      "reference/michael-daigler/photos/11.jpg",
+      "reference/michael-daigler/photos/12.jpg",
+      "reference/michael-daigler/photos/13.jpg",
+      "reference/michael-daigler/photos/14.jpg",
+      "reference/michael-daigler/photos/15.jpg"
+    ],
+    "canonicalPhotos": {
+      "face": null,
+      "fit": null
+    },
+    "approval": {
+      "state": "gated",
+      "by": "michael-daigler",
+      "on": null
+    },
     "sensitiveList": "RESEARCH.md#sensitive",
     "groupCount": null
   },
