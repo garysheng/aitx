@@ -1,109 +1,102 @@
 # Loom script — AITX Brand Agent (AITX x NVIDIA Claw Hackathon)
 
-**Format:** film loose (~10-15 min, as many takes as you want), cut to a tight
-**~2 min, high energy, green chair, your thing.** Latency doesn't matter — trim
-every "Nemotron thinking…" wait in the edit.
+**Format:** film loose (~10-15 min, many takes), cut to **~2 min, high energy,
+green chair, your thing.** Latency doesn't matter — trim every "Nemotron
+thinking…" wait in the edit. Everything runs at **temperature 0**, so the same
+prompt gives the same result every take.
 
-**The one-liner (say it your way):** *"An agent that learns your brand's rules
-from its own mistakes and never makes them again. Powered by NVIDIA Nemotron. No
-retraining."*
+**The one-liner:** *"An agent that learns your brand's rules from its own
+mistakes and never makes them again. Powered by NVIDIA Nemotron. No retraining.
+And it's the engine for a whole platform."*
 
-**What we're optimizing for (the judges' rubric):**
-- Sponsor tech (30): Nemotron is the brain, and you can say *why* (small open
-  model, agentic, NIM-served).
-- Technical execution (30): a real, live, working system at a URL.
-- Value/impact (20): a brand guardrail any team could use tomorrow.
-- Frontier (20): it *learns* live, and it's a 9B model punching up.
-
----
-
-## Pre-roll setup (before you hit record)
-
-- Open the live app full-screen: **https://aitx-brand-os.vercel.app/agent**
-  (dark dashboard). Do a warm-up run first so the model is hot.
-- Zoom the browser to ~110-125% so text is legible on video.
-- Have these two prompts ready to paste (verified deterministic — same result
-  every take):
-  - **HERO PROMPT (mixes logos blind):** `[[HERO_PROMPT]]`
-  - **SECOND PROMPT (voice slip):** `[[SECOND_PROMPT]]`
-- Optional: a second tab on the repo `hackathon/brand-agent/` for the "it's all
-  real code" beat.
+**We're going for three prizes at once:**
+- Best Use of Nemotron (Nemotron is the brain, and you can say why)
+- Recursive Intelligence track (it measurably learns)
+- Most Commercializable / Antler (the platform + the church wedge)
 
 ---
 
-## Capture list (film these raw, in any order)
+## Pre-roll setup (before recording)
 
-1. **You, to camera** — the hook + the problem + the close (talking-head bits).
-2. **Screen: the blind-vs-brain run** — paste HERO PROMPT, hit Generate, let
-   both sides land. Left goes red (mixed logos), right stays green.
-3. **Screen: teach-it** — on a prompt that slips, click *"Teach the agent from
-   this mistake"*, watch a new rule drop into the Knowledge Base, watch it
-   re-run clean.
-4. **Screen: the aggregate bar** — after a few prompts, the "blind avg → with
-   knowledge" delta at the top.
-5. **Screen (optional b-roll):** slow scroll of the Knowledge Base list; the
-   repo; the `LESSONS.md` the agent wrote itself.
+- Live app, full screen: **https://aitx-brand-os.vercel.app/agent**
+  - Do one warm-up run first so the model is hot.
+  - Browser zoom ~110-125%.
+- The three example chips on `/agent` are pre-loaded and verified — the first one
+  ("A co-branded merch design for AITX x NVIDIA…") reliably makes the blind agent
+  mix logos. That's your hero click.
+- Second tab: **/platform** (the pitch). Third tab: **/thanks** (thank a sponsor).
+
+**Verified hero prompt (already a chip):**
+`A co-branded merch design for AITX x NVIDIA. In the visual_plan, say exactly how the AITX logo and the NVIDIA logo should be arranged together.`
+→ blind scores ~60 with a red **logo-mixing** violation; knowledge base fixes it.
+
+---
+
+## Capture list (film raw, any order)
+
+1. **You to camera:** hook, the problem, the close (talking-head bits).
+2. **Screen /agent:** click the first example chip → blind (left) goes red
+   (mixes logos), knowledge (right) stays green. Then click **"Teach the agent
+   from this mistake"** and watch a rule drop into the Knowledge Base.
+3. **Screen /thanks:** click **NVIDIA** → an on-brand thank-you writes itself →
+   point at "Record it in your voice on BlessOut."
+4. **Screen /platform:** slow scroll past the church wedge + the Create/Fork/
+   Rent/Earn cards.
 
 ---
 
 ## The 2-minute edit (beat sheet)
 
-### 0:00-0:12 — COLD OPEN / HOOK  *(talking head, max energy)*
-> "This is an AI agent that just taught *itself* my brand's rules. Watch it
-> learn in real time."
+### 0:00-0:12 — HOOK  *(talking head, max energy)*
+> "This is an AI agent that taught *itself* my brand's rules. Watch it learn,
+> live." *(cut to a 1-sec flash of the red → green fix.)*
 
-Cut straight to a 1-second flash of the red→green fix. Hook first, context
-second.
-
-### 0:12-0:30 — THE PROBLEM  *(talking head)*
-> "Every team is generating content with AI now. It drifts off-brand fast.
+### 0:12-0:28 — THE PROBLEM  *(talking head)*
+> "Everyone's generating content with AI now, and it drifts off-brand instantly.
 > Yesterday my *own* agent designed a collab and mixed our logo with a partner's
 > — a real branding no-no. The fix isn't a better prompt. It's an agent that
 > *learns*."
 
-### 0:30-1:05 — DEMO 1: BLIND vs KNOWLEDGE  *(screen)*
-- Paste HERO PROMPT, hit Generate. **[edit out the wait]**
-- Point at the left: *"Blind — no knowledge — it locks up both logos. Red. The
-  critic caught it."*
-- Point at the right: *"Same model, but reading the rules it's learned. Clean.
-  Green. It named the partner in text instead."*
-> "Same Nemotron model. The only difference is what it knows."
+### 0:28-1:05 — DEMO: IT LEARNS  *(screen /agent)*
+- Click the NVIDIA co-brand chip. **[trim the wait]**
+- Left: *"Blind — no knowledge — it puts both logos side by side. Red. The critic
+  caught it."*  Right: *"Same Nemotron model, reading what it's learned. Clean."*
+- Click **"Teach the agent from this mistake."** A rule animates into the
+  Knowledge Base ("just learned").
+> "It just turned its *own* mistake into a rule, wrote it to memory, and it'll
+> never do that again. No retraining. That's the whole idea — the intelligence
+> is in the knowledge base, not the weights."
 
-### 1:05-1:40 — DEMO 2: THE MAGIC (it learns)  *(screen)*
-- On a slip, click **"Teach the agent from this mistake."** **[edit out wait]**
-- A rule animates into the Knowledge Base ("just learned").
-> "It just distilled its *own* mistake into a general rule, wrote it to its
-> memory, and re-ran — clean. No retraining. It will never make that mistake
-> again."
-- Tap the aggregate bar: *"Across prompts: blind average vs with-knowledge —
-  it's measurably smarter."*
+### 1:05-1:30 — DELIGHT: THANK A SPONSOR  *(screen /thanks)*
+- Click **NVIDIA**. An on-brand thank-you writes itself. **[trim the wait]**
+> "Same brain, different superpower. It just wrote NVIDIA a thank-you in our
+> voice — warm, human, not corporate — and I can record it in *my* voice and
+> send it as a BlessOut e-card. On-brand deliverables with *soul*."
 
-### 1:40-1:55 — WHY NEMOTRON  *(talking head or voiceover over screen)*
-> "The brain is NVIDIA Nemotron — a small 9-billion-parameter open model, served
-> on NIM. Small model, big scaffolding: it matches way bigger models on this
-> task because the intelligence lives in the knowledge base, not the weights.
-> That's the whole idea."
+### 1:30-1:50 — THE BUSINESS  *(screen /platform, or talking head over it)*
+> "And this is a platform. Build a brand universe once — its canon, its rules —
+> then fork it or rent it. Picture a beautiful comic universe that tells the
+> truth of Christianity. What church wouldn't pay to rent that to make their own
+> on-brand content? That's GitHub for brand universes."
 
-### 1:55-2:05 — CLOSE  *(talking head, warm + confident)*
-> "A brand guardrail that gets smarter every time you use it. It's live right
-> now. AITX x NVIDIA. Come build the future with us."
+### 1:50-2:05 — CLOSE  *(talking head, warm + confident)*
+> "A brand that gets smarter and more soulful every time you use it. Powered by
+> NVIDIA Nemotron. It's live right now. Come build the future with us."
 
 Optional end card: the URL + "Powered by NVIDIA Nemotron."
 
 ---
 
-## Energy + delivery notes
-- Lead with the wow, explain second. Judges watch a lot of demos; earn the next
-  10 seconds in the first 3.
-- Say **"Nemotron"** out loud at least twice — sponsor-tech points reward the
-  clear "why."
+## Energy + delivery
+- Lead with the wow, explain second. Earn the next 10 seconds in the first 3.
+- Say **"Nemotron"** out loud 2-3 times (sponsor-tech points reward the clear why).
 - Warm and confident, not hype. No "you're already behind." (On brand.)
-- Keep cuts tight; every dead second is a cut. The 15-min raw becomes 2 min of
-  only the good stuff.
+- Tight cuts. 15 min raw → 2 min of only the good stuff.
 
 ## Do-not-forget checklist
-- [ ] Say the app is **live at a URL** (real working system).
-- [ ] Show a real **red → green** fix on screen.
-- [ ] Show the agent **writing its own rule** (the learning).
+- [ ] Show a real **red → green** logo fix on screen.
+- [ ] Show the agent **writing its own rule** (Teach it).
+- [ ] Show the **thank-a-sponsor** card (soul + BlessOut).
+- [ ] Say **the church wedge** out loud (commercialization).
 - [ ] Name **Nemotron + NIM** and the **9B small-model** angle.
-- [ ] End with the URL.
+- [ ] End with the **live URL**.

@@ -15,11 +15,19 @@ const MODEL = process.env.NEMOTRON_MODEL || "nvidia/nvidia-nemotron-nano-9b-v2";
 // keep it warm and human, never corporate.
 const SYSTEM =
   "You are the AITX brand agent writing a heartfelt thank-you from AITX (the largest AI builder " +
-  "community in Texas, built on loyalty, reputation, and good vibes) to a sponsor. Warm, human, " +
-  "plain-spoken, Texas-proud, specific, and genuine. Short. Signature warmth like 'it has open arms' " +
-  "and 'come build the future with us' where it fits.\n\n" +
-  "BRAND RULES (obey every one):\n" + SEED_LESSONS.map((l) => `- ${l}`).join("\n") +
-  '\n\nReturn compact JSON only: {"title": "a short warm title", "message": "2-4 sentence thank-you"}';
+  "community in Texas, built on loyalty, reputation, and good vibes) to a sponsor.\n\n" +
+  "VOICE: warm, human, plain-spoken, Texas-proud, specific, first person plural (we/us/AITX). " +
+  "2 to 4 short sentences. Start with the thank-you itself. End with a line like 'Come build the " +
+  "future with us.' or 'It has open arms.'\n\n" +
+  "NEVER: write an email, use a 'Subject:' line, open with 'Dear ... Team', say 'I hope this " +
+  "message finds you well', use markdown, or leave any bracket placeholder like [Name]. No em " +
+  "dashes. No corporate filler. Be genuine, not formal.\n\n" +
+  "BRAND RULES:\n" + SEED_LESSONS.map((l) => `- ${l}`).join("\n") +
+  "\n\nEXAMPLE (for NVIDIA): " +
+  '{"title":"Thank you for showing up","message":"NVIDIA, thank you for putting real tools in our ' +
+  "builders' hands this weekend. The Nemotron models and the GPUs meant our community could build " +
+  'things that actually run. That is the good stuff, and we will not forget it. Come build the future with us."}' +
+  '\n\nOutput ONLY the JSON object, nothing else: {"title": "...", "message": "..."}';
 
 export async function POST(req: Request) {
   const apiKey = process.env.NIM_API_KEY || process.env.NVIDIA_API_KEY;
