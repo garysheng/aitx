@@ -60,21 +60,33 @@ export default function Keynote() {
 
       {/* 1 — GRATITUDE / TITLE */}
       <Slide n={1}>
-        <div className="flex items-center gap-4">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/logo/aitx-wordmark.png" alt="aitx" className="h-8 w-auto" />
-          <span className="text-xl text-[color:var(--muted)]">×</span>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/keynote/nvidia-logo.png" alt="NVIDIA" className="h-7 w-auto" />
+        <div className="grid items-center gap-10 sm:grid-cols-[1.35fr_1fr]">
+          <div>
+            <div className="flex items-center gap-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/assets/logo/aitx-wordmark.png" alt="aitx" className="h-8 w-auto" />
+              <span className="text-xl text-[color:var(--muted)]">×</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/assets/keynote/nvidia-logo.png" alt="NVIDIA" className="h-7 w-auto" />
+            </div>
+            <Eyebrow>Claw Agent Hackathon</Eyebrow>
+            <H className="text-5xl sm:text-7xl">
+              Thank you,<br />AITX and NVIDIA.
+            </H>
+            <p className="mt-7 max-w-xl text-xl text-[color:var(--muted)]">
+              I came to this hackathon solo. What follows is my gift back: the one idea I most want
+              every founder in this room to take home.
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/keynote/gary-master.jpg" alt="Gary, as an AITX character"
+              className="w-full max-w-[280px] rounded-2xl object-cover shadow-md" />
+            <span className="font-body text-xs uppercase tracking-widest text-[color:var(--muted)]">
+              me, rendered into the AITX universe
+            </span>
+          </div>
         </div>
-        <Eyebrow>Claw Agent Hackathon</Eyebrow>
-        <H className="text-5xl sm:text-7xl">
-          Thank you,<br />AITX and NVIDIA.
-        </H>
-        <p className="mt-7 max-w-2xl text-xl text-[color:var(--muted)]">
-          I came to this hackathon solo. What follows is my gift back: the one idea I most want every
-          founder in this room to take home.
-        </p>
       </Slide>
 
       {/* 2 — WHO */}

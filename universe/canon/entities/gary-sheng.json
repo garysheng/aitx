@@ -1,0 +1,29 @@
+{
+  "id": "gary-sheng",
+  "kind": "character",
+  "originStory": "origin-of-aitx",
+  "fictional": false,
+  "status": "locked",
+  "authority": { "lockedBy": "gary", "lockedOn": null },
+  "structured": {
+    "sheets": {
+      "sheet": "reference/gary/gabr-gary-master.png",
+      "base": "reference/gary/gabr-gary.png"
+    },
+    "wardrobe": {
+      "default": "Cream 'I (heart) aitx' crew tee using the REAL aitx logotype (orange open-arms mark + lowercase 'aitx' wordmark). Clean-shaven, short parted dark hair."
+    },
+    "requiredForRender": ["sheet"],
+    "invariants": [
+      "real-likeness-from-photo-anchor",
+      "clean-shaven-no-facial-hair",
+      "shirt-uses-real-aitx-logotype-never-invented-lettering",
+      "same-illustrated-style-as-michael-and-jake"
+    ],
+    "promptCraft": "Illustrated in the same comic style as gabr-michael / gabr-jake. Face locked from gary-pfp-warm photo anchor. Pass gabr-gary-master on every render. The 'I love aitx' shirt is its own atom (explorations/apparel/i-love-aitx-tee.png); always reproduce the REAL aitx wordmark, never invent lettering. Real person: gated on Gary's approval."
+  },
+  "realPerson": {
+    "faceAnchor": "gary-pfp-warm (garyinparadise face-anchors)",
+    "approval": "pending"
+  }
+}
