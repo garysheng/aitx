@@ -10,7 +10,24 @@ AITX brand OS: `BRAND-RULES.md`, `VOICE.md`, a curated golden library) plus a
 ## The measured result (no model retraining)
 
 Same held-out suite of design requests, scored by a deterministic brand-rule
-critic, before and after the agent learns from a training queue:
+critic, before and after the agent learns from a training queue. Two runs, both
+honest and clearly labeled — the live one is the real number.
+
+**Live on Nemotron** (`nvidia/llama-3.3-nemotron-super-49b-v1` via NIM) — this
+is the real result, and what `RESULTS.md` records:
+
+| Phase | Avg score /100 | Brand violations | Clean outputs |
+|---|---|---|---|
+| Baseline (blind) | 84 | 6 | 2/6 |
+| After self-learning | 91 | 2 | 4/6 |
+| **Delta** | **+7** | **−4** | **+2** |
+
+Nemotron is already fairly on-brand cold, so the live headroom is smaller — the
+point is that it *measurably* improves from its own distilled lessons, with no
+retraining.
+
+**Mock harness** (`demo.py --mock`, no API key) — a deliberately cold baseline
+that isolates the mechanism end to end and proves the pipeline:
 
 | Phase | Avg score /100 | Brand violations | Clean outputs |
 |---|---|---|---|
@@ -18,10 +35,10 @@ critic, before and after the agent learns from a training queue:
 | After self-learning | 93 | 1 | 5/6 |
 | **Delta** | **+58** | **−23** | **+5** |
 
-The knowledge base grew from **0 to 4 self-distilled lessons**. The model never
-changed weights; it got better because its persistent context got better. (Run
-`demo.py` to reproduce; numbers above are from the mock harness that proves the
-pipeline, and are regenerated live on Nemotron.)
+The larger mock delta comes from a worst-case cold start, not a better model; it
+exists to show the full loop working without a key. In both runs the model never
+changed weights — it got better because its persistent context got better. Run
+`demo.py` (live) or `demo.py --mock` to reproduce either table.
 
 ## What Nemotron is doing (and why it's the right model)
 
