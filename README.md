@@ -1,3 +1,29 @@
+# AITX Brand Agent — AITX × NVIDIA Claw Agent Hackathon submission
+
+> **Chip, the AITX brand czar: an agent that learns your brand's voice and never breaks it.**
+> A version-controlled brand universe (canon + blessed goldens + rules) with an agent, powered by
+> **NVIDIA Nemotron via NIM**, that generates anything on-brand *and gets sharper the more it runs* —
+> it critiques its own output against the brand rules, and when it slips it writes itself a new rule
+> and remembers it. No model retraining. Every asset carries full provenance (model + prompt +
+> hash-pinned references), so nothing is a mystery and everything is reproducible.
+
+**Track:** Recursive Intelligence · **Bounties:** Best Use of Nemotron, Most Commercializable (Antler)
+
+**See it live**
+- 🎤 **The keynote (start here):** https://aitx-brand-os.vercel.app/keynote — the full argument, co-presented by Gary + Chip.
+- 🤖 **The learning agent, live:** https://aitx-brand-os.vercel.app/agent — give it a task, watch it slip, teach it, watch it fix itself. Real Nemotron.
+- 💼 **The business:** https://aitx-brand-os.vercel.app/platform
+- 💌 **On-brand sponsor thank-yous:** https://aitx-brand-os.vercel.app/thanks
+- 📖 **Proof — books Chip made in ~30 min each:** https://show-up-book.vercel.app · https://do-all-the-things-book.vercel.app · https://aitx-origin.vercel.app
+
+**Where the Nemotron code lives**
+- `portal/app/api/agent/route.ts` — Nemotron (NIM) generation + self-critique + the learning step.
+- `portal/lib/agent/` — the deterministic brand-rule critic (the metric) + the knowledge base.
+- `hackathon/brand-agent/` — the CLI + the measured recursive-intelligence delta (`demo.py`) + writeup (`README.md`).
+- `generator/` — the provenance spine (every asset ↔ its exact recipe).
+
+---
+
 # AITX — a story universe
 
 > **The vision:** [`VISION.md`](VISION.md) — AITX as an agentic story OS: one version-controlled, human/machine/partner-legible brand source of truth, editable in plain language.
