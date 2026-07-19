@@ -20,6 +20,7 @@ export default function Home() {
         </div>
         <div className="mt-2">
           <a href="/studio/flyer" className="inline-block rounded-md bg-[color:var(--orange)] px-4 py-2 text-sm font-semibold text-white hover:bg-[color:var(--orange-deep)]">Open the Flyer Studio →</a>
+          <a href="/studio/create" className="ml-3 inline-block rounded-md border border-black/15 px-4 py-2 text-sm font-semibold hover:border-[color:var(--orange)]">Generate an asset →</a>
         </div>
         <nav className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-[color:var(--orange-deep)]">
           {CATEGORIES.filter((c) => ASSETS.some((a) => a.category === c.key)).map((c) => <a key={c.key} href={`#${c.key}`} className="hover:underline">{c.label}</a>)}
