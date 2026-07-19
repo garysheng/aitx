@@ -1,10 +1,13 @@
 {
   "id": "aitx-agent",
+  "name": "Chip",
+  "fullName": "Robot Chipman (Rob for short)",
   "kind": "character",
   "originStory": "origin-of-aitx",
   "fictional": true,
   "status": "locked",
   "authority": { "lockedBy": "gary", "lockedOn": null },
+  "voice": { "provider": "elevenlabs", "voiceId": "OjnJBCejJlol0Ps2wkAK", "model": "eleven_v3" },
   "structured": {
     "sheets": { "sheet": "reference/aitx-agent/gabr-aitx-agent.png" },
     "wardrobe": { "default": "Friendly cream-white helper robot with AITX orange (#ff4201) accent seams, kind glowing screen-face, orange open-arms mark on chest, open-arms welcoming posture." },
