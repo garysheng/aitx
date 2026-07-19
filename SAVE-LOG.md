@@ -153,3 +153,31 @@ Delta since c8fd6ef. This stretch reframed the whole thing and spun up three new
 4. Still un-built: `/thanks` sponsor-logo option; Gary's pro voice clone (`yffqtNJ84E8Jjz7BeGaF`) once fine-tuning completes; `/meta-coherence-check` (requested twice).
 5. Gary to add DNS at Namecheap for soulsoftech.com (+ agenticbranduniverse.com when it lands).
 2026-07-19T18:55:49Z · d12f360 · session 5: ontology locked (universe=cartridge/OS=console/projection) + Chip PRs verified + keynote standard band + 3 works (Every Brand Alive, soulsoftech.com, Loom comic). Resume: rename agenticstory repo after sub-agent, propagate ontology to SPEC.
+
+---
+
+## Session 6 — 2026-07-19 (marathon, cont. from d12f360)
+
+All aitx work through **414282a** (+ cross-repo). A second Claude session edited aitx/portal concurrently all session; pushes were serialized via explicit-path commits + rebase.
+
+**AITX keynote & Brand OS:**
+- Keynote: loop/kiosk toggle; hero (slide 1) rewritten as an informative distillment, not gratitude (NVIDIA×AITX logo lockup dropped per never-mix-logos); blunt slop→brand-damage copy (slides 3–4); slide-14 book cards → horizontal rows; slide-7 concept cards (Canon/Goldens/The agent) got on-model square illustrations; **new slide 17** — Chip introduces **Joy** + the mascot question, narrated in Chip's voice (chip-17.mp3); OG share card (og.png) + full share tags.
+- **Joy** = the AITX open-arms mark as an *animated logo* (NOT yet crowned mascot). Blessed g4-hero-joy-longlegs-c. Locked entity + multi-angle reference matrix (front/3q-left/3q-right/turn) so the split holds in scenes. Chip-jealous-of-Joy scene on slide 17 (rendered passing 3 Joy angles + the mark). Lesson: dynamic walking/jumping poses collapse Joy's split legs into anatomical legs — avoid.
+- Coherence fixes: honest mock(+58)-vs-live(+7) results labeling; reconciled spec version; seeded LEARNED-RULES.md.
+- Origin book: anime edition re-rendered provenance-correct (all 15 from scene prompts) + reader Comic/Anime toggle + "show the prompt" panel (aitx-origin.vercel.app).
+- Fixed Explorer provenance chain: Michael's "real photos" were the Antler venue; swapped in real Michael photos. Gary label → "applied AI engineer + AITX fan".
+
+**The standard (agenticstory → agentic-brand-universe):** authored **BRAND-OS-SPEC.md v0.1** (engine spec, framed as early draft); site thesis → "Every brand SHOULD be a version-controlled universe its agent can render on demand."
+
+**Other surfaces:** PeonPing Agentic Brand Universe (github.com/PeonPing/brand-universe, validates green, tavern intentionally unlocked); Souls of Tech books Jordan + Will LIVE (uncommitted, subject blessing pending); appliedai.wiki brand-OS concept + perspective pages; "Every Brand, Alive" in garysheng-books.
+
+**Tribal knowledge → global AGENTS.md (this session):** provenance is mandatory (recipe alongside every asset); restyle sets re-render FROM source prompts (never image-to-image); **use the universe prompt-factory skills** (canon-resolve → render → render-readback / generate-a-brand-os) and NEVER render a mark/logo or canon character without passing its real reference.
+
+**Resume-here (open threads):**
+1. **Coherence sweep** was running at save time (5 parallel report-only agents: aitx, standard, souls-of-tech, appliedai-wiki, peonping+books). Read findings and act on judge-visible items.
+2. **Souls of Tech** books on disk are LIVE but UNCOMMITTED; real subjects (Jordan, Will) haven't personally blessed words/likeness — get blessing before promoting; commit when Gary says.
+3. **Joy mascot decision** is intentionally open (keynote poses the question).
+4. **Spec-version split**: prose/site say v0.5, aitx universe.json conformsTo v0.4 — decide whether AITX re-conforms to v0.5 (only if actually re-validated).
+5. DNS to add: soulsoftech.com, agenticbranduniverse.com. Swap Gary's pro voice clone (yffqtNJ84E8Jjz7BeGaF) into Chip once fine-tuned.
+
+2026-07-19T21:40:41Z · 414282a · session 6: Joy the animated logo + slide 17, OS spec v0.1, anime edition + reader toggle, keynote polish (hero/slop/cards/OG), Michael provenance fix, prompt-factory rule. Coherence sweep running; SoT books uncommitted + blessing pending.
