@@ -328,10 +328,10 @@ export default function Keynote() {
           <div>
             <H className="text-4xl sm:text-5xl">A few minutes of me. <span style={{ color: OR }}>Chip did the rest.</span></H>
             <p className="mt-6 text-lg text-[color:var(--muted)]">
-              These are two real, narrated books about Michael, spun up from the AITX universe. I spent a
-              few minutes on each. Chip made the rest, about thirty minutes a book. And it stays alive:
-              change Michael's shirt in every panel, or add two spreads because the story advanced, just
-              by talking. Version-controlled, always on brand.
+              Two real, narrated books spun up from the universe: one for Michael, one for Mark Heaps of
+              NVIDIA. I spent a few minutes on each. Chip made the rest, about thirty minutes a book. And
+              they stay alive: change a shirt in every panel, or add two spreads because the story
+              advanced, just by talking. Version-controlled, always on brand.
             </p>
             <div className="mt-6 flex flex-col gap-2 font-body text-sm font-semibold" style={{ color: OR }}>
               <a href="https://show-up-book.vercel.app/" target="_blank" rel="noreferrer">Read “Show Up” →</a>
@@ -339,22 +339,16 @@ export default function Keynote() {
               <a href="https://aitx-origin.vercel.app" target="_blank" rel="noreferrer">Read the AITX origin story →</a>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-3">
-            <a href="https://show-up-book.vercel.app/" target="_blank" rel="noreferrer" className="group flex aspect-[3/4] flex-col justify-between rounded-2xl border p-5 transition hover:-translate-y-1" style={{ borderColor: "#e0d6c2", background: "#fffdf9" }}>
+          <div className="flex flex-col gap-4">
+            <a href="https://show-up-book.vercel.app/" target="_blank" rel="noreferrer" className="group overflow-hidden rounded-2xl border shadow-sm transition hover:-translate-y-1" style={{ borderColor: "#e0d6c2" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/logo/aitx-mark-transparent.png" alt="aitx" className="h-7 w-auto" />
-              <div>
-                <div className="font-display text-2xl font-bold leading-tight">Show Up</div>
-                <div className="mt-1 text-sm text-[color:var(--muted)]">a Michael Daigler story · ~30 min to make</div>
-              </div>
+              <img src="/assets/keynote/book-show-up.jpg" alt="Show Up — a Michael Daigler story" className="w-full object-cover" />
+              <div className="bg-[#fffdf9] px-4 py-2 text-sm text-[color:var(--muted)]">Michael Daigler · made in ~30 min</div>
             </a>
-            <a href="https://do-all-the-things-book.vercel.app/" target="_blank" rel="noreferrer" className="group flex aspect-[3/4] flex-col justify-between rounded-2xl border p-5 transition hover:-translate-y-1" style={{ borderColor: "#e0d6c2", background: "#fffdf9" }}>
+            <a href="https://do-all-the-things-book.vercel.app/" target="_blank" rel="noreferrer" className="group overflow-hidden rounded-2xl border shadow-sm transition hover:-translate-y-1" style={{ borderColor: "#e0d6c2" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/logo/aitx-mark-transparent.png" alt="aitx" className="h-7 w-auto" />
-              <div>
-                <div className="font-display text-2xl font-bold leading-tight">Do All The Things</div>
-                <div className="mt-1 text-sm text-[color:var(--muted)]">a Michael Daigler story · ~30 min to make</div>
-              </div>
+              <img src="/assets/keynote/book-do-all.jpg" alt="Do All The Things — a Mark Heaps story" className="w-full object-cover" />
+              <div className="bg-[#fffdf9] px-4 py-2 text-sm text-[color:var(--muted)]">Mark Heaps of NVIDIA · made in ~30 min</div>
             </a>
           </div>
         </div>

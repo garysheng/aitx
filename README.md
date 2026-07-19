@@ -1,26 +1,66 @@
-# Agentic Brand Universe — AITX × NVIDIA Claw Agent Hackathon submission
+# Agentic Brand Universe
 
-> **A version-controlled home for a brand, with an agent (Chip, the brand czar) that learns its voice and never breaks it.**
-> Canon + blessed goldens + rules, plus an agent powered by
-> **NVIDIA Nemotron via NIM** that generates anything on-brand *and gets sharper the more it runs* —
-> it critiques its own output against the brand rules, and when it slips it writes itself a new rule
-> and remembers it. No model retraining. Every asset carries full provenance (model + prompt +
-> hash-pinned references), so nothing is a mystery and everything is reproducible.
+### AITX × NVIDIA Claw Agent Hackathon submission
 
-**Track:** Recursive Intelligence · **Bounties:** Best Use of Nemotron, Most Commercializable (Antler)
+> **A version-controlled home for a brand, with an agent (Chip, the brand czar) that learns its voice and never breaks it.** Powered by **NVIDIA Nemotron via NIM**, Chip generates anything on-brand *and gets sharper the more it runs*: it critiques its own output against the brand's rules, and when it slips it writes itself a new rule and remembers it. No model retraining. Every asset carries full provenance, so nothing is a mystery and everything is reproducible.
 
-**See it live**
-- 🎤 **The keynote (start here):** https://aitx-brand-os.vercel.app/keynote — the full argument, co-presented by Gary + Chip.
-- 🤖 **The learning agent, live:** https://aitx-brand-os.vercel.app/agent — give it a task, watch it slip, teach it, watch it fix itself. Real Nemotron.
-- 💼 **The business:** https://aitx-brand-os.vercel.app/platform
-- 💌 **On-brand sponsor thank-yous:** https://aitx-brand-os.vercel.app/thanks
-- 📖 **Proof — books Chip made in ~30 min each:** https://show-up-book.vercel.app · https://do-all-the-things-book.vercel.app · https://aitx-origin.vercel.app
+**Track:** Recursive Intelligence · **Bounties:** Best Use of Nemotron · Most Commercializable (Antler)
 
-**Where the Nemotron code lives**
-- `portal/app/api/agent/route.ts` — Nemotron (NIM) generation + self-critique + the learning step.
-- `portal/lib/agent/` — the deterministic brand-rule critic (the metric) + the knowledge base.
-- `hackathon/brand-agent/` — the CLI + the measured recursive-intelligence delta (`demo.py`) + writeup (`README.md`).
-- `generator/` — the provenance spine (every asset ↔ its exact recipe).
+## ▶ Start here: [aitx-brand-os.vercel.app/keynote](https://aitx-brand-os.vercel.app/keynote)
+
+A ~5-minute keynote, co-presented by me and Chip (in his own voice), built entirely from the AITX brand universe.
+
+![Gary at the AITX x NVIDIA hackathon, rendered into the AITX universe](portal/public/assets/keynote/gary-hackathon.jpg)
+
+---
+
+### The whole idea, in one picture
+
+Same event graphic. On the left: raw AI, no system — garbled text, stock clip-art, un-branded, unrepeatable. On the right: the same thing made by Chip from the AITX universe — on brand, correct, reproducible, sponsors and all.
+
+| Without a brand universe | With the Agentic Brand Universe |
+|:---:|:---:|
+| ![off-brand raw AI graphic](portal/public/assets/keynote/hack-fair-before.jpg) | ![on-brand golden flyer](portal/public/assets/keynote/hack-fair-after.jpg) |
+
+---
+
+### Meet Chip, the brand czar
+
+<img src="portal/public/assets/keynote/chip-joy.jpg" width="360" alt="Chip, the AITX brand czar" />
+
+Chip holds the canon, the blessed "goldens," and the rules. Michael and Jake don't call me for assets anymore — they talk to Chip. He does the making; they stay in charge of taste.
+
+---
+
+### See it live
+
+- 🎤 **[The keynote](https://aitx-brand-os.vercel.app/keynote)** — start here. The full argument, co-presented by Gary + Chip.
+- 🤖 **[The learning agent](https://aitx-brand-os.vercel.app/agent)** — give it a task, watch it slip off-brand, teach it once, watch it fix itself. Real Nemotron, live.
+- 💼 **[The platform / business](https://aitx-brand-os.vercel.app/platform)** — GitHub for brand universes.
+- 💌 **[On-brand sponsor thank-yous](https://aitx-brand-os.vercel.app/thanks)** — Chip writes them; you record them in your voice.
+- 📖 **Proof — books Chip made in ~30 min each:** [Show Up (Michael)](https://show-up-book.vercel.app) · [Do All The Things (Mark Heaps of NVIDIA)](https://do-all-the-things-book.vercel.app) · [AITX origin story](https://aitx-origin.vercel.app)
+
+### Where the Nemotron code lives
+
+| Path | What |
+|---|---|
+| `portal/app/api/agent/route.ts` | Nemotron (NIM) generation + self-critique + the learning step |
+| `portal/lib/agent/` | the deterministic brand-rule critic (the metric) + the knowledge base |
+| `hackathon/brand-agent/` | the CLI + the measured recursive-intelligence delta (`demo.py`) + full writeup |
+| `generator/` | the provenance spine — every asset ↔ its exact recipe |
+| `hackathon/SUBMISSION.md` | the hackathon submission answers |
+
+### Run the demo yourself
+
+```bash
+# the measured recursive-intelligence delta, on real Nemotron
+cd hackathon/brand-agent
+echo "NIM_API_KEY=nvapi-..." > .env      # free key at build.nvidia.com
+uv run demo.py                            # or: uv run demo.py --mock  (no key)
+
+# the web app (keynote + live agent)
+cd portal && npm install && npm run dev   # http://localhost:3000/keynote
+```
 
 ---
 
