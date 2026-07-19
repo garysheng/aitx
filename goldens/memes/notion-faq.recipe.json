@@ -1,0 +1,32 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/memes/notion-faq.png",
+  "createdAt": "2026-07-19T00:00:00.000Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "A friendly single-panel community meme in a clean illustrated comic style on a warm paper-white background (#fbf5ec). Michael (use the references: a good-natured guy with a mustache and slicked-back dark hair, wearing a black AITX tee with the orange open-arms mark on the chest, warm and welcoming) is smiling and gesturing with one open hand toward a Notion document floating beside him. The Notion page is a clean white doc in the recognizable Notion style, titled 'AITX Hackathon FAQ' with a few light gray bullet lines of placeholder text. Above Michael is a rounded speech bubble with crisp, correctly spelled black text that reads exactly: thanks for the question :) it's all in the Notion. Warm, wholesome, gently funny community-organizer energy. AITX orange #ff4201 accents. No other text anywhere. All baked-in text must be sharp and correctly spelled.",
+  "params": {
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/michael-daigler/gabr-michael.png",
+      "sha256": "a85f8be4b1c5055c85fab6790805fe167757c641f6257a6189e71005b1b3527f",
+      "role": "character:michael"
+    },
+    {
+      "path": "universe/reference/michael-daigler/gabr-michael-face.png",
+      "sha256": "fce92d9303fdb1d8753141cd65b5ea2ab716c3265798153d924b2a862ea1be36",
+      "role": "face:michael"
+    },
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    }
+  ]
+}
