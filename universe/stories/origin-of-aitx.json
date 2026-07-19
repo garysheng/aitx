@@ -1,8 +1,27 @@
 {
   "id": "origin-of-aitx",
-  "status": "stub",
+  "status": "full",
   "spine": "testimony",
   "title": "The Origin of AITX",
-  "logline": "How Michael Daigler built the largest in-person AI community in Texas.",
-  "note": "First property (stub). Provisional: Michael shapes the premise, beats, and register. Real-subject, so it stays gated until Michael blesses the words + art and his photo stack exists."
+  "refrain": "You get a better sense of a person in person.",
+  "logline": "Two builders with no one to talk to about AI meet at SXSW, start a meetup for ten, and by doing what they say and keeping it warm, compound it into the largest in-person AI community in Texas.",
+  "audience": "Sponsors and partners (a gift/pitch comic): why a tech company wanting the right crowd of founders and engineers should work with AITX by default.",
+  "register": {
+    "id": "warm-comic-community",
+    "anchor": "reference/michael-daigler/gabr-michael.png",
+    "note": "Comic-book register locked across the character art + Antler-venue plates: bold clean linework, cel shading, warm light. The real AITX logo is passed in on every render."
+  },
+  "features": ["michael-daigler", "jake-oshea", "aitx", "aitx-mark", "antler-venue"],
+  "gates": { "subjectApproval": "gated:michael-daigler,jake-oshea", "wordsBlessed": null },
+  "note": "Grounded in Recording 2076 (Michael + Jake + Gary) + Gary's outside-perspective context + PRM. Real-subject: GATED until Michael and Jake bless words + art.",
+  "beats": [
+    { "n": 1, "text": "SXSW, Austin, 2023. Two people building with AI keep running into the same wall: nobody to actually talk to about it. Michael was making consumer mobile apps with his brother, doing AI consulting to keep the lights on, and posting LangChain how-tos on YouTube (this is the future). Jake was at Foundation Capital, building AI tools inside the firm, back before structured outputs, before half the stack existed.", "location": null, "characters": ["michael-daigler", "jake-oshea"], "provenance": "Recording 2076 (Michael, Jake)" },
+    { "n": 2, "text": "They bumped into each other and had the conversation they'd both been missing. So they made a simple decision: build the room they wished existed, a place for AI builders to connect, collaborate, and trade what actually works.", "location": null, "characters": ["michael-daigler", "jake-oshea"], "provenance": "Recording 2076" },
+    { "n": 3, "text": "April 2023, the first event. About ten people showed up, off a Luma link. Small, warm, in person. That was the whole idea.", "location": "antler-venue", "characters": ["michael-daigler", "jake-oshea"], "provenance": "Recording 2076 (April 2023, ~10, Luma)" },
+    { "n": 4, "text": "Ten became twelve, then fifteen, then twenty-five, then fifty. Nobody was paid to come. They came because it was real, and because these two kept doing exactly what they said they'd do.", "location": "antler-venue", "characters": [], "provenance": "Recording 2076 (10 -> 12 -> 15 -> 25 -> 50 -> 80)" },
+    { "n": 5, "text": "Then they stopped just talking and started building together: hackathons. The first ones taught people the tools, put ideas in front of them, and got some of them jobs. Reputation spread, and the sponsors came, Google Cloud, NVIDIA, Meta. It compounds and compounds, and it is beautiful.", "location": "antler-venue", "characters": ["michael-daigler", "jake-oshea"], "provenance": "Recording 2076 (hackathons 2024+, NVIDIA/Meta/Google Cloud) + Gary's context" },
+    { "n": 6, "text": "Michael has no car. He walks Austin, and when it matters he will rent one and drive to Houston or Dallas to host an event himself, because Austin is not the only Texas that gets to be on the frontier. AITX shows up for all of it.", "location": null, "characters": ["michael-daigler"], "provenance": "Gary's outside-perspective context; Recording 2076 (no car, travel)" },
+    { "n": 7, "text": "Ask Michael why any of this works and he points at the same thing every time: you get a better sense of a person in person. Loyalty, patience, kindness, doing what you say, keeping good company that gives high signal. Every honest interaction is one more piece of evidence, and evidence compounds into trust.", "location": "antler-venue", "characters": ["michael-daigler"], "provenance": "Recording 2076 (Michael on reputation) + Gary's context" },
+    { "n": 8, "text": "The mark says it in one glyph: a person with open arms. AITX is now the largest in-person AI community in Texas. So if you are a tech company and you want to be in front of the right room of founders and engineers, there is a default answer, and it has open arms.", "location": "antler-venue", "characters": ["michael-daigler", "jake-oshea"], "provenance": "Gary's thesis; the aitx-mark; PRM (largest in-person AI community in Texas)" }
+  ]
 }

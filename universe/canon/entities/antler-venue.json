@@ -2,25 +2,33 @@
   "id": "antler-venue",
   "kind": "setting",
   "originStory": "origin-of-aitx",
-  "status": "unlocked",
-  "authority": { "lockedBy": "gary", "lockedOn": null },
+  "status": "locked",
+  "authority": {
+    "lockedBy": "gary",
+    "lockedOn": "2026-07-18"
+  },
   "contract": {
-    "turnaround": null,
+    "turnaround": "reference/antler/alcove-empty-1.png",
     "emptyPlates": [
       "reference/antler/signin-1.png",
       "reference/antler/signin-2.png",
       "reference/antler/signin-3.png",
-      "reference/antler/alcove-1.png",
-      "reference/antler/alcove-2.png",
-      "reference/antler/alcove-3.png"
+      "reference/antler/alcove-empty-1.png"
     ],
-    "blueprint": null,
-    "map": null,
-    "blocking": null,
-    "dressing": "SIGN-IN: dark wood-plank wall with 'ANTLER' in white capitals; white AITX pull-up banner ('Building AI's future in Texas', QR, twilight skyline); white check-in desk with orange flowers, orange lanyards + 'aitx Guest' name tags, sticker bowl, laptop; glass entrance doors + green EXIT; AITX A-frame ('AI that works'). ALCOVE: ANTLER + AITX step-and-repeat (coral-red ANTLER on white); NVIDIA-logo monitor; brown tan-leather loveseat (fireside-chat speaking spot); rows of black event chairs + white folding chairs; concrete kitchen/bar counter; papel-picado banners overhead; warm-wood + polished-concrete floors; exposed industrial ceiling. The ANTLER wall is BEHIND the check-in greeter (not visible in the greeter POV)."
+    "blueprint": "One open loft floor, split-level. TWO named zones: (1) SIGN-IN near the glass-door entrance; (2) SPEAKING ALCOVE on the LOWER ground. A permanent rectangular kitchen island sits between/beside them; a staircase leads to a raised area used only as open standing/lounge space.",
+    "map": "Entrance (glass doors, green EXIT) -> sign-in desk + AITX A-frame, with the dark 'ANTLER' wood wall and white AITX pull-up banner BEHIND the seated greeter (not in the greeter's forward view). Speaking alcove is lower-ground: brown leather loveseat in front of the ANTLER+AITX step-and-repeat and a wall screen + green-NVIDIA-logo monitor; rows of black + white chairs face it. Kitchen island along one side (food/coffee). Raised area via stairs = standing/lounge only.",
+    "blocking": "The speaker sits/stands on the LOWER ground on the leather loveseat by the step-and-repeat; the audience sits in rows facing them on the lower ground; networking happens standing around the kitchen island. NEVER a podium or stage on the raised upper platform.",
+    "dressing": "ANTLER: white capitals on the dark wood sign-in wall; coral-red on the alcove step-and-repeat. AITX: the LOGO (orange reaching-person mark + 'aitx'), never plain text; on the pull-up banner ('Building AI's future in Texas', QR, skyline), the A-frame, the step-and-repeat, lanyards/name tags ('aitx Guest'), the wall screen. NVIDIA: green logo on the monitor (the hackathon). Papel-picado banners overhead; warm-wood + polished-concrete floors; exposed industrial ceiling. NO 'Applied AI Society' / 'AAS'. NOTE: 'AI that works' is APIFY's slogan (Michael's employer), NOT AITX; never put it on AITX materials. The signin-2 A-frame currently shows it in error and should be reshot."
+  },
+  "structured": {
+    "populatedScenes": [
+      "reference/antler/alcove-live-1.png",
+      "reference/antler/alcove-live-2.png",
+      "reference/antler/alcove-live-3.png"
+    ]
   },
   "prose": {
-    "lore": "Antler VC's Austin venue, the home base for AITX events (monthly meetups, the NVIDIA hackathon). Two named zones: the SIGN-IN area and the SPEAKING ALCOVE.",
-    "rules": "Unlocked: has empty-plate references (6 angles across the two zones) and a dressing spec, but no formal turnaround/blueprint/blocking/map yet, so the resolver still refuses a full spread render here until those are locked. Comic-book register, matching the character art."
+    "lore": "Antler VC's Austin venue, the home base for AITX events (monthly meetups, the NVIDIA hackathon). Comic-book register matching the character art.",
+    "rules": "Locked: turnaround + empty plates + layout/blocking spec present. Every render passes the real AITX logo in. Speaking on the lower ground only."
   }
 }

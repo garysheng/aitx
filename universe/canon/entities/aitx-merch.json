@@ -1,0 +1,20 @@
+{
+  "id": "aitx-merch",
+  "kind": "prop",
+  "originStory": "origin-of-aitx",
+  "status": "locked",
+  "authority": { "lockedBy": "gary", "lockedOn": "2026-07-18" },
+  "structured": {
+    "sheets": {
+      "cap": "reference/products/merch/aitx-cap.png",
+      "tote": "reference/products/merch/aitx-tote.png",
+      "tumbler": "reference/products/merch/aitx-tumbler.png",
+      "hoodie": "reference/products/merch/aitx-hoodie.png"
+    },
+    "invariants": ["aitx-logo-passed-in-every-render", "exact-palette-only", "no-apify-slogan-ai-that-works"]
+  },
+  "prose": {
+    "lore": "AITX branded merch: cap, tote, tumbler, hoodie (plus the Skylark shoe as its own prop). Stickers are made ONE AT A TIME (not a sheet).",
+    "rules": "Always pass the real AITX logo in on every render. Never use 'AI that works' (that is Apify's slogan)."
+  }
+}
