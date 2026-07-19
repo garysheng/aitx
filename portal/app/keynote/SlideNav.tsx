@@ -30,7 +30,7 @@ export default function SlideNav({ count }: { count: number }) {
     "flex h-9 w-9 items-center justify-center rounded-full border border-neutral-400/60 bg-white/80 text-neutral-700 shadow-sm backdrop-blur transition hover:border-[#ff4201] hover:text-[#ff4201] disabled:opacity-30";
 
   return (
-    <nav className="fixed right-4 top-1/2 z-50 flex -translate-y-1/2 flex-col items-center gap-3 sm:right-6">
+    <nav className="fixed right-4 top-1/2 z-50 hidden -translate-y-1/2 flex-col items-center gap-3 sm:right-6 sm:flex">
       <button onClick={() => go(active - 1)} disabled={active === 1} aria-label="Previous slide" className={arrow}>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 15l-6-6-6 6" /></svg>
       </button>

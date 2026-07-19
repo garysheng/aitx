@@ -85,7 +85,7 @@ export default function Explorer() {
             { name: "Jake", photos: ["/assets/provenance/jake-1.jpg", "/assets/provenance/jake-2.jpg"], master: "/assets/founders/jake.png" },
             { name: "Mark Heaps", photos: ["/assets/provenance/mark-1.jpg", "/assets/provenance/mark-2.jpg"], master: "/assets/founders/mark.png" },
           ].map((c) => (
-            <div key={c.name} className="flex items-center gap-4 rounded-2xl border bg-white p-4 shadow-sm sm:gap-6" style={{ borderColor: "#e0d6c2" }}>
+            <div key={c.name} className="flex items-center justify-between gap-4 rounded-2xl border bg-white p-4 shadow-sm sm:justify-start sm:gap-6" style={{ borderColor: "#e0d6c2" }}>
               <div className="flex gap-2">
                 {c.photos.map((p, i) => (
                   // eslint-disable-next-line @next/next/no-img-element

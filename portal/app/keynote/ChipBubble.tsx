@@ -21,7 +21,7 @@ export default function ChipBubble() {
   }, []);
 
   return (
-    <div className="pointer-events-none fixed bottom-5 left-5 z-40 flex items-center gap-3">
+    <div className="pointer-events-none fixed bottom-5 left-5 z-40 hidden items-center gap-3 sm:flex">
       <div
         className="relative h-20 w-20 overflow-hidden rounded-full border-2 bg-white transition-all duration-300"
         style={{
