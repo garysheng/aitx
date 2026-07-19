@@ -1,4 +1,4 @@
-# AITX as an Agentic Story OS
+# AITX as an Agentic Brand OS
 
 *A one-stop, version-controlled, human- and machine- and partner-legible source
 of truth for a brand, editable in plain language, and a fun engine for
@@ -117,7 +117,7 @@ new asset faster, cheaper, and more on-brand than the last.
   surfaces? How does "download an asset" and "generate a new one" feel?
 - **Permissions model.** Roles, grants, and how modification rights are
   configured and enforced.
-- **How the agentic-story spec evolves.** Today `../agenticstory` (spec ~v0.4)
+- **How the agentic-story spec evolves.** Today `../agenticstory` (spec v0.5)
   types the canon. The next version should encompass **generation** (skills that
   make molecules), the **asset library**, **access/permissions**, and
   **human-language editing** — the full one-stop shop, not just the canon.
