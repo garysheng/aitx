@@ -34,7 +34,7 @@ function Slide({
       <div className="mx-auto w-full max-w-5xl">{children}</div>
       {n != null && (
         <div className="pointer-events-none absolute bottom-6 right-8 font-body text-xs tracking-widest text-[color:var(--muted)]">
-          {String(n).padStart(2, "0")} / 16
+          {String(n).padStart(2, "0")} / 17
         </div>
       )}
     </section>
@@ -61,7 +61,7 @@ function H({ children, className = "" }: { children: React.ReactNode; className?
 export default function Keynote() {
   return (
     <main className="h-screen snap-y snap-mandatory overflow-y-scroll font-body text-[color:var(--ink)]">
-      <SlideNav count={16} />
+      <SlideNav count={17} />
       <Presenter />
       <ChipBubble />
       <ChipSubtitles />
@@ -421,6 +421,30 @@ export default function Keynote() {
             <a href="#explore">Explore the Brand OS ↓</a>
             <a href="/platform">The platform →</a>
             <a href="https://aitx-origin.vercel.app" target="_blank" rel="noreferrer">The origin story →</a>
+          </div>
+        </div>
+      </Slide>
+
+      {/* 17 — CHIP vs JOY (the animated logo) — a fun kicker */}
+      <Slide n={17} bg="#f2ead9">
+        <div className="grid items-center gap-10 sm:grid-cols-[1.1fr_1fr]">
+          <div>
+            <Eyebrow>One more thing</Eyebrow>
+            <H className="text-4xl sm:text-6xl">
+              Michael&apos;s not sure he likes me. He kinda thinks <span style={{ color: OR }}>Joy</span> should be the mascot.
+            </H>
+            <p className="mt-7 max-w-xl text-xl text-[color:var(--muted)]">
+              Meet Joy: the AITX open-arms mark, come to life. An animated logo, born right here in the
+              universe. I&apos;m Chip, and I do the making. Joy is the heart. Honestly? Look at that face.
+              I get it. There&apos;s plenty of room in this universe for the both of us.
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/keynote/joy.png" alt="Joy, the AITX animated logo" className="w-full max-w-[300px]" />
+            <span className="font-body text-xs uppercase tracking-widest text-[color:var(--muted)]">
+              Joy · the animated logo · blessed into the universe today
+            </span>
           </div>
         </div>
       </Slide>
