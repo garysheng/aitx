@@ -87,40 +87,23 @@ Everything in the demo was generated from the AITX brand universe itself — inc
 
 ---
 
-# Suggested X/Twitter post (thread, in Gary's voice)
+# Suggested X/Twitter post (single long post, in Gary's voice)
 
-1/
 I've been off X for a while, but I had to come back for this one.
 
 This weekend @AITXCommunity and @NVIDIAAI hosted a hackathon that genuinely inspired me. So I built something, and I think a lot of founders will want to see it.
 
-2/
 It's called an Agentic Brand Universe. Your brand as a version-controlled system: its canon, its best work, its rules. Plus an agent (I named mine Chip) that makes anything on brand and gets sharper every time it runs.
 
-3/
-What I keep seeing: most teams use AI like a faster intern. One-off prompts, generic output, a brand that drifts a little more with every asset.
+Here's what I keep seeing. Most teams use AI like a faster intern. One-off prompts, generic output, a brand that drifts a little more with every asset. But you don't really know your brand until you try things. Taste is discovered, not declared. So your brand should be a living thing, not a PDF you wrote on day one.
 
-But you don't really know your brand until you try things. Taste is discovered. So your brand should be a living thing, not a PDF.
-
-4/
 AI agents change the math. On-brand work that used to take weeks takes minutes now, and it gets better every run. Your brand can evolve as fast as your competition moves. If you're a founder, that's the part worth sitting with.
 
-5/
 Everything in the demo was made from the universe itself, including the keynote and Chip.
 
-Thank you @AITXCommunity and @NVIDIAAI. That was a good room.
+Thank you @AITXCommunity and @NVIDIAAI. The two of you created the kind of room that makes people want to build. That is a real thing, and it is why this weekend was so inspiring.
 
 aitx-brand-os.vercel.app/keynote
-
----
-
-## Alt: single tweet (if you don't want a thread)
-
-Been off X for a bit, but @AITXCommunity and @NVIDIAAI hosted a hackathon that inspired me, so here I am.
-
-I built an Agentic Brand Universe: your brand as a version-controlled system with an agent that makes anything on brand and gets sharper every run. On-brand work that took weeks now takes minutes, so your brand can evolve as fast as your competition moves.
-
-Thank you both. aitx-brand-os.vercel.app/keynote
 
 ---
 
