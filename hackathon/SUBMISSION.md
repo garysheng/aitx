@@ -103,7 +103,8 @@ Everything in the demo was made from the universe itself, including the keynote 
 
 Thank you @AITXCommunity and @NVIDIAAI. The two of you created the kind of room that makes people want to build. That is a real thing, and it is why this weekend was so inspiring.
 
-Watch it: aitx-brand-os.vercel.app/keynote
+Watch the demo: https://share.descript.com/view/2WsLZXv3P2k
+See it live: aitx-brand-os.vercel.app/keynote
 It's all open source: github.com/garysheng/aitx
 
 ---
