@@ -7,7 +7,7 @@ export default function Home() {
       {/* Hero / brand at a glance */}
       <header className="mb-12 flex flex-col gap-4">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/logo/aitx-mark.png" alt="AITX" className="h-14 w-auto" />
+        <img src="/assets/logo/aitx-wordmark.png" alt="AITX" className="h-12 w-auto object-contain" />
         <h1 className="font-display text-4xl font-bold sm:text-5xl">AITX Brand OS</h1>
         <p className="max-w-2xl text-lg text-[color:var(--muted)]">
           The AITX brand, in one place. Browse and download on-brand assets, and see how they are made.

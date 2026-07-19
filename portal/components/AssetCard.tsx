@@ -16,7 +16,7 @@ export default function AssetCard({ asset }: { asset: BrandAsset }) {
         <a
           href={asset.file}
           download={asset.downloadName}
-          className="mt-3 inline-block rounded-md bg-[color:var(--orange)] px-3 py-1.5 text-center text-sm font-semibold text-white hover:bg-[color:var(--orange-deep)]"
+          className="mt-auto inline-block rounded-md bg-[color:var(--orange)] px-3 py-1.5 text-center text-sm font-semibold text-white hover:bg-[color:var(--orange-deep)]"
         >
           Download
         </a>
