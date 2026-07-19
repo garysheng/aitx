@@ -56,7 +56,7 @@ export default function AutoDemo() {
     if (started.current) return;
     started.current = true;
     try {
-      await chipSay("Hi, I'm Chip, the brand czar of AITX. Give me a task and watch me learn.", audioRef);
+      await chipSay("Alright, hit me with a task. Watch me learn.", audioRef);
       // type the prompt
       setPhase("typing");
       for (let i = 1; i <= PROMPT.length; i++) {
@@ -66,16 +66,16 @@ export default function AutoDemo() {
       setPhase("thinking1");
       const b: Res = await api({ action: "generate", request: PROMPT, useKnowledge: false, lessons: [] });
       setBlind(b); setPhase("blind");
-      await chipSay("Hmm. My first instinct was loud and full of hype. That is not the AITX voice.", audioRef);
+      await chipSay("Woof. My first swing was loud and all hype. That ain't the AITX voice, y'all.", audioRef);
       // teach
       setPhase("teaching");
       const { lessons } = await api({ action: "learn", request: PROMPT, violations: b.violations });
       setLesson((lessons as string[])[0] || "Never spam exclamation points. Warm and confident, not loud.");
-      await chipSay("So I'll write myself a rule, and remember it. Now let me try again.", audioRef);
+      await chipSay("So I'll jot myself a rule and remember it. Lemme try that again.", audioRef);
       setPhase("thinking2");
       const f: Res = await api({ action: "generate", request: PROMPT, useKnowledge: true, lessons });
       setFixed(f); setPhase("fixed");
-      await chipSay("Warm, confident, on brand. And I will never make that mistake again. No retraining.", audioRef);
+      await chipSay("There we go. Warm, confident, on brand. And I won't make that mistake again. No retrainin'.", audioRef);
     } catch {
       // graceful fallback so the show never shows a broken state
       setBlind({ asset: { headline: "AITX's BIGGEST EVENT YET!!!", body: "Don't miss this game-changing, cutting-edge night!!!" }, score: 75, violations: [{ rule: "exclaim_spam", label: "" }, { rule: "banned_filler", label: "" }] });

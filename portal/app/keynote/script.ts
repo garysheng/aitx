@@ -26,11 +26,11 @@ export const SCRIPT: Beat[] = [
 
   // --- Chip's act ---
   { speaker: "chip", garyCue: "Say: 'They don't call me anymore. They talk to Chip.' Then let Chip introduce himself.",
-    line: "Hey everyone, I'm Chip, the AITX brand czar. I hold everything that makes AITX feel like AITX: the canon, the goldens, the rules. Need something on brand? You just ask me.", seconds: 17, audio: "/assets/keynote/audio/chip-11-intro.mp3" },
+    line: "Howdy, y'all. I'm Chip, the AITX brand czar. I keep everything that makes AITX feel like AITX: the canon, the goldens, the rules. Y'all need somethin' on brand? You just holler at me.", seconds: 17, audio: "/assets/keynote/audio/chip-11-intro.mp3" },
   { speaker: "chip", garyCue: "Let Chip run his live demo. Just stand back and let it play.",
     line: "[Chip narrates his live demo in his own voice.]", seconds: 34, audio: "inline" },
   { speaker: "chip", garyCue: "Let Chip thank NVIDIA in his own voice.",
-    line: "NVIDIA, thank you for putting real tools in our builders' hands with those Nemotron models and GPUs. Seeing our community bring projects to life with them was pure magic. Your support means the world to us. Come build the future with us.", seconds: 18, audio: "/assets/keynote/audio/chip-13-thanks.mp3" },
+    line: "NVIDIA, thank y'all for puttin' real tools in our builders' hands with those Nemotron models and GPUs. Watchin' our community bring projects to life with 'em was pure magic. Y'all's support means the world to us. Come build the future with us.", seconds: 18, audio: "/assets/keynote/audio/chip-13-thanks.mp3" },
 
   // --- Gary lands it ---
   { speaker: "gary", line: "Here's the proof. Two real narrated books about Michael. I spent a few minutes on each. Chip did the rest, about thirty minutes a book. And they stay alive. Change the shirt, add a spread, just by talking.", seconds: 15 },
