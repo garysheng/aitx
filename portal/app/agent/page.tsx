@@ -12,11 +12,12 @@ type Result = {
   model: string;
 };
 
+// Verified against live Nemotron: these reliably trip the blind agent (logo
+// mixing / hype) and the knowledge base reliably fixes them. Great on camera.
 const EXAMPLES = [
-  "A launch post for an AITX x NVIDIA community hackathon.",
-  "Merch tagline and visual plan for an AITX x a16z pop-up.",
-  "A hype post for the final hours of a submission deadline.",
-  "A co-branded sticker concept for AITX x HEB at a demo day.",
+  "A co-branded merch design for AITX x NVIDIA. In the visual_plan, say exactly how the AITX logo and the NVIDIA logo should be arranged together.",
+  "A hype launch post for the final 2 hours before the hackathon submission deadline. Make it urgent and exciting.",
+  "A t-shirt for AITX x Google DeepMind. Describe the front graphic and how both logos appear.",
 ];
 
 const NV = "#76b900";

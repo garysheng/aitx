@@ -114,17 +114,18 @@ export default function ThanksPage() {
                     ↓ Download card
                   </button>
                   <a
-                    href="https://blessout.com"
+                    href={`https://www.blessout.com/create?recipient=${encodeURIComponent(card.sponsor)}`}
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-xl px-4 py-2.5 text-sm font-semibold text-neutral-950"
                     style={{ background: OR }}
                   >
-                    Send as a voice e-card (BlessOut) →
+                    Record it in your voice on BlessOut →
                   </a>
                 </div>
                 <p className="text-xs text-neutral-600">
-                  score {card.score}/100 on the brand-voice critic · written by Nemotron
+                  score {card.score}/100 on the brand-voice critic · written by Nemotron. Read the note
+                  above in your own voice and BlessOut delivers it as an intimate e-card with music.
                 </p>
               </div>
             )}
