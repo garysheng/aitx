@@ -1,4 +1,4 @@
-import { buildReferences, writeRecipe, type Recipe } from "./recipe.ts";
+import { buildRepoRelativeReferences, recipePathFor, toRepoRelative, writeRecipe, type Recipe } from "./recipe.ts";
 
 export type RenderArgs = {
   prompt: string;
@@ -33,14 +33,19 @@ export async function generateImageAsset(spec: ImageSpec, deps: { render: Render
   });
   const recipe: Recipe = {
     recipeVersion: 1,
-    asset: spec.outPath,
+    // Stored repo-root-relative so the recipe is resolvable regardless of the
+    // cwd the caller ran from (e.g. `--out ../goldens/x.png` from `generator/`).
+    asset: toRepoRelative(spec.outPath),
     createdAt: spec.createdAt,
     generator: { kind: "image-model", tool: "aitx-generator@0.1.0" },
     model: spec.model,
     prompt: spec.prompt,
     ...(spec.params ? { params: spec.params } : {}),
-    references: buildReferences(spec.references, spec.roles),
+    references: buildRepoRelativeReferences(spec.references, spec.roles),
   };
-  const recipePath = writeRecipe(recipe);
+  // The recipe file is still written as the sidecar of the ACTUAL rendered
+  // file (spec.outPath, resolved against cwd) — independent of the
+  // repo-relative path stored inside the recipe's `asset` field.
+  const recipePath = writeRecipe(recipe, recipePathFor(spec.outPath));
   return { assetPath: spec.outPath, recipePath, recipe };
 }

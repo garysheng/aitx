@@ -4,7 +4,7 @@ import { mkdtempSync, writeFileSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { generateImageAsset, type RenderFn } from "./generate-image.ts";
-import { readRecipe, recipePathFor } from "./recipe.ts";
+import { fromRepoRelative, readRecipe, recipePathFor } from "./recipe.ts";
 
 test("generateImageAsset renders then writes a correct recipe", async () => {
   const dir = mkdtempSync(path.join(tmpdir(), "aitx-gen-"));
@@ -36,7 +36,10 @@ test("generateImageAsset renders then writes a correct recipe", async () => {
   assert.equal(recipe.model, "openai:gpt-image-2");
   assert.equal(recipe.prompt, "michael as uncle sam");
   assert.equal(recipe.generator.kind, "image-model");
-  assert.equal(recipe.references?.[0].path, logo);
+  // asset + reference paths are stored repo-root-relative, not verbatim —
+  // resolve back through the repo root to recover the real file.
+  assert.equal(fromRepoRelative(recipe.asset), out);
+  assert.equal(fromRepoRelative(recipe.references?.[0].path ?? ""), logo);
   assert.equal(recipe.references?.[0].role, "logo");
   assert.match(recipe.references?.[0].sha256 ?? "", /^[0-9a-f]{64}$/);
 });
