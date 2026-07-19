@@ -32,3 +32,5 @@ Incremental save anchors for this workspace. Newest at the bottom.
 **Uncommitted at save:** none after this commit. Local portal dev server was running on :3500 for review (the two UI fixes: trimmed non-stretched logo + Download buttons pinned to card bottom). Fixes committed locally, NOT pushed (no deploy requested).
 
 Checkpoint: see line below.
+
+2026-07-19T04:58:27Z · 2efb1cc · session save: book+goldens+portal shipped; pivot to rules-encoded generator + provenance captured as resume note
