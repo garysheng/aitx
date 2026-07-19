@@ -322,35 +322,33 @@ export default function Keynote() {
         </div>
       </Slide>
 
-      {/* 14 — THE LIVING STORY (real proof: books Chip made in 30 min) */}
+      {/* 14 — THE LIVING STORY (the AITX origin book, embedded live) */}
       <Slide n={14}>
-        <Eyebrow>Real proof · made this weekend</Eyebrow>
-        <div className="grid items-center gap-8 sm:grid-cols-2">
-          <div>
-            <H className="text-4xl sm:text-5xl">A few minutes of me. <span style={{ color: OR }}>Chip did the rest.</span></H>
-            <p className="mt-6 text-lg text-[color:var(--muted)]">
-              Two real, narrated books spun up from the universe: one for Michael, one for Mark Heaps of
-              NVIDIA. I spent a few minutes on each. Chip made the rest, about thirty minutes a book. And
-              they stay alive: change a shirt in every panel, or add two spreads because the story
-              advanced, just by talking. Version-controlled, always on brand.
-            </p>
-            <div className="mt-6 flex flex-col gap-2 font-body text-sm font-semibold" style={{ color: OR }}>
-              <a href="https://show-up-book.vercel.app/" target="_blank" rel="noreferrer">Read “Show Up” →</a>
-              <a href="https://do-all-the-things-book.vercel.app/" target="_blank" rel="noreferrer">Read “Do All The Things” →</a>
-              <a href="https://aitx-origin.vercel.app" target="_blank" rel="noreferrer">Read the AITX origin story →</a>
-            </div>
+        <Eyebrow>Made from the universe · right here on the page</Eyebrow>
+        <div className="grid items-center gap-8 lg:grid-cols-[1.15fr_1fr]">
+          <div className="overflow-hidden rounded-2xl border shadow-md" style={{ borderColor: "#e0d6c2", aspectRatio: "1 / 1", background: "#000" }}>
+            <iframe src="https://aitx-origin.vercel.app" title="The AITX origin story" loading="lazy"
+              className="h-full w-full" style={{ border: 0 }} />
           </div>
-          <div className="flex flex-col gap-4">
-            <a href="https://show-up-book.vercel.app/" target="_blank" rel="noreferrer" className="group overflow-hidden rounded-2xl border shadow-sm transition hover:-translate-y-1" style={{ borderColor: "#e0d6c2" }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/keynote/book-show-up.jpg" alt="Show Up — a Michael Daigler story" className="w-full object-cover" />
-              <div className="bg-[#fffdf9] px-4 py-2 text-sm text-[color:var(--muted)]">Michael Daigler · made in ~30 min</div>
-            </a>
-            <a href="https://do-all-the-things-book.vercel.app/" target="_blank" rel="noreferrer" className="group overflow-hidden rounded-2xl border shadow-sm transition hover:-translate-y-1" style={{ borderColor: "#e0d6c2" }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/keynote/book-do-all.jpg" alt="Do All The Things — a Mark Heaps story" className="w-full object-cover" />
-              <div className="bg-[#fffdf9] px-4 py-2 text-sm text-[color:var(--muted)]">Mark Heaps of NVIDIA · made in ~30 min</div>
-            </a>
+          <div>
+            <H className="text-3xl sm:text-5xl">The AITX origin story. <span style={{ color: OR }}>Flip through it.</span></H>
+            <p className="mt-5 text-lg text-[color:var(--muted)]">
+              A whole narrated picture book, generated from the universe, embedded right here. And it
+              wasn't the only one. Two more, each about thirty minutes of agent time once the command
+              fired. The library grows just by asking.
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              <a href="https://show-up-book.vercel.app/" target="_blank" rel="noreferrer" className="overflow-hidden rounded-xl border shadow-sm transition hover:-translate-y-1" style={{ borderColor: "#e0d6c2" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/keynote/book-show-up.jpg" alt="Show Up — a Michael story" className="w-full object-cover" />
+                <div className="bg-[#fffdf9] px-3 py-1.5 text-xs text-[color:var(--muted)]">Michael · ~30 min</div>
+              </a>
+              <a href="https://do-all-the-things-book.vercel.app/" target="_blank" rel="noreferrer" className="overflow-hidden rounded-xl border shadow-sm transition hover:-translate-y-1" style={{ borderColor: "#e0d6c2" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/keynote/book-do-all.jpg" alt="Do All The Things — a Mark Heaps story" className="w-full object-cover" />
+                <div className="bg-[#fffdf9] px-3 py-1.5 text-xs text-[color:var(--muted)]">Mark Heaps, NVIDIA · ~30 min</div>
+              </a>
+            </div>
           </div>
         </div>
       </Slide>
