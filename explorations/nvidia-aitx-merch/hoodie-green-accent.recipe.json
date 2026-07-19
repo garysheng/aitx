@@ -1,0 +1,22 @@
+{
+  "recipeVersion": 1,
+  "asset": "explorations/nvidia-aitx-merch/hoodie-green-accent.png",
+  "createdAt": "2026-07-19T12:59:33.217Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "Real on-model portrait photograph, natural window light, mirrorless camera, shallow depth of field. A person wearing a premium heavyweight black pullover hoodie. A small orange AITX open-arms mark embroidered on the left chest. A thin NVIDIA-green #76b900 stitch accent along the cuff. On the lower sleeve, tiny plain neutral text reads \"AITX in collaboration with NVIDIA\". Relaxed premium streetwear, neutral warm backdrop. IMPORTANT LOGO RULES: The ONLY logo anywhere is the orange AITX open-arms mark (a friendly figure with open arms, AITX orange #ff4201, from the passed reference image). Do NOT render the NVIDIA logo, the NVIDIA eye/GPU icon, or any NVIDIA wordmark graphic. The word 'NVIDIA' may appear ONLY as very small, plain, neutral sans-serif text as a collaboration credit, set apart from the AITX mark (like a discreet tag or hem credit), never stylized as a brand logo and never combined with the AITX mark. NVIDIA green #76b900 appears only as a small accent detail; AITX orange leads.",
+  "params": {
+    "size": "1024x1536",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    }
+  ]
+}
