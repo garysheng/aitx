@@ -9,8 +9,8 @@ import type { FlyerProps } from "./props";
 
 const Detail: React.FC<{ label: string; value: string; scale: number }> = ({ label, value, scale }) => (
   <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-    <span style={{ fontSize: 11 * scale, letterSpacing: "0.22em", textTransform: "uppercase", opacity: 0.55 }}>{label}</span>
-    <span style={{ fontSize: 20 * scale, fontWeight: 600 }}>{value}</span>
+    <span style={{ fontSize: 15 * scale, letterSpacing: "0.2em", textTransform: "uppercase", opacity: 0.6 }}>{label}</span>
+    <span style={{ fontSize: 34 * scale, fontWeight: 700, lineHeight: 1.05 }}>{value}</span>
   </div>
 );
 
@@ -40,7 +40,7 @@ export const EventFlyer: React.FC<FlyerProps> = ({
 
       {/* header: the mark */}
       <div style={{ position: "relative", display: "flex", alignItems: "center" }}>
-        <Img src={staticFile(MARK)} style={{ height: Math.round(width * 0.058), width: "auto" }} />
+        <Img src={staticFile(MARK)} style={{ height: Math.round(width * 0.13), width: "auto" }} />
       </div>
 
       {/* headline block */}
@@ -72,34 +72,29 @@ export const EventFlyer: React.FC<FlyerProps> = ({
           position: "relative",
           background: COLORS.ink,
           color: COLORS.white,
-          borderRadius: 16 * s,
-          padding: `${Math.round(pad * 0.55)}px ${Math.round(pad * 0.6)}px`,
+          borderRadius: 18 * s,
+          padding: `${Math.round(pad * 0.6)}px ${Math.round(pad * 0.65)}px`,
           display: "flex",
-          flexDirection: wide ? "row" : "column",
-          gap: 18 * s,
-          alignItems: wide ? "center" : "stretch",
-          justifyContent: "space-between",
+          flexWrap: "wrap",
+          alignItems: "center",
+          gap: `${18 * s}px ${Math.round(width * 0.045)}px`,
         }}
       >
-        <div style={{ display: "flex", gap: 34 * s, flexWrap: "wrap" }}>
-          <Detail label="When" value={dateLine} scale={s} />
-          <Detail label="Where" value={venueLine} scale={s} />
-        </div>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: wide ? "flex-end" : "flex-start" }}>
-          <span
+        <Detail label="When" value={dateLine} scale={s} />
+        <Detail label="Where" value={venueLine} scale={s} />
+        <span
             style={{
               background: COLORS.orange,
               color: COLORS.white,
               fontWeight: 700,
-              padding: `${12 * s}px ${22 * s}px`,
+              padding: `${14 * s}px ${28 * s}px`,
               borderRadius: 999,
-              fontSize: Math.round(width * 0.024),
+              fontSize: Math.round(width * 0.028),
               whiteSpace: "nowrap",
             }}
           >
             {registerLine}
           </span>
-        </div>
       </div>
 
       {/* sponsor strip */}

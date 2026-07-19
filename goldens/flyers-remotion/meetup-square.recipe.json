@@ -1,7 +1,7 @@
 {
   "recipeVersion": 1,
   "asset": "goldens/flyers-remotion/meetup-square.png",
-  "createdAt": "2026-07-19T09:24:16.800Z",
+  "createdAt": "2026-07-19T10:11:45.171Z",
   "generator": {
     "kind": "deterministic",
     "tool": "aitx-flyer-remotion@0.1.0"
