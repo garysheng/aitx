@@ -12,7 +12,7 @@
 
 - **Try the working system (2 min):** [aitx-brand-os.vercel.app/agent](https://aitx-brand-os.vercel.app/agent) — click an example, watch Nemotron's first try go off-brand, teach it once, watch it fix itself. Then hit **"Make it permanent"** and Chip **opens a real pull request** with the rule it learned. Live Nemotron, real PRs, not a mockup.
 - **Take the self-serve tour:** the [keynote](https://aitx-brand-os.vercel.app/keynote) is narrated end-to-end by Chip in his own voice (hit "Play the tour with Chip"). It flows into an embedded **Brand OS Explorer**: the cast, the goldens, the rules, and every live tool, on one page.
-- **Browse the provenance:** the [home gallery](https://aitx-brand-os.vercel.app) shows all 26 goldens; click "How it was made" on any of them for a slide-out sidebar with the exact model, prompt, and hash-pinned references.
+- **Browse the provenance:** the [home gallery](https://aitx-brand-os.vercel.app) shows all 26 goldens; click "How it was made" on any of them for a slide-out sidebar with the exact model, prompt, and references (each recipe pins every reference by hash).
 - **The engineering** is the [recursive-intelligence loop](#how-it-works-the-recursive-intelligence-loop) below: Nemotron generates, a deterministic critic scores, the agent distills each mistake into a rule, and opens a PR to persist it. Code map at the bottom.
 
 ### Honest note on persistence
@@ -46,7 +46,7 @@ Chip holds the canon, the blessed "goldens," and the rules. Michael and Jake don
 
 ### See it live
 
-- 🏠 **[The Brand OS home](https://aitx-brand-os.vercel.app)** — all 26 goldens, each with a provenance sidebar (model + exact prompt + hash-pinned refs).
+- 🏠 **[The Brand OS home](https://aitx-brand-os.vercel.app)** — all 26 goldens, each with a provenance sidebar (model, exact prompt, and references; recipes pin them by hash).
 - 🎤 **[The keynote](https://aitx-brand-os.vercel.app/keynote)** — the self-serve tour, narrated by Chip, ending in the embedded Brand OS Explorer.
 - 🤖 **[The learning agent](https://aitx-brand-os.vercel.app/agent)** — teach it a rule; it opens a real pull request. Live Nemotron.
 - 🎟️ **[Event Flyer Studio](https://aitx-brand-os.vercel.app/studio/events)** — the AITX Luma flyer as a version-controlled template: pick event, city (per-city skylines), and sponsors, download deterministically.
@@ -107,6 +107,8 @@ cd portal && npm install && npm run dev   # http://localhost:3000/keynote
 # AITX — an Agentic Brand Universe
 
 > **The vision:** [`VISION.md`](VISION.md) — AITX as an agentic story OS: one version-controlled, human/machine/partner-legible brand source of truth, editable in plain language.
+>
+> **The universe at a glance:** [`universe/UNIVERSE.md`](universe/UNIVERSE.md) — a human-legible rendering of the whole canon (cast, rules, goldens), generated from the typed source by [`generator/universe-md.py`](generator/universe-md.py). Edit the canon, re-run, regenerate.
 
 Michael Daigler's AITX universe, built on the [Agentic Brand Universe](../agenticstory) standard, conforming to spec v0.4 (the standard itself is now at v0.5; this universe hasn't been re-conformed yet). The **universe is the first-class object**: a typed, git-versioned canon (`universe/`) where every reference is load-bearing. Books, flyers, speaker cards, and any other projection are queries over this canon that write back into it.
 
