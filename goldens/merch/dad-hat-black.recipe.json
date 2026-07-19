@@ -1,0 +1,22 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/merch/dad-hat-black.png",
+  "createdAt": "2026-07-19T12:54:22.931Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "Studio product shot of a premium unstructured black cotton dad hat (six-panel low-profile cap) resting on a neutral warm gray seamless background, slightly angled hero product view. The orange AITX open-arms mark (a friendly figure with open arms, AITX orange #ff4201, from the reference image) embroidered crisply on the front panel. No text, no words, no slogan. Premium, clean, soft natural shadow.",
+  "params": {
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/merch/tee-natural.png",
+  "createdAt": "2026-07-19T12:54:22.930Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "Real on-model portrait photograph, soft daylight. A person wearing a premium heavyweight boxy tee in natural undyed cotton. A single medium orange AITX open-arms mark centered on the chest. Clean garment, minimal, high-end blank-brand look. Neutral warm backdrop. The only logo is the orange AITX open-arms mark (a friendly figure with open arms, AITX orange #ff4201), shown from the passed reference image. No text, no words, no slogan anywhere. Premium, clean, real, tasteful. Studio lighting, soft natural shadow.",
+  "params": {
+    "size": "1024x1536",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/merch/power-bank-allinone.png",
+  "createdAt": "2026-07-19T12:54:45.649Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "Studio product shot of a premium matte black all-in-one portable power bank on a neutral warm gray seamless background. It has a BUILT-IN Lightning cable and a BUILT-IN USB-C cable that tuck into the body, plus fold-out wall-plug prongs on the back, shown partly extended so all three are visible. A small orange AITX open-arms mark on the front face. Sleek premium consumer-electronics look, soft shadow. The only logo is the orange AITX open-arms mark (a friendly figure with open arms, AITX orange #ff4201), shown from the passed reference image. No text, no words, no slogan anywhere. Premium, clean, real, tasteful. Studio lighting, soft natural shadow.",
+  "params": {
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    }
+  ]
+}
