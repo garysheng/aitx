@@ -14,9 +14,11 @@ Agentic Brand Universe: a version-controlled home for a brand, with an agent tha
 
 ---
 
-## Demo Video Link (Loom, max 5 min)
+## Demo Video Link (max 5 min)
 
-**[YOU]** Paste your Loom URL. (The co-presented keynote at /keynote — hit Present, teleprompter on your other screen.)
+https://share.descript.com/view/2WsLZXv3P2k
+
+NOTE: the form says "YOU MUST USE Loom." This is a Descript share link (also a public video). If they enforce Loom strictly, re-upload there; otherwise this should be fine as a publicly accessible video.
 
 ---
 
@@ -101,7 +103,8 @@ Everything in the demo was made from the universe itself, including the keynote 
 
 Thank you @AITXCommunity and @NVIDIAAI. The two of you created the kind of room that makes people want to build. That is a real thing, and it is why this weekend was so inspiring.
 
-aitx-brand-os.vercel.app/keynote
+Watch it: aitx-brand-os.vercel.app/keynote
+It's all open source: github.com/garysheng/aitx
 
 ---
 
