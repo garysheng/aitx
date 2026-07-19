@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SlideNav from "./SlideNav";
 
 export const metadata: Metadata = {
   title: "The Agentic Brand Universe — a gift to AITX",
@@ -20,6 +21,7 @@ function Slide({
 }: { children: React.ReactNode; n?: number; bg?: string }) {
   return (
     <section
+      id={n != null ? `s${n}` : undefined}
       className="relative flex min-h-screen snap-start flex-col justify-center px-6 py-20 sm:px-12"
       style={{ background: bg }}
     >
@@ -52,7 +54,9 @@ function H({ children, className = "" }: { children: React.ReactNode; className?
 
 export default function Keynote() {
   return (
-    <main className="snap-y snap-mandatory font-body text-[color:var(--ink)]">
+    <main className="h-screen snap-y snap-mandatory overflow-y-scroll font-body text-[color:var(--ink)]">
+      <SlideNav count={15} />
+
 
       {/* 1 — GRATITUDE / TITLE */}
       <Slide n={1}>
