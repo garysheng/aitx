@@ -6,10 +6,13 @@
 // spine, so every asset lands with a provenance recipe. This is the vision:
 // natural language -> a batch of rule-encoded generate calls -> reproducible art.
 //
-// Note: a community collab concept drop (the kind a meetup makes when a big tech
-// company shows up), not official NVIDIA product. The AITX open-arms mark is
-// passed as a reference on every render so our mark is the real mark; NVIDIA's
-// wordmark + green are described in the prompt.
+// BRAND RULE (learned the hard way): mixing logos is almost never OK. Only the
+// AITX open-arms mark ever appears as a mark. NVIDIA is named in WORDS (AITX's
+// own type) with green as a small accent color — never its logo, never a
+// combined "AITX x NVIDIA" lockup. See universe/brand-os/BRAND-RULES.md.
+//
+// Output goes to explorations/ — these are CANDIDATES, not goldens. A golden is
+// human-approved; the agent never writes into goldens/.
 
 import { query } from "@anthropic-ai/claude-agent-sdk";
 import { mkdirSync, existsSync } from "node:fs";
@@ -34,7 +37,7 @@ const renderOpenAIAsync: RenderFn = async ({ prompt, outPath, size, quality, ref
 
 const REPO = path.resolve(process.cwd(), "../..");
 const MARK = path.join(REPO, "universe/reference/aitx-mark/aitx-logo.png");
-const OUTDIR = path.join(REPO, "goldens/collabs/nvidia-aitx");
+const OUTDIR = path.join(REPO, "explorations/collabs/nvidia-aitx");
 mkdirSync(OUTDIR, { recursive: true });
 
 const SIZES = ["1024x1024", "1024x1536", "1536x1024"] as const;
@@ -84,10 +87,19 @@ AITX VOICE (obey it in every line of copy):
   cutting-edge, revolutionary, game-changing, ecosystem, thought leader). Short true sentences.
 
 BRAND / VISUAL RULES for every imagePrompt (each prompt must stand alone for an image model):
-- AITX palette: orange #ff4201, black, warm paper white. NVIDIA accent: NVIDIA green #76b900.
-- The orange AITX open-arms mark is passed to the image model as a reference image, so refer to
-  it as "the orange AITX open-arms mark" and place it tastefully. Render the NVIDIA wordmark in
-  NVIDIA green. Where a co-brand lockup fits, write it as "AITX x NVIDIA".
+- AITX palette: orange #ff4201, black, warm paper white. NVIDIA green #76b900 is allowed ONLY as
+  a small accent color (a heart, a thin underline, a word). Orange always leads; green never
+  co-leads.
+- LOGOS — THE CARDINAL RULE. Mixing logos is almost never OK. The ONLY logo/mark that may appear
+  on any piece is the orange AITX open-arms mark (passed to the model as a reference image; refer
+  to it as "the orange AITX open-arms mark" and place it tastefully). You must NOT:
+  * render the NVIDIA logo, the NVIDIA eye/GPU icon, or the NVIDIA wordmark/official typeface;
+  * put any second logo next to the AITX mark;
+  * create any "AITX x NVIDIA" logo lockup, badge, or combined emblem.
+- Express the collaboration in WORDS ONLY. The word "NVIDIA" may appear inside a headline or
+  sentence set in a plain clean sans (AITX's own type), e.g. "with NVIDIA" or "NVIDIA in the
+  room". It must read as typed words in a sentence, never as a standalone logo/badge and never
+  locked to the AITX mark. Do not stylize it as a brand wordmark.
 - Premium, clean, real. Studio product shots for merch (neutral background, soft shadow). Real
   on-model portrait shots for fashion. For memes and stickers, bake any caption text into the
   prompt exactly, in the AITX voice.

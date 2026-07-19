@@ -2,6 +2,11 @@
 
 This folder is where the AITX brand becomes **software you can compound**.
 
+> **Golden means human-approved.** A file lands here only after a human blesses
+> it. The agent never writes its own output straight into `goldens/` — candidates
+> stage in [`../explorations`](../explorations/README.md) and get promoted here on
+> approval. If it wasn't blessed, it isn't golden.
+
 ## Atoms and molecules
 
 The AITX universe (`../universe`) holds the **atoms**: Golden Atomic Brand
