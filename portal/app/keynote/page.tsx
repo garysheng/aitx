@@ -359,17 +359,22 @@ export default function Keynote() {
               wasn't the only one. Two more, each about thirty minutes of agent time once the command
               fired. The library grows just by asking.
             </p>
-            <div className="mt-6 grid grid-cols-2 gap-3">
-              <a href="https://show-up-book.vercel.app/" target="_blank" rel="noreferrer" className="overflow-hidden rounded-xl border shadow-sm transition hover:-translate-y-1" style={{ borderColor: "#e0d6c2" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/keynote/book-show-up.jpg" alt="Show Up — a Michael story" className="w-full object-cover" />
-                <div className="bg-[#fffdf9] px-3 py-1.5 text-xs text-[color:var(--muted)]">Michael · ~30 min</div>
-              </a>
-              <a href="https://do-all-the-things-book.vercel.app/" target="_blank" rel="noreferrer" className="overflow-hidden rounded-xl border shadow-sm transition hover:-translate-y-1" style={{ borderColor: "#e0d6c2" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/keynote/book-do-all.jpg" alt="Do All The Things — a Mark Heaps story" className="w-full object-cover" />
-                <div className="bg-[#fffdf9] px-3 py-1.5 text-xs text-[color:var(--muted)]">Mark Heaps, NVIDIA · ~30 min</div>
-              </a>
+            <div className="mt-6 flex flex-col gap-3">
+              {[
+                { href: "https://show-up-book.vercel.app/", img: "/assets/keynote/book-show-up.jpg", title: "Show Up", meta: "Michael · ~30 min" },
+                { href: "https://do-all-the-things-book.vercel.app/", img: "/assets/keynote/book-do-all.jpg", title: "Do All The Things", meta: "Mark Heaps, NVIDIA · ~30 min" },
+              ].map((b) => (
+                <a key={b.href} href={b.href} target="_blank" rel="noreferrer"
+                  className="group flex items-center gap-4 rounded-xl border bg-[#fffdf9] p-2.5 shadow-sm transition hover:-translate-y-0.5" style={{ borderColor: "#e0d6c2" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={b.img} alt={b.title} className="h-16 w-28 flex-none rounded-md object-cover" />
+                  <div className="min-w-0">
+                    <div className="font-display font-bold leading-tight">{b.title}</div>
+                    <div className="text-xs text-[color:var(--muted)]">{b.meta}</div>
+                  </div>
+                  <span className="ml-auto pr-1 text-lg transition group-hover:translate-x-0.5" style={{ color: OR }}>→</span>
+                </a>
+              ))}
             </div>
           </div>
         </div>
