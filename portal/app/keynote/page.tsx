@@ -5,6 +5,7 @@ import AutoDemo from "./AutoDemo";
 import ChipBubble from "./ChipBubble";
 import ChipSubtitles from "./ChipSubtitles";
 import Explorer from "./Explorer";
+import { MaximizeMeter, AdditiveVsMultiplicative, TryAndBless, RecipeToMany, BrandDNA } from "./Diagrams";
 
 export const metadata: Metadata = {
   title: "The Agentic Brand Universe — a gift to AITX",
@@ -101,27 +102,37 @@ export default function Keynote() {
 
       {/* 2 — WHO */}
       <Slide n={2}>
-        <Eyebrow>Who's talking</Eyebrow>
-        <H className="text-4xl sm:text-6xl">
-          I'm Gary. I help companies get the <span style={{ color: OR }}>most</span> out of generative AI.
-        </H>
-        <p className="mt-7 max-w-2xl text-xl text-[color:var(--muted)]">
-          An applied AI engineer. I've done this for businesses and for churches. The tools are the
-          same. The question is always the same too: are you actually maximizing them?
-        </p>
+        <div className="grid items-center gap-10 sm:grid-cols-[1.25fr_1fr]">
+          <div>
+            <Eyebrow>Who's talking</Eyebrow>
+            <H className="text-4xl sm:text-6xl">
+              I'm Gary. I help companies get the <span style={{ color: OR }}>most</span> out of generative AI.
+            </H>
+            <p className="mt-7 max-w-2xl text-xl text-[color:var(--muted)]">
+              An applied AI engineer. I've done this for businesses and for churches. The tools are the
+              same. The question is always the same too: are you actually maximizing them?
+            </p>
+          </div>
+          <MaximizeMeter />
+        </div>
       </Slide>
 
       {/* 3 — THE PATTERN */}
       <Slide n={3}>
-        <Eyebrow>The pattern I keep seeing</Eyebrow>
-        <H className="text-4xl sm:text-6xl">
-          Everyone sees the opportunity in generative AI.<br />
-          <span style={{ color: OR }}>Almost no one is maximizing it.</span>
-        </H>
-        <p className="mt-7 max-w-2xl text-xl text-[color:var(--muted)]">
-          Most teams use it like a slightly faster intern. One-off prompts. Generic output. The brand
-          drifts a little more with every asset. It's additive at best. It should be multiplicative.
-        </p>
+        <div className="grid items-center gap-10 sm:grid-cols-[1.1fr_1fr]">
+          <div>
+            <Eyebrow>The pattern I keep seeing</Eyebrow>
+            <H className="text-4xl sm:text-6xl">
+              Everyone sees the opportunity in generative AI.<br />
+              <span style={{ color: OR }}>Almost no one is maximizing it.</span>
+            </H>
+            <p className="mt-7 max-w-2xl text-xl text-[color:var(--muted)]">
+              Most teams use it like a slightly faster intern. One-off prompts. Generic output. The brand
+              drifts a little more with every asset. It's additive at best. It should be multiplicative.
+            </p>
+          </div>
+          <AdditiveVsMultiplicative />
+        </div>
       </Slide>
 
       {/* 4 — THE VILLAIN → HERO (same asset, before/after) */}
@@ -170,15 +181,20 @@ export default function Keynote() {
 
       {/* 6 — THE INSIGHT */}
       <Slide n={6} bg="#f2ead9">
-        <Eyebrow>The thing nobody tells you</Eyebrow>
-        <H className="text-4xl sm:text-6xl">
-          You don't know your brand<br />until you <span style={{ color: OR }}>try things</span>.
-        </H>
-        <p className="mt-7 max-w-2xl text-xl text-[color:var(--muted)]">
-          Taste is discovered, not declared. You generate something you were sure would look great, and
-          it doesn't. You see one that lands, and now you know why. Your rules, your patterns, your best
-          examples emerge over time. A brand is not a PDF you write on day one. It is a living system.
-        </p>
+        <div className="grid items-center gap-10 sm:grid-cols-[1.2fr_1fr]">
+          <div>
+            <Eyebrow>The thing nobody tells you</Eyebrow>
+            <H className="text-4xl sm:text-6xl">
+              You don't know your brand<br />until you <span style={{ color: OR }}>try things</span>.
+            </H>
+            <p className="mt-7 max-w-2xl text-xl text-[color:var(--muted)]">
+              Taste is discovered, not declared. You generate something you were sure would look great, and
+              it doesn't. You see one that lands, and now you know why. Your rules, your patterns, your best
+              examples emerge over time. A brand is not a PDF you write on day one. It is a living system.
+            </p>
+          </div>
+          <TryAndBless />
+        </div>
       </Slide>
 
       {/* 7 — THE UNIVERSE */}
@@ -232,16 +248,21 @@ export default function Keynote() {
 
       {/* 9 — GOLDEN PROCESS */}
       <Slide n={9}>
-        <Eyebrow>The compounding move</Eyebrow>
-        <H className="text-4xl sm:text-6xl">
-          A golden isn't a one-off.<br />It's a <span style={{ color: OR }}>process</span>.
-        </H>
-        <p className="mt-7 max-w-3xl text-xl text-[color:var(--muted)]">
-          Get one hackathon graphic truly right, and you don't just have a golden image. You have a
-          golden recipe for hackathon graphics. AITX runs many hackathons. Next one, you change the
-          variables (the date, the sponsors, the theme) and the on-brand asset falls out. Every new
-          golden adds a repeatable capability to the brand. That is how it compounds.
-        </p>
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
+          <div>
+            <Eyebrow>The compounding move</Eyebrow>
+            <H className="text-4xl sm:text-6xl">
+              A golden isn't a one-off.<br />It's a <span style={{ color: OR }}>process</span>.
+            </H>
+            <p className="mt-7 max-w-3xl text-xl text-[color:var(--muted)]">
+              Get one hackathon graphic truly right, and you don't just have a golden image. You have a
+              golden recipe for hackathon graphics. AITX runs many hackathons. Next one, you change the
+              variables (the date, the sponsors, the theme) and the on-brand asset falls out. Every new
+              golden adds a repeatable capability to the brand. That is how it compounds.
+            </p>
+          </div>
+          <RecipeToMany />
+        </div>
       </Slide>
 
       {/* 10 — PROVENANCE */}
@@ -357,19 +378,24 @@ export default function Keynote() {
 
       {/* 15 — CRISPR / VERSION CONTROL + recursive */}
       <Slide n={15} bg="#f2ead9">
-        <Eyebrow>Version-control your brand</Eyebrow>
-        <H className="text-4xl sm:text-6xl">
-          CRISPR + GitHub for your brand <span style={{ color: OR }}>DNA</span>.
-        </H>
-        <p className="mt-7 max-w-3xl text-xl text-[color:var(--muted)]">
-          Edit the DNA and every future asset inherits the change. The system even learns your rules from
-          its own mistakes, so it gets sharper the more you use it. Your brand stops drifting and starts
-          compounding, every generation reflecting the latest, best version of you.
-        </p>
-        <a href="/agent" className="mt-8 inline-block rounded-xl px-6 py-3 font-body font-semibold text-white"
-          style={{ background: OR }}>
-          See the agent learn, live →
-        </a>
+        <div className="grid items-center gap-10 sm:grid-cols-[1.15fr_1fr]">
+          <div>
+            <Eyebrow>Version-control your brand</Eyebrow>
+            <H className="text-4xl sm:text-6xl">
+              CRISPR + GitHub for your brand <span style={{ color: OR }}>DNA</span>.
+            </H>
+            <p className="mt-7 max-w-3xl text-xl text-[color:var(--muted)]">
+              Edit the DNA and every future asset inherits the change. The system even learns your rules from
+              its own mistakes, so it gets sharper the more you use it. Your brand stops drifting and starts
+              compounding, every generation reflecting the latest, best version of you.
+            </p>
+            <a href="/agent" className="mt-8 inline-block rounded-xl px-6 py-3 font-body font-semibold text-white"
+              style={{ background: OR }}>
+              See the agent learn, live →
+            </a>
+          </div>
+          <BrandDNA />
+        </div>
       </Slide>
 
       {/* 16 — THESIS + OFFER */}
