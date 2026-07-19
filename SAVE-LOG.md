@@ -61,3 +61,25 @@ Both stages built spec → plan → subagent-driven (all tasks reviewed clean). 
 
 **Resume-here (open thread):** Stage 2c — replace the access-code gate with Firebase Google sign-in + roles (viewer/creator/admin). The access code is a real, safe gate today, so 2c is hardening, not a new capability. Spec: `docs/superpowers/specs/2026-07-19-aitx-studio-generate.md` (Stage 2c section). Also outstanding since earlier: wire `invitation.dawsoncarroll.com` DNS for the Dawson site.
 2026-07-19T10:24:15Z · d82d7d8 · session save: generator spine + Agent SDK lab (16 exp) + silver/charger + Remotion flyer template + AITX Studio LIVE (flyer + AI generate). Resume: Stage 2c Firebase auth.
+
+---
+
+## 2026-07-19 (session 3) — brand rules earned, clean merch line, then a hackathon pivot
+
+Delta since 051a8b6. All committed.
+
+**Two brand rules learned the hard way** (`9e3598f`, in `universe/brand-os/BRAND-RULES.md` + global AGENTS.md):
+- **Never mix logos.** Built an AITX x NVIDIA collab drop with logo lockups + NVIDIA's eye-logo; Gary: "mixing logos is almost NEVER ok." A collab is words + accent color, only our own mark on the piece. Collab drop (`45ed73e`) scrapped.
+- **Golden = human-approved.** Had committed agent output straight into `goldens/`; Gary: "GOLDEN requires HUMAN APPROVAL." New `explorations/` folder stages candidates; a human blessing promotes to `goldens/`. Both READMEs spell out the gate.
+
+**Clean AITX merch line — LOCKED IN as goldens** (`c1b71d8`, `goldens/merch/`): 8 premium mark-only pieces (hoodie, natural tee, dad hat, enamel mug, all-in-one power bank, matte tumbler, canvas tote, beanie), no slogans, each with a provenance recipe. Gary blessed them → the golden gate working as designed.
+
+**Michael "it's all in the Notion" hackathon FAQ meme — golden** (`44f6b95`, `goldens/memes/notion-faq.png`): warm community-organizer meme, Michael pointing to an AITX Hackathon FAQ Notion page. First-pass, clean text.
+
+**Reusable pattern proven:** the embedded agent as CREATIVE DIRECTOR — one sentence + VOICE.md → structured JSON plan (drop name, per-piece copy + image prompt) → fan out all renders in PARALLEL through the generator spine, each with provenance. Experiments `agent-sdk-lab/17-nvidia-collab.ts`, `merch-clean.ts`, `merch-nvidia.ts`.
+
+**Open threads (resume in a few hours):**
+1. **NVIDIA x AITX co-brand merch** — 5 candidates in `explorations/nvidia-aitx-merch/` (`0322509`) awaiting Gary's **A** (green-accent-only) vs **B** (accent + tiny text credit) call. My lean: A.
+2. **Dangling wiki page** — `supersuit-repos/appliedai-wiki/docs/concepts/golden.md` was written (HARD definition of "golden" + significance) but is UNCOMMITTED and unpublished: still needs its mandatory hero comic + `pnpm build` + explicit publish. Not touched by this save (public-surface = explicit ask only).
+3. **NOW PIVOTED to the AITX x NVIDIA Claw Agent Hackathon** (Gary is competing; code freeze Sun 11am). Goal: win a prize by swapping the Claude Agent SDK for **Nemotron** (served via **vLLM**/NIM) and framing the compounding golden library as a Recursive Intelligence entry. Brand work resumes after.
+2026-07-19T13:41:10Z · 0322509 · brand rules (never mix logos, golden=human-approved) + clean merch goldens + Notion meme; pivoting to Nemotron hackathon. Resume: co-brand A/B, wiki golden.md, then hackathon.
