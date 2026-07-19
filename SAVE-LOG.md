@@ -119,3 +119,4 @@ Delta since 0322509. All committed. This session turned the submission from "a k
 3. Wire all sponsor logos into the brand OS on-demand (Apify added; Featherless/Supabase still missing files).
 4. Gary's pro voice clone: swap Chip (or add a Gary-narrated track) once `yffqtNJ84E8Jjz7BeGaF` finishes fine-tuning.
 5. `/meta-coherence-check` was requested at the end of this session — run it as the next task.
+2026-07-19T18:33:16Z · ccf22dd · session 4: 2 studios + self-serve Chip-narrated keynote + provenance gallery/sidebar + Chip files real PRs (verified) + README refresh. Resume: /meta-coherence-check, /thanks logo, story sub-agent link.
