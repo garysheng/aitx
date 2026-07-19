@@ -4,8 +4,8 @@
   "spec": {
     "framework": "agenticstory",
     "version": "0.4",
-    "wiki": "https://agenticstory.wiki",
-    "conformsTo": "https://agenticstory.wiki/spec v0.4"
+    "wiki": "https://agenticbranduniverse.com",
+    "conformsTo": "https://agenticbranduniverse.com/spec v0.4"
   },
   "note": "AITX universe canon (agenticstory schema v0.4). Self-contained: assetRoot is '.' and every referenced asset lives inside this repo. Generic Agentic Story skills read the identity block above. Register style anchor to be locked via the style-lock step.",
   "identity": {

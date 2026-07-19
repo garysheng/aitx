@@ -108,7 +108,7 @@ cd portal && npm install && npm run dev   # http://localhost:3000/keynote
 
 > **The vision:** [`VISION.md`](VISION.md) — AITX as an agentic story OS: one version-controlled, human/machine/partner-legible brand source of truth, editable in plain language.
 
-Michael Daigler's AITX universe, built on the [Agentic Brand Universe](../agenticstory) standard (spec v0.5). The **universe is the first-class object**: a typed, git-versioned canon (`universe/`) where every reference is load-bearing. Books, flyers, speaker cards, and any other projection are queries over this canon that write back into it.
+Michael Daigler's AITX universe, built on the [Agentic Brand Universe](../agenticstory) standard, conforming to spec v0.4 (the standard itself is now at v0.5; this universe hasn't been re-conformed yet). The **universe is the first-class object**: a typed, git-versioned canon (`universe/`) where every reference is load-bearing. Books, flyers, speaker cards, and any other projection are queries over this canon that write back into it.
 
 ## Canon so far (incremental)
 

@@ -4,7 +4,7 @@ Typed, git-versioned canon for the **aitx** universe (agenticstory schema).
 The structured record is the source of truth; prose is a first-class field on it,
 never a separate document that can drift.
 
-**Conforms to:** [agenticstory spec](https://agenticstory.wiki/spec) v0.4 · canonical: [https://agenticstory.wiki](https://agenticstory.wiki)
+**Conforms to:** [Agentic Brand Universe spec](https://agenticbranduniverse.com) v0.4 · canonical: [https://agenticbranduniverse.com](https://agenticbranduniverse.com)
 (provenance also recorded in `../universe.json` `spec`).
 
 ## Layout
