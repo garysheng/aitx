@@ -2,12 +2,20 @@
 
 Michael Daigler's AITX universe, built on the [Agentic Story](../agenticstory) framework (spec v0.2). The **universe is the first-class object**: a typed, git-versioned canon (`universe/`) where every reference is load-bearing. Books, flyers, speaker cards, and any other projection are queries over this canon that write back into it.
 
-## Canon so far (v0, incremental)
+## Canon so far (incremental)
 
-- **`aitx`** (group) — the community: largest in-person AI community in Texas, warm/human/bold, exact palette `#ff4201 / #010101 / #ffffff`.
-- **`michael-daigler`** (character · realPerson) — founder. Correctly **gated**: no property featuring him renders until his photo stack + blessing + GABR art exist.
-- **`aitx-mark`** (motif) — the sacred logo; the real file resolves load-bearing (`reference/aitx-mark/aitx-logo.png`).
-- **`origin-of-aitx`** (story · stub) — the first property, spine `testimony`. Provisional; Michael shapes the premise, beats, and register.
+- **`aitx`** (group) — the community: largest AI builder community in Texas, warm/human/bold, exact palette `#ff4201 / #010101 / #ffffff`.
+- **`michael-daigler`** (character · realPerson) — founder. Locked: master + face macro + poses + back turnaround (tee back = Texas + "Texas loves AI"). Stays **gated** on his blessing for any property.
+- **`jake-oshea`** (character · realPerson) — cofounder, a foot taller. Locked: default VC quarter-zip wardrobe (plain back) + casual tee alternate; face + poses + back.
+- **`founders`** — the locked two-shot (correct one-foot height gap), the anchor for any scene with both.
+- **`aitx-mark`** (motif) — the sacred logo; load-bearing on every render (`reference/aitx-mark/aitx-logo.png`).
+- **`antler-venue`** (setting · LOCKED), **`aitx-skylark`** + **`aitx-merch`** (props).
+- **`origin-of-aitx`** (story · full) — the first property, spine `testimony`.
+
+## Properties (molecules)
+
+- **`books/origin-of-aitx/`** — *The Origin of the AITX Community*, a narrated flip-book (13 spreads + cover + closing). Live: **https://aitx-origin.vercel.app** (Vercel project `aitx-origin`, git-linked; `git push` auto-deploys).
+- **`goldens/`** — the blessed base-asset library (flyers, IG post, memes, stickers). See `goldens/README.md` for the atoms→molecules brand-OS vision.
 
 ## Working with it
 
