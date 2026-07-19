@@ -20,6 +20,21 @@ export type FlyerSizeKey = keyof typeof FLYER_SIZES;
 
 export const DEFAULT_FLYER: FlyerValues = flyerSchema.parse({});
 
+// Presets loaded when you pick an event type, so each kind is a useful starting
+// point (not just an inert flag). These mirror the Remotion sample flyers.
+export const KIND_PRESETS: Record<FlyerValues["kind"], FlyerValues> = {
+  meetup: DEFAULT_FLYER,
+  hackathon: flyerSchema.parse({
+    kind: "hackathon",
+    eventTitle: "AITX Hackathon",
+    subhead: "Build the future in a weekend.",
+    dateLine: "Sat & Sun, Nov 8-9",
+    venueLine: "Antler, Austin, TX",
+    registerLine: "Register on Luma",
+    sponsors: ["NVIDIA", "Meta", "Google Cloud"],
+  }),
+};
+
 export function flyerFilename(values: FlyerValues, sizeKey: FlyerSizeKey): string {
   const slug = values.eventTitle
     .toLowerCase()

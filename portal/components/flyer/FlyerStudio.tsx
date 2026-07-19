@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { toPng } from "html-to-image";
 import FlyerLayout from "./FlyerLayout";
-import { DEFAULT_FLYER, FLYER_SIZES, flyerFilename, type FlyerSizeKey, type FlyerValues } from "@/lib/flyer/schema";
+import { DEFAULT_FLYER, KIND_PRESETS, FLYER_SIZES, flyerFilename, type FlyerSizeKey, type FlyerValues } from "@/lib/flyer/schema";
 
 const PREVIEW_W = 460;
 
@@ -47,7 +47,7 @@ export default function FlyerStudio() {
       <div className="flex flex-col gap-4">
         <div className="flex gap-2">
           {(["meetup", "hackathon"] as const).map((k) => (
-            <button key={k} type="button" onClick={() => set("kind", k)}
+            <button key={k} type="button" onClick={() => setValues(KIND_PRESETS[k])}
               className={`rounded-md px-3 py-1.5 text-sm font-semibold ${values.kind === k ? "bg-[color:var(--orange)] text-white" : "border border-black/15"}`}>
               {k === "meetup" ? "Meetup" : "Hackathon"}
             </button>
