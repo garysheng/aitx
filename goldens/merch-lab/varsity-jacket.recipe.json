@@ -1,0 +1,22 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/merch-lab/varsity-jacket.png",
+  "createdAt": "2026-07-19T06:07:22.059Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "Premium studio apparel product shot of an AITX-branded varsity jacket, presented as a clean flat-lay slightly angled ghost-mannequin float, front view. Classic wool-body baseball jacket in matte black with black genuine-leather raglan sleeves, ribbed knit collar, cuffs and hem with a single subtle tonal black-and-white stripe. Black snap-button placket. A tasteful orange (#ff4201) AITX open-arms chenille patch embroidered on the left chest, and the same mark echoed as a larger clean embroidery centered on the back — restrained, premium, not busy. Rich texture in the wool and leather, soft realistic fabric folds. Clean neutral light-gray seamless studio background, soft diffused overhead key light, gentle soft drop shadow beneath the garment. Strict AITX palette: black jacket, white ribbing accents, orange AITX mark only, no other text or logos. Sharp focus, editorial fashion e-commerce quality, true-to-life fabric detail.",
+  "params": {
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    }
+  ]
+}

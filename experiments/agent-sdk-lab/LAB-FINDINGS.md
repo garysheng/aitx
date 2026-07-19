@@ -114,3 +114,37 @@ reproducible asset. The whole thesis, working end to end.
     the recipe's `asset` path became an ugly `../../../../../tmp/...`. Reference
     paths were clean repo-relative; asset paths only normalize well when the
     output lives inside the repo.
+
+## Round 3 — the real creative use cases (fashion, merch, voice)
+
+| # | Capability | Result |
+|---|---|---|
+| **15** | **agent reads & applies `VOICE.md`** | ✅ read the guide and wrote copy with NO em dashes, NO banned filler, and the signature lines ("open arms", "you get a better sense of a person in person") |
+| **16** | **agent designs a real merch + fashion line** | ✅ one sentence → 3 real gpt-image-2 product shots (power bank, water bottle, varsity jacket) + 3 provenance recipes, output into the repo |
+
+### Voice (15)
+
+The agent read `universe/brand-os/VOICE.md` and produced on-brand copy that
+passed every automated check: no em dashes (a hard rule), none of the banned
+corporate filler, and it reached for AITX signature language. So the brand
+voice is not just for humans — the agent honors it when generating copy. This
+is the copy half of the generator (taglines, event blurbs, captions) and it
+works from the same version-controlled source of truth as the art.
+
+### Merch + fashion (16)
+
+From "design a small AITX merch line: a power bank, a water bottle, and a
+varsity jacket," the agent wrote three distinct premium studio product-shot
+prompts itself, called the real generator for each (AITX mark passed as a
+reference so branding is the real mark), and produced `goldens/merch-lab/*.png`
+plus a `.recipe.json` for each. The recipes carry clean repo-relative paths
+(`asset: goldens/merch-lab/power-bank.png`, mark hashed) — the round-2 lesson
+applied. This is the full loop for physical-product design: natural language →
+rule-encoded generate call → real on-brand product + reproducible recipe.
+
+### Bottom line
+
+The Agent SDK, on top of the deterministic generator + `VOICE.md`, is a genuine
+brand studio you talk to: it designs art, apparel, and merch, and writes on-brand
+copy, all from the same version-controlled brand OS, and every output leaves a
+recipe. Optional layer, real payoff.

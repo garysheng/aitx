@@ -1,0 +1,22 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/merch-lab/power-bank.png",
+  "createdAt": "2026-07-19T06:05:50.524Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "Premium studio product shot of an AITX-branded portable power bank / phone charger, three-quarter hero angle. Slim rectangular power bank with a soft-touch matte black anodized aluminum body, subtly rounded edges and a fine machined chamfer catching a thin highlight. A small orange (#ff4201) AITX open-arms mark is tastefully embossed/printed centered on the front face, plus a tiny row of four white LED charge indicators and a discreet USB-C port on the top edge. Understated, high-end industrial design — think flagship tech accessory. Clean neutral light-gray seamless studio background, soft diffused key light from upper left, gentle soft contact shadow beneath the device, crisp reflections on the matte surface. Color palette strictly AITX: matte black hardware, one orange accent mark, white indicators. Sharp focus, 50mm lens, commercial e-commerce catalog quality, no text or logos other than the AITX mark.",
+  "params": {
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    }
+  ]
+}

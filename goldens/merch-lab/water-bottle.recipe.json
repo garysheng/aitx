@@ -1,0 +1,22 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/merch-lab/water-bottle.png",
+  "createdAt": "2026-07-19T06:06:36.405Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "Premium studio product shot of an AITX-branded insulated stainless-steel water bottle, standing upright, straight-on hero angle. Tall slim double-wall vacuum bottle with a matte black powder-coated finish, seamless body, a black threaded screw cap with a subtle knurled grip ring. A single tasteful orange (#ff4201) AITX open-arms mark placed at chest height, centered on the body, crisp and clean. Soft-touch matte texture with a gentle vertical highlight running down one side to convey the cylindrical form. High-end reusable drinkware, flagship merch quality. Clean neutral light-gray seamless studio backdrop, soft diffused key light from upper left, subtle elliptical soft shadow pooling at the base, delicate rim light on the right edge. Strict AITX palette: matte black bottle, one orange mark, no other logos or text. Sharp focus, 50mm lens, commercial catalog product photography.",
+  "params": {
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    }
+  ]
+}
