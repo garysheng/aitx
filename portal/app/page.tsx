@@ -1,5 +1,5 @@
 import AssetGallery from "@/components/AssetGallery";
-import { CATEGORIES } from "@/lib/brand";
+import { ASSETS, CATEGORIES } from "@/lib/brand";
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
           <span className="rounded-full border border-black/15 px-3 py-1">#ffffff</span>
         </div>
         <nav className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-[color:var(--orange-deep)]">
-          {CATEGORIES.map((c) => <a key={c.key} href={`#${c.key}`} className="hover:underline">{c.label}</a>)}
+          {CATEGORIES.filter((c) => ASSETS.some((a) => a.category === c.key)).map((c) => <a key={c.key} href={`#${c.key}`} className="hover:underline">{c.label}</a>)}
         </nav>
       </header>
 
