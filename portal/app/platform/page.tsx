@@ -96,6 +96,43 @@ export default function PlatformPage() {
         </div>
       </Section>
 
+      {/* superpowers */}
+      <Section className="py-12">
+        <h2 className="text-sm font-semibold uppercase tracking-widest" style={{ color: NV }}>Superpowers</h2>
+        <p className="mt-3 text-2xl font-semibold leading-snug">
+          One universe, on-brand deliverables in every medium.
+        </p>
+        <p className="mt-3 max-w-2xl text-neutral-400">
+          Not just flyers. A living brand should show up everywhere its people are: written, visual,
+          spoken, and sonic. Every one of these runs through the same rules and the same golden library,
+          so it is always unmistakably you.
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            ["Events & merch", "Flyers, posters, stickers, apparel, product mockups. On-brand, in seconds.", true],
+            ["Comics & stories", "A whole illustrated universe: characters, worlds, and picture books that stay coherent across hundreds of frames.", true],
+            ["Memes & social", "Shareable, on-voice, on-mark. The community's own material, generated.", true],
+            ["Soulful thank-yous", "The agent writes an on-brand thank-you and sends it as an intimate voice e-card (via BlessOut). Thank your sponsors like you mean it.", false],
+            ["Branded sound packs", "Custom sound effects (via ElevenLabs) your community runs as their coding notification sounds. Every finished build plays your brand. Pure developer goodwill.", false],
+            ["Anything the brand needs", "Decks, one-pagers, email, onboarding kits. If it should be on-brand, the universe makes it on-brand.", false],
+          ].map(([h, b, live]) => (
+            <div key={h as string} className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5">
+              <div className="flex items-center gap-2">
+                <span className="font-semibold text-neutral-100">{h}</span>
+                {live && (
+                  <span className="rounded px-1.5 py-0.5 text-[10px] font-bold uppercase" style={{ background: `${NV}22`, color: NV }}>live</span>
+                )}
+              </div>
+              <p className="mt-2 text-sm text-neutral-400">{b}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-5 text-sm text-neutral-500">
+          The thread through all of them: a brand that is delightful and soulful, at a scale a human
+          team could never sustain, because the universe carries the taste.
+        </p>
+      </Section>
+
       {/* the wedge */}
       <Section className="py-12">
         <div className="rounded-3xl border p-8" style={{ borderColor: `${OR}55`, background: `linear-gradient(160deg, ${OR}12, transparent 60%)` }}>

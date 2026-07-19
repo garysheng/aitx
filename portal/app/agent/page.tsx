@@ -185,7 +185,11 @@ export default function AgentPage() {
       <div className="mx-auto max-w-5xl px-5 py-10">
         {/* header */}
         <div className="mb-8">
-          <a href="/" className="text-sm text-neutral-500 hover:text-neutral-300">← AITX Brand OS</a>
+          <div className="flex items-center gap-4 text-sm">
+            <a href="/" className="text-neutral-500 hover:text-neutral-300">← AITX Brand OS</a>
+            <a href="/platform" className="text-neutral-500 hover:text-neutral-300">The platform</a>
+            <a href="/thanks" className="text-neutral-500 hover:text-neutral-300">Thank a sponsor</a>
+          </div>
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <span className="rounded-full px-3 py-1 text-xs font-semibold" style={{ background: `${NV}1f`, color: NV }}>
               Powered by NVIDIA Nemotron · NIM
