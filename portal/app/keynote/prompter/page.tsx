@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type State = { index: number; total: number; line: string; next: string; seconds: number; at: number; playing: boolean };
+type State = { index: number; total: number; line: string; next: string; seconds: number; at: number; playing: boolean; speaker?: "gary" | "chip"; garyCue?: string };
 
 export default function Prompter() {
   const [s, setS] = useState<State | null>(null);
@@ -39,15 +39,26 @@ export default function Prompter() {
 
       {/* progress within the current slide */}
       <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
-        <div className="h-full rounded-full transition-[width] duration-100" style={{ width: `${pct * 100}%`, background: "#ff4201" }} />
+        <div className="h-full rounded-full transition-[width] duration-100" style={{ width: `${pct * 100}%`, background: s?.speaker === "chip" ? "#4a9d3a" : "#ff4201" }} />
       </div>
 
-      {/* the line to read */}
-      <div className="flex flex-1 items-center">
-        <p className="font-semibold leading-[1.25]" style={{ fontSize: "clamp(28px, 5vw, 52px)" }}>
-          {s?.line || "Press ▶ Present on the keynote to begin."}
-        </p>
-      </div>
+      {s?.speaker === "chip" ? (
+        /* Chip is speaking — Gary listens (and does his stage cue) */
+        <div className="flex flex-1 flex-col justify-center">
+          <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-sm font-bold" style={{ background: "#4a9d3a22", color: "#7ec96a" }}>
+            🤖 CHIP IS SPEAKING — listen
+          </div>
+          {s.garyCue && <p className="mb-4 text-xl text-amber-300">You: {s.garyCue}</p>}
+          <p className="text-2xl leading-snug text-neutral-400">“{s.line}”</p>
+        </div>
+      ) : (
+        /* Gary's line to read */
+        <div className="flex flex-1 items-center">
+          <p className="font-semibold leading-[1.25]" style={{ fontSize: "clamp(28px, 5vw, 52px)" }}>
+            {s?.line || "Press ▶ Present on the keynote to begin."}
+          </p>
+        </div>
+      )}
 
       {/* next line */}
       <div className="border-t border-white/10 pt-4">

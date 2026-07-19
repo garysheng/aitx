@@ -6,13 +6,18 @@ import { SCRIPT } from "./script";
 const KEY = "aitx-keynote-state";
 const CH = "aitx-keynote";
 
-type State = { index: number; total: number; line: string; next: string; seconds: number; at: number; playing: boolean };
+type State = {
+  index: number; total: number; line: string; next: string; seconds: number;
+  at: number; playing: boolean; speaker: "gary" | "chip"; garyCue: string;
+};
 
 function push(index: number, playing: boolean) {
   const b = SCRIPT[index];
+  const nb = SCRIPT[index + 1];
   const payload: State = {
-    index, total: SCRIPT.length, line: b?.line ?? "", next: SCRIPT[index + 1]?.line ?? "",
+    index, total: SCRIPT.length, line: b?.line ?? "", next: nb?.line ?? "",
     seconds: b?.seconds ?? 0, at: Date.now(), playing,
+    speaker: b?.speaker ?? "gary", garyCue: b?.garyCue ?? "",
   };
   try { localStorage.setItem(KEY, JSON.stringify(payload)); } catch {}
   try { const c = new BroadcastChannel(CH); c.postMessage(payload); c.close(); } catch {}
@@ -23,13 +28,26 @@ export default function Presenter() {
   const [paused, setPaused] = useState(false);
   const [index, setIndex] = useState(0);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const chipAudio = useRef<HTMLAudioElement | null>(null);
+
+  const playChip = useCallback((i: number) => {
+    // stop any prior clip; play this slide's static Chip clip (not inline demos)
+    if (chipAudio.current) { chipAudio.current.pause(); chipAudio.current = null; }
+    const b = SCRIPT[i];
+    if (b?.speaker === "chip" && b.audio && b.audio !== "inline") {
+      const a = new Audio(b.audio);
+      chipAudio.current = a;
+      a.play().catch(() => {});
+    }
+  }, []);
 
   const goTo = useCallback((i: number, playing = true) => {
     const el = document.getElementById(`s${i + 1}`);
     el?.scrollIntoView({ behavior: "smooth" });
     setIndex(i);
     push(i, playing);
-  }, []);
+    if (playing) playChip(i);
+  }, [playChip]);
 
   const clear = () => { if (timer.current) { clearTimeout(timer.current); timer.current = null; } };
 
@@ -48,9 +66,10 @@ export default function Presenter() {
     setOn(true); setPaused(false); openPrompter();
     goTo(0); schedule(0);
   };
-  const pause = () => { clear(); setPaused(true); push(index, false); };
-  const resume = () => { setPaused(false); push(index, true); schedule(index); };
-  const stop = () => { clear(); setOn(false); setPaused(false); push(index, false); };
+  const hushChip = () => { if (chipAudio.current) { chipAudio.current.pause(); chipAudio.current = null; } };
+  const pause = () => { clear(); hushChip(); setPaused(true); push(index, false); };
+  const resume = () => { setPaused(false); push(index, true); schedule(index); playChip(index); };
+  const stop = () => { clear(); hushChip(); setOn(false); setPaused(false); push(index, false); };
 
   useEffect(() => () => clear(), []);
 

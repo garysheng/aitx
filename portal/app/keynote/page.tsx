@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SlideNav from "./SlideNav";
 import Presenter from "./Presenter";
 import AutoDemo from "./AutoDemo";
+import ChipBubble from "./ChipBubble";
 
 export const metadata: Metadata = {
   title: "The Agentic Brand Universe — a gift to AITX",
@@ -59,6 +60,7 @@ export default function Keynote() {
     <main className="h-screen snap-y snap-mandatory overflow-y-scroll font-body text-[color:var(--ink)]">
       <SlideNav count={16} />
       <Presenter />
+      <ChipBubble />
 
 
       {/* 1 — GRATITUDE / TITLE */}
@@ -85,10 +87,10 @@ export default function Keynote() {
           </div>
           <div className="flex flex-col items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/keynote/gary-master.jpg" alt="Gary, as an AITX character"
-              className="w-full max-w-[280px] rounded-2xl object-cover shadow-md" />
+            <img src="/assets/keynote/gary-hackathon.jpg" alt="Gary loving the hackathon at Antler"
+              className="w-full rounded-2xl object-cover shadow-md" />
             <span className="font-body text-xs uppercase tracking-widest text-[color:var(--muted)]">
-              me, rendered into the AITX universe
+              me, this weekend, rendered into the AITX universe
             </span>
           </div>
         </div>
@@ -119,23 +121,23 @@ export default function Keynote() {
         </p>
       </Slide>
 
-      {/* 4 — THE VILLAIN (before) */}
+      {/* 4 — THE VILLAIN → HERO (same asset, before/after) */}
       <Slide n={4} bg="#f2ead9">
-        <Eyebrow>Exhibit A · generative AI with no system</Eyebrow>
-        <div className="grid items-center gap-8 sm:grid-cols-2">
+        <Eyebrow>Same event graphic · without a system, then with one</Eyebrow>
+        <H className="mb-8 text-3xl sm:text-5xl">This is the difference a <span style={{ color: OR }}>brand universe</span> makes.</H>
+        <div className="grid items-center gap-6 sm:grid-cols-[1fr_auto_1fr]">
           <div>
-            <H className="text-4xl sm:text-5xl">This is what "not maximizing" looks like.</H>
-            <p className="mt-6 text-lg text-[color:var(--muted)]">
-              A real hackathon graphic. The mark is fine. Everything else is a stranger: garbled text,
-              stock circuit clip-art, a random "512." You can't tell what brand it belongs to. Worse,
-              you can't tell how it was made, or make another one like it.
-            </p>
-          </div>
-          <div className="overflow-hidden rounded-2xl border border-[color:var(--muted)]/20 bg-white shadow-sm">
-            {/* Drop the real HACK FAIR image at public/assets/keynote/hack-fair-before.jpg */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/keynote/hack-fair-before.jpg" alt="An off-brand hackathon graphic"
-              className="h-full w-full object-cover" />
+              className="w-full rounded-2xl border border-[color:var(--muted)]/20 object-cover shadow-sm" />
+            <p className="mt-3 text-sm text-[color:var(--muted)]">Raw AI. Garbled text, stock clip-art, a random "512." Un-branded and unrepeatable.</p>
+          </div>
+          <div className="hidden text-3xl text-[color:var(--muted)] sm:block">→</div>
+          <div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/keynote/hack-fair-after.jpg" alt="The on-brand AITX HACK FAIR flyer"
+              className="w-full rounded-2xl object-cover shadow-md" />
+            <p className="mt-3 text-sm font-medium" style={{ color: OR }}>Chip, from the AITX universe. On brand, correct, reproducible, sponsors and all.</p>
           </div>
         </div>
       </Slide>
@@ -191,7 +193,7 @@ export default function Keynote() {
             </p>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/keynote/robot.jpg" alt="Chip, the AITX brand czar" className="mx-auto w-full max-w-[240px]" />
+          <img src="/assets/keynote/chip-joy.jpg" alt="Chip, the AITX brand czar" className="mx-auto w-full max-w-[240px]" />
         </div>
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           {[
@@ -251,10 +253,11 @@ export default function Keynote() {
           Down to the atom: the model, the prompt, and the precise goldens it referenced, each pinned by
           hash. Any asset can be rebuilt. Its lineage back to your brand DNA is never a mystery.
         </p>
-        <div className="mt-8 overflow-x-auto rounded-2xl border border-white/10 bg-black/40 p-5 font-mono text-[13px] leading-relaxed text-[#c9c9c9]">
+        <div className="mt-8 max-h-[40vh] overflow-auto rounded-2xl border border-white/10 bg-black/40 p-5 font-mono text-[12px] leading-relaxed text-[#c9c9c9]">
           <div><span className="text-[#6b5d4a]">asset</span>   goldens/memes/notion-faq.png</div>
           <div><span className="text-[#6b5d4a]">model</span>   <span style={{ color: OR }}>openai:gpt-image-2</span></div>
-          <div><span className="text-[#6b5d4a]">prompt</span>  "A friendly single-panel community meme, Michael…"</div>
+          <div><span className="text-[#6b5d4a]">params</span>  size: 1024x1024 · quality: high</div>
+          <div className="mt-1 whitespace-pre-wrap"><span className="text-[#6b5d4a]">prompt</span>  A friendly single-panel community meme in a clean illustrated comic style on a warm paper-white background (#fbf5ec). Michael (use the references: a good-natured guy with a mustache and slicked-back dark hair, wearing a black AITX tee with the orange open-arms mark on the chest, warm and welcoming) is smiling and gesturing with one open hand toward a Notion document floating beside him. The Notion page is a clean white doc in the recognizable Notion style, titled &apos;AITX Hackathon FAQ&apos; with a few light gray bullet lines. Above Michael is a rounded speech bubble reading exactly: thanks for the question :) it&apos;s all in the Notion. Warm, wholesome, gently funny community-organizer energy. AITX orange #ff4201 accents.</div>
           <div className="mt-2 text-[#6b5d4a]">references</div>
           <div>  gabr-michael.png       role: character:michael  sha: a85f8be4…</div>
           <div>  gabr-michael-face.png  role: face:michael       sha: fce92d93…</div>
@@ -275,7 +278,7 @@ export default function Keynote() {
             </p>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/keynote/robot.jpg" alt="Chip, the AITX brand czar"
+          <img src="/assets/keynote/chip-joy.jpg" alt="Chip, the AITX brand czar"
             className="mx-auto w-full max-w-[300px]" />
         </div>
       </Slide>
@@ -318,28 +321,40 @@ export default function Keynote() {
         </div>
       </Slide>
 
-      {/* 14 — THE LIVING STORY */}
+      {/* 14 — THE LIVING STORY (real proof: books Chip made in 30 min) */}
       <Slide n={14}>
-        <Eyebrow>The story keeps moving</Eyebrow>
+        <Eyebrow>Real proof · made this weekend</Eyebrow>
         <div className="grid items-center gap-8 sm:grid-cols-2">
-          <div className="grid grid-cols-2 gap-3">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/keynote/book-1.jpg" alt="Origin story spread" className="col-span-2 w-full rounded-xl object-cover" />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/keynote/book-2.jpg" alt="Origin story spread" className="w-full rounded-xl object-cover" />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/keynote/book-3.jpg" alt="Origin story spread" className="w-full rounded-xl object-cover" />
-          </div>
           <div>
-            <H className="text-4xl sm:text-5xl">Your brand story is <span style={{ color: OR }}>alive</span>, and you edit it by talking.</H>
+            <H className="text-4xl sm:text-5xl">A few minutes of me. <span style={{ color: OR }}>Chip did the rest.</span></H>
             <p className="mt-6 text-lg text-[color:var(--muted)]">
-              "Change Michael's shirt in every panel." Done, consistently, everywhere. "Something big
-              happened, add two spreads." The story advances. Because the whole book is generated from the
-              canon, an edit to the DNA ripples through every asset at once, and every version is tracked.
+              These are two real, narrated books about Michael, spun up from the AITX universe. I spent a
+              few minutes on each. Chip made the rest, about thirty minutes a book. And it stays alive:
+              change Michael's shirt in every panel, or add two spreads because the story advanced, just
+              by talking. Version-controlled, always on brand.
             </p>
-            <a href="https://aitx-origin.vercel.app" target="_blank" rel="noreferrer"
-              className="mt-6 inline-block font-body text-sm font-semibold" style={{ color: OR }}>
-              Read the living origin story →
+            <div className="mt-6 flex flex-col gap-2 font-body text-sm font-semibold" style={{ color: OR }}>
+              <a href="https://show-up-book.vercel.app/" target="_blank" rel="noreferrer">Read “Show Up” →</a>
+              <a href="https://do-all-the-things-book.vercel.app/" target="_blank" rel="noreferrer">Read “Do All The Things” →</a>
+              <a href="https://aitx-origin.vercel.app" target="_blank" rel="noreferrer">Read the AITX origin story →</a>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <a href="https://show-up-book.vercel.app/" target="_blank" rel="noreferrer" className="group flex aspect-[3/4] flex-col justify-between rounded-2xl border p-5 transition hover:-translate-y-1" style={{ borderColor: "#e0d6c2", background: "#fffdf9" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/assets/logo/aitx-mark-transparent.png" alt="aitx" className="h-7 w-auto" />
+              <div>
+                <div className="font-display text-2xl font-bold leading-tight">Show Up</div>
+                <div className="mt-1 text-sm text-[color:var(--muted)]">a Michael Daigler story · ~30 min to make</div>
+              </div>
+            </a>
+            <a href="https://do-all-the-things-book.vercel.app/" target="_blank" rel="noreferrer" className="group flex aspect-[3/4] flex-col justify-between rounded-2xl border p-5 transition hover:-translate-y-1" style={{ borderColor: "#e0d6c2", background: "#fffdf9" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/assets/logo/aitx-mark-transparent.png" alt="aitx" className="h-7 w-auto" />
+              <div>
+                <div className="font-display text-2xl font-bold leading-tight">Do All The Things</div>
+                <div className="mt-1 text-sm text-[color:var(--muted)]">a Michael Daigler story · ~30 min to make</div>
+              </div>
             </a>
           </div>
         </div>
