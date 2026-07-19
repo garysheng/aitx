@@ -11,6 +11,7 @@ export default function FlyerStudio() {
   const [values, setValues] = useState<FlyerValues>(DEFAULT_FLYER);
   const [sizeKey, setSizeKey] = useState<FlyerSizeKey>("square");
   const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
   const captureRef = useRef<HTMLDivElement>(null);
 
   const size = FLYER_SIZES[sizeKey];
@@ -23,12 +24,15 @@ export default function FlyerStudio() {
   async function download() {
     if (!captureRef.current) return;
     setBusy(true);
+    setErr(null);
     try {
       const dataUrl = await toPng(captureRef.current, { pixelRatio: 2, width: size.w, height: size.h, cacheBust: true });
       const a = document.createElement("a");
       a.href = dataUrl;
       a.download = flyerFilename(values, sizeKey);
       a.click();
+    } catch {
+      setErr("Could not render the PNG. Try again.");
     } finally {
       setBusy(false);
     }
@@ -67,6 +71,7 @@ export default function FlyerStudio() {
             {busy ? "Rendering..." : "Download PNG"}
           </button>
         </div>
+        {err && <p className="text-sm text-red-600">{err}</p>}
       </div>
 
       {/* live preview (CSS-scaled; the captured node is true size) */}

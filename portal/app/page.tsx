@@ -18,6 +18,9 @@ export default function Home() {
           <span className="rounded-full bg-black px-3 py-1 text-white">#010101</span>
           <span className="rounded-full border border-black/15 px-3 py-1">#ffffff</span>
         </div>
+        <div className="mt-2">
+          <a href="/studio/flyer" className="inline-block rounded-md bg-[color:var(--orange)] px-4 py-2 text-sm font-semibold text-white hover:bg-[color:var(--orange-deep)]">Open the Flyer Studio →</a>
+        </div>
         <nav className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-[color:var(--orange-deep)]">
           {CATEGORIES.filter((c) => ASSETS.some((a) => a.category === c.key)).map((c) => <a key={c.key} href={`#${c.key}`} className="hover:underline">{c.label}</a>)}
         </nav>
