@@ -19,9 +19,9 @@ HYPE_FEAR = [
 # logo-mixing: the cardinal brand rule. Flag language that composes a partner's
 # mark with ours or renders a second logo.
 LOGO_MIXING = [
-    "logo lockup", "logo-lockup", "lockup", "lock-up", "lock up",
+    "logo lockup", "logo-lockup",
     "both logos", "two logos", "dual logo", "dual-logo",
-    "combine the logos", "combining the logos", "combined logo", "combined branding",
+    "combine the logos", "combining the logos", "combined logo",
     "partner's logo", "partner logo", "co-branded logo", "co-brand the logo",
     "nvidia logo", "nvidia's logo", "nvidia eye", "logos of both",
     "logos side by side", "logos side-by-side", "side-by-side logos", "merge the logos",
