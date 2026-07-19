@@ -23,7 +23,7 @@ const CAST = [
   { name: "Jake", role: "co-founder", img: "/assets/founders/jake.png" },
   { name: "Chip", role: "brand czar", img: "/assets/keynote/chip-joy.jpg" },
   { name: "Gary", role: "applied AI engineer", img: "/assets/keynote/gary-master.jpg" },
-  { name: "Mark Heaps", role: "NVIDIA · guest of honor", img: "/assets/founders/mark.png" },
+  { name: "Mark Heaps", role: "trusted partner · head of developer community, NVIDIA", img: "/assets/founders/mark.png" },
 ];
 
 const GOLDENS = [

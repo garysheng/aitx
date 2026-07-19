@@ -5,13 +5,28 @@
   "originStory": "origin-of-aitx",
   "fictional": false,
   "status": "locked",
-  "authority": { "lockedBy": "gary", "lockedOn": null },
-  "structured": {
-    "sheets": { "sheet": "reference/mark-heaps/gabr-mark.png" },
-    "wardrobe": { "default": "Salt-and-pepper hair, rectangular glasses, short beard, colorful tattoo sleeves, dark short-sleeve button shirt." },
-    "requiredForRender": ["sheet"],
-    "invariants": ["real-likeness", "same-illustrated-style-as-the-founders"],
-    "promptCraft": "Head of developer community at NVIDIA; the guest-of-honor character. Illustrated in the same comic style as gabr-michael. Pass gabr-mark on every render. Real person: gated on his approval."
+  "authority": {
+    "lockedBy": "gary",
+    "lockedOn": null
   },
-  "realPerson": { "role": "Head of Developer Community, NVIDIA", "approval": "pending" }
+  "structured": {
+    "sheets": {
+      "sheet": "reference/mark-heaps/gabr-mark.png"
+    },
+    "wardrobe": {
+      "default": "Salt-and-pepper hair, rectangular glasses, short beard, colorful tattoo sleeves, dark short-sleeve button shirt."
+    },
+    "requiredForRender": [
+      "sheet"
+    ],
+    "invariants": [
+      "real-likeness",
+      "same-illustrated-style-as-the-founders"
+    ],
+    "promptCraft": "Head of developer community at NVIDIA; a trusted partner character. Illustrated in the same comic style as gabr-michael. Pass gabr-mark on every render. Real person: gated on his approval."
+  },
+  "realPerson": {
+    "role": "Trusted partner; Head of Developer Community, NVIDIA",
+    "approval": "pending"
+  }
 }
