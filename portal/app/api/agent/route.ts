@@ -21,12 +21,19 @@ async function nemotron(c: OpenAI, messages: { role: "system" | "user"; content:
   const msgs = MODEL.toLowerCase().includes("nemotron")
     ? [{ role: "system" as const, content: "detailed thinking off" }, ...messages]
     : messages;
-  const resp = await c.chat.completions.create({
-    model: MODEL, messages: msgs, temperature: 0, max_tokens: 700,
-  });
-  let text = resp.choices[0]?.message?.content || "";
-  if (text.includes("</think>")) text = text.split("</think>").pop() || text;
-  return text.trim();
+  // Retry once on empty: reasoning models occasionally spend the whole budget on
+  // hidden thinking and return no content. An empty answer must never reach the
+  // critic (it would read as "clean"), so we retry, then fail loudly.
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const resp = await c.chat.completions.create({
+      model: MODEL, messages: msgs, temperature: 0, max_tokens: 1200,
+    });
+    let text = resp.choices[0]?.message?.content || "";
+    if (text.includes("</think>")) text = text.split("</think>").pop() || text;
+    text = text.trim();
+    if (text.length >= 15) return text;
+  }
+  throw new Error("empty model response");
 }
 
 function extractJSON(text: string): { headline?: string; body?: string; visual_plan?: string } {

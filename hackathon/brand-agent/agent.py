@@ -43,13 +43,18 @@ def nemotron(messages, temperature=0.3) -> str:
     msgs = messages
     if "nemotron" in MODEL.lower():
         msgs = [{"role": "system", "content": "detailed thinking off"}] + messages
-    resp = client.chat.completions.create(
-        model=MODEL, messages=msgs, temperature=temperature, max_tokens=700,
-    )
-    text = resp.choices[0].message.content or ""
-    # strip any stray reasoning trace, keep the answer
-    if "</think>" in text:
-        text = text.split("</think>")[-1]
+    # retry once on empty (reasoning models sometimes spend the budget thinking);
+    # an empty answer must never reach the critic as a false "clean".
+    for _ in range(2):
+        resp = client.chat.completions.create(
+            model=MODEL, messages=msgs, temperature=temperature, max_tokens=1200,
+        )
+        text = resp.choices[0].message.content or ""
+        if "</think>" in text:
+            text = text.split("</think>")[-1]
+        text = text.strip()
+        if len(text) >= 15:
+            return text
     return text.strip()
 
 
@@ -103,7 +108,8 @@ def run_once(request: str, kb_mode: str, mock: bool = False) -> dict:
         {"role": "system", "content": kb.system_prompt(kb_mode)},
         {"role": "user", "content": f"Design request: {request}"},
     ]
-    raw = _mock_call(messages) if mock else nemotron(messages)
+    # temperature 0 so the cold-vs-learned delta is reproducible, not noise.
+    raw = _mock_call(messages) if mock else nemotron(messages, temperature=0.0)
     asset = _extract_json(raw)
     s, violations = critic.score(flat(asset))
     return {"request": request, "kb_mode": kb_mode, "asset": asset,
@@ -134,10 +140,12 @@ def _distill(violation: dict, request: str, mock: bool) -> str:
     base = canned.get(violation["rule"], f"Avoid: {violation['label']}.")
     if mock:
         return base
-    # let Nemotron phrase the lesson as a crisp, reusable rule
+    # let Nemotron phrase the lesson as a crisp, GENERAL, reusable rule.
+    # Generality is the whole point: a rule tied to this one request ("...at
+    # Antler") never fires again. Force a rule that transfers to any future task.
     try:
-        msg = [{"role": "system", "content": "You distill a brand mistake into one short imperative rule the agent will read next time. One sentence, no preamble."},
-               {"role": "user", "content": f"Mistake: {violation['label']} (matched '{violation['match']}') while handling request: {request}. Write the rule."}]
-        return nemotron(msg, temperature=0.2).strip().strip('"')[:240] or base
+        msg = [{"role": "system", "content": "You distill a brand mistake into ONE short, GENERAL imperative rule the agent reads before every future task. It must NOT mention the specific company, event, venue, or wording from this incident. State the rule so it applies to ALL future requests. One sentence, no preamble."},
+               {"role": "user", "content": f"Mistake type: {violation['label']} (a phrase like '{violation['match']}' appeared). Write the general rule."}]
+        return nemotron(msg, temperature=0.0).strip().strip('"')[:240] or base
     except Exception:
         return base
