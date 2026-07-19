@@ -6,6 +6,12 @@
 
 **Track:** Recursive Intelligence · **Bounties:** Best Use of Nemotron · Most Commercializable (Antler)
 
+## For judges
+
+- **Try the working system (2 min):** [aitx-brand-os.vercel.app/agent](https://aitx-brand-os.vercel.app/agent) — click an example, watch Nemotron's first try go off-brand, teach it once, watch it fix itself and remember the rule. This is live Nemotron, not a mockup.
+- **Watch the ~5-min demo:** the co-presented keynote, [aitx-brand-os.vercel.app/keynote](https://aitx-brand-os.vercel.app/keynote).
+- **The engineering** is the [recursive-intelligence loop](#how-it-works-the-recursive-intelligence-loop) below: Nemotron generates, a deterministic critic scores, and the agent distills each mistake into a version-controlled rule it reads next time. Try it on `/agent` — the same task goes off-brand blind, then clean once it has learned the rule.
+
 ## ▶ Start here: [aitx-brand-os.vercel.app/keynote](https://aitx-brand-os.vercel.app/keynote)
 
 A ~5-minute keynote, co-presented by me and Chip (in his own voice), built entirely from the AITX brand universe.
@@ -39,6 +45,25 @@ Chip holds the canon, the blessed "goldens," and the rules. Michael and Jake don
 - 💼 **[The platform / business](https://aitx-brand-os.vercel.app/platform)** — GitHub for brand universes.
 - 💌 **[On-brand sponsor thank-yous](https://aitx-brand-os.vercel.app/thanks)** — Chip writes them; you record them in your voice.
 - 📖 **Proof — books Chip made in ~30 min each:** [Show Up (Michael)](https://show-up-book.vercel.app) · [Do All The Things (Mark Heaps of NVIDIA)](https://do-all-the-things-book.vercel.app) · [AITX origin story](https://aitx-origin.vercel.app)
+
+### How it works (the recursive-intelligence loop)
+
+Not a wrapper. Every task runs a closed loop where Nemotron both makes the work *and* judges it, and the brand's knowledge compounds:
+
+```mermaid
+flowchart LR
+    R["Plain-language<br/>request"] --> G["Nemotron<br/>generates asset<br/>(strict JSON)"]
+    G --> C["Deterministic<br/>brand-rule critic<br/>(turns 'on-brand'<br/>into a score)"]
+    C -->|clean| OUT["On-brand asset<br/>+ provenance recipe<br/>(model, prompt,<br/>hash-pinned refs)"]
+    C -->|violation| D["Nemotron distills<br/>the mistake into a<br/>general, reusable rule"]
+    D --> KB[("Version-controlled<br/>knowledge base<br/>(grows over time)")]
+    KB -->|grounds every<br/>future request| G
+```
+
+- **Nemotron does two jobs:** generate the asset, and (when the critic flags it) distill the specific mistake into a durable rule.
+- **The critic is deterministic** — it turns "on-brand" into a number the agent optimizes against, so improvement is *measured*, not claimed.
+- **The knowledge base is the intelligence.** It's version-controlled and compounds: the more the agent runs, the higher the floor. No model retraining.
+- **Every asset is reproducible** — its recipe pins the model, exact prompt, and the references by hash.
 
 ### Where the Nemotron code lives
 
