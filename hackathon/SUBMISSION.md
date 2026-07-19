@@ -33,6 +33,18 @@ Agentic Brand Universe: a version-controlled home for a brand, with an agent tha
 - Best Use of Nemotron
 - Most Commercializable Hack (Antler)
 
+> ⚠️ NOTE: Do NOT select "Best Use of NemoClaw + Open Shell." That bounty requires
+> building on NVIDIA's NemoClaw stack and authoring a real OpenShell YAML sandbox
+> policy — we did not use those. Select only the two above.
+
+---
+
+## Please describe how your submission applies to the bounty(s)
+
+**Best Use of Nemotron:** Nemotron (via NIM) is the core of the agent, not a chatbot layer. It does three inference jobs on every task — it generates the on-brand asset as structured output, critiques its own output against the brand's rules, and distills each mistake into a durable, reusable rule it reads next time. We maximize it with strict JSON output, retrieval-grounded generation from a self-written rulebook, and a deterministic critic that turns "on-brand" into a score the agent optimizes against. The result: measurably fewer brand violations run over run, with no model retraining. Code: portal/app/api/agent/route.ts and hackathon/brand-agent/.
+
+**Most Commercializable Hack:** Every brand, agency, creator, and church needs endless on-brand content and can't keep it consistent at scale. The Agentic Brand Universe is GitHub for brands: build one once, then fork it, rent it, and generate unlimited on-brand assets forever. Creators earn on every fork and rental (Shopify / GitHub economics). Live pitch: aitx-brand-os.vercel.app/platform.
+
 ---
 
 ## List Team Members
