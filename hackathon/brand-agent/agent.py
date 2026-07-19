@@ -38,10 +38,19 @@ def nemotron(messages, temperature=0.3) -> str:
     if not NIM_API_KEY:
         raise RuntimeError("Set NIM_API_KEY (nvapi-... from build.nvidia.com).")
     client = OpenAI(base_url=NIM_BASE_URL, api_key=NIM_API_KEY)
+    # Nemotron reasoning models (Super/Nano) honor a thinking directive; turn it
+    # off so we get clean JSON instead of <think> traces.
+    msgs = messages
+    if "nemotron" in MODEL.lower():
+        msgs = [{"role": "system", "content": "detailed thinking off"}] + messages
     resp = client.chat.completions.create(
-        model=MODEL, messages=messages, temperature=temperature, max_tokens=700,
+        model=MODEL, messages=msgs, temperature=temperature, max_tokens=700,
     )
-    return resp.choices[0].message.content
+    text = resp.choices[0].message.content or ""
+    # strip any stray reasoning trace, keep the answer
+    if "</think>" in text:
+        text = text.split("</think>")[-1]
+    return text.strip()
 
 
 # ---- mock inference (deterministic; proves the pipeline w/o a key) --------
