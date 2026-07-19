@@ -7,16 +7,24 @@ import ChipSubtitles from "./ChipSubtitles";
 import Explorer from "./Explorer";
 import { MaximizeMeter, AdditiveVsMultiplicative, TryAndBless, RecipeToMany, BrandDNA, FoundersToChip } from "./Diagrams";
 
+const OG_IMAGE = "https://aitx-brand-os.vercel.app/assets/keynote/og.png";
 export const metadata: Metadata = {
-  title: "The Agentic Brand Universe — a gift to AITX",
+  title: "The Agentic Brand Universe · the AITX Brand OS",
   description:
-    "Why an agentic brand universe should be the new standard for a company in 2026. Built from real AITX assets, with full provenance. From Gary, with gratitude.",
+    "The whole AITX brand as a version-controlled universe its agent generates from. A self-serve tour narrated by Chip. Runs on NVIDIA Nemotron, with full provenance on every asset.",
   openGraph: {
-    title: "The Agentic Brand Universe",
-    description: "Why every company in 2026 should have a version-controlled, agentic brand universe.",
+    title: "The Agentic Brand Universe · the AITX Brand OS",
+    description: "The whole AITX brand as a version-controlled universe its agent generates from. A self-serve tour, narrated by Chip.",
+    url: "https://aitx-brand-os.vercel.app/keynote",
     type: "website",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "The Agentic Brand Universe · the AITX Brand OS" }],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Agentic Brand Universe · the AITX Brand OS",
+    description: "The whole AITX brand as a version-controlled universe its agent generates from.",
+    images: [OG_IMAGE],
+  },
 };
 
 const OR = "#ff4201";
@@ -128,8 +136,10 @@ export default function Keynote() {
               <span style={{ color: OR }}>Almost no one is maximizing it.</span>
             </H>
             <p className="mt-7 max-w-2xl text-xl text-[color:var(--muted)]">
-              Most teams use it like a slightly faster intern. One-off prompts. Generic output. The brand
-              drifts a little more with every asset. It's additive at best. It should be multiplicative.
+              Most teams use it like a slightly faster intern. One-off prompts, generic output, a logo
+              that is almost right. That is slop, and slop is not free: every off-brand asset chips away
+              at the brand you spent years building. Careless generative AI does not just underwhelm. It
+              damages the brand. It is additive at best. It should be multiplicative.
             </p>
           </div>
           <AdditiveVsMultiplicative />
@@ -145,7 +155,7 @@ export default function Keynote() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/keynote/hack-fair-before.jpg" alt="An off-brand hackathon graphic"
               className="w-full rounded-2xl border border-[color:var(--muted)]/20 object-cover shadow-sm" />
-            <p className="mt-3 text-sm text-[color:var(--muted)]">Raw AI. Garbled text, stock clip-art, a random "512." Un-branded and unrepeatable.</p>
+            <p className="mt-3 text-sm text-[color:var(--muted)]">Raw AI, no system. Garbled text, stock clip-art, a random "512." This is slop, and it makes the brand look careless.</p>
           </div>
           <div className="hidden text-3xl text-[color:var(--muted)] sm:block">→</div>
           <div>

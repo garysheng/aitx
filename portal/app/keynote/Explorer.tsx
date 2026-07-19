@@ -22,7 +22,7 @@ const CAST = [
   { name: "Michael", role: "co-founder", img: "/assets/founders/michael.png" },
   { name: "Jake", role: "co-founder", img: "/assets/founders/jake.png" },
   { name: "Chip", role: "brand czar", img: "/assets/keynote/chip-joy.jpg" },
-  { name: "Gary", role: "applied AI engineer", img: "/assets/keynote/gary-master.jpg" },
+  { name: "Gary", role: "applied AI engineer + AITX fan", img: "/assets/keynote/gary-master.jpg" },
   { name: "Mark Heaps", role: "trusted partner · head of developer community, NVIDIA", img: "/assets/founders/mark.png" },
 ];
 
