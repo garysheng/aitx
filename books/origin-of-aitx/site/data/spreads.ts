@@ -36,7 +36,7 @@ export const SPREADS: Spread[] = [
   },
   {
     n: 3,
-    pos: "top",
+    pos: "bottom",
     lines: [
       "April 2023, the first event. About ten people, off a Luma link, in a borrowed room.",
       "No venue of their own, no budget. Just two guys and whatever space they could get, in Austin.",
@@ -44,7 +44,7 @@ export const SPREADS: Spread[] = [
   },
   {
     n: 4,
-    pos: "top",
+    pos: "bottom",
     lines: [
       "Ten became twenty-five, then a hundred. Borrowed rooms all over Austin, all filling up.",
       "Eventually Antler opened its doors and AITX had a home: a hub for engineers, operators, and really talented founders.",
@@ -52,7 +52,7 @@ export const SPREADS: Spread[] = [
   },
   {
     n: 5,
-    pos: "top",
+    pos: "bottom",
     lines: [
       "It was never a room of sales pitches. It was builders showing real things.",
       "Ninety seconds each, live demos: here is a real problem, and here is what I made.",
@@ -60,7 +60,7 @@ export const SPREADS: Spread[] = [
   },
   {
     n: 6,
-    pos: "top",
+    pos: "bottom",
     lines: [
       "Then they stopped just talking and started building together. Hackathons. Moltathon. Web AI.",
       "The one with NVIDIA, where a team won on brand new hardware. Weekends that taught the tools, put ideas in front of people, and got some of them jobs.",
@@ -68,7 +68,7 @@ export const SPREADS: Spread[] = [
   },
   {
     n: 7,
-    pos: "top",
+    pos: "bottom",
     lines: [
       "Reputation spreads, and it does not spread through sales.",
       "The sponsors came because these two did favors nobody asked for and showed up when it did not pay. NVIDIA. Meta. Google Cloud.",
@@ -102,7 +102,7 @@ export const SPREADS: Spread[] = [
   },
   {
     n: 11,
-    pos: "top",
+    pos: "bottom",
     lines: [
       "Ask him why any of it works, and he points at the same thing every time. You get a better sense of a person in person.",
       "Loyalty. Patience. Kindness. Doing what you say. Keeping good company.",
