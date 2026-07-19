@@ -1,0 +1,29 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/flyers-remotion/hackathon-wide.png",
+  "createdAt": "2026-07-19T09:24:15.930Z",
+  "generator": {
+    "kind": "deterministic",
+    "tool": "aitx-flyer-remotion@0.1.0"
+  },
+  "template": {
+    "id": "aitx-event-flyer:hackathon-wide",
+    "version": "0.1.0"
+  },
+  "inputs": {
+    "kind": "hackathon",
+    "eventTitle": "AITX Hackathon",
+    "subhead": "Build the future in a weekend.",
+    "dateLine": "Sat & Sun, Nov 8-9",
+    "venueLine": "Antler, Austin, TX",
+    "registerLine": "Register on Luma",
+    "sponsors": [
+      "NVIDIA",
+      "Meta",
+      "Google Cloud"
+    ],
+    "width": 1200,
+    "height": 630
+  },
+  "notes": "Deterministic Remotion still. Byte-reproducible from template version + inputs (system fonts, no external assets beyond the bundled mark)."
+}

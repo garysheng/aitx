@@ -1,0 +1,22 @@
+{
+  "name": "aitx-flyer-remotion",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "still": "remotion still",
+    "studio": "remotion studio",
+    "render-samples": "tsx render-samples.ts"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.400",
+    "remotion": "4.0.400",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "tsx": "latest",
+    "typescript": "^5"
+  }
+}

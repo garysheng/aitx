@@ -1,0 +1,25 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/flyers-remotion/meetup-square.png",
+  "createdAt": "2026-07-19T09:24:16.800Z",
+  "generator": {
+    "kind": "deterministic",
+    "tool": "aitx-flyer-remotion@0.1.0"
+  },
+  "template": {
+    "id": "aitx-event-flyer:meetup-square",
+    "version": "0.1.0"
+  },
+  "inputs": {
+    "kind": "meetup",
+    "eventTitle": "AITX Monthly Meetup",
+    "subhead": "Austin's AI builder community. Builders showing real things.",
+    "dateLine": "Third Thursday, 6:00 PM",
+    "venueLine": "Antler, Austin, TX",
+    "registerLine": "Free, Register on Luma",
+    "sponsors": [],
+    "width": 1080,
+    "height": 1080
+  },
+  "notes": "Deterministic Remotion still. Byte-reproducible from template version + inputs (system fonts, no external assets beyond the bundled mark)."
+}
