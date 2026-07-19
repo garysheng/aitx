@@ -12,12 +12,12 @@ type Result = {
   model: string;
 };
 
-// Verified against live Nemotron: these reliably trip the blind agent (logo
-// mixing / hype) and the knowledge base reliably fixes them. Great on camera.
+// Verified against live Nemotron (temp 0): each reliably makes the BLIND agent
+// slip (filler / hype / em dash) while the knowledge base reliably fixes it.
+// Clean red -> green on camera, every take.
 const EXAMPLES = [
-  "A co-branded merch design for AITX x NVIDIA. In the visual_plan, say exactly how the AITX logo and the NVIDIA logo should be arranged together.",
-  "A hype launch post for the final 2 hours before the hackathon submission deadline. Make it urgent and exciting.",
-  "A t-shirt for AITX x Google DeepMind. Describe the front graphic and how both logos appear.",
+  "Write a bold, exciting, high-energy marketing hype post to promote AITX's next big event. Make it pop.",
+  "Write an urgent, exciting post about the final hours to submit at the AITX x NVIDIA hackathon.",
 ];
 
 const NV = "#76b900";

@@ -8,7 +8,10 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
 const BASE_URL = process.env.NIM_BASE_URL || "https://integrate.api.nvidia.com/v1";
-const MODEL = process.env.NEMOTRON_MODEL || "nvidia/nvidia-nemotron-nano-9b-v2";
+// Generation task -> route to the larger Nemotron for polished, on-voice copy.
+// (The /agent enforcement demo uses the fast Nano model; we pick the right
+// Nemotron per task.)
+const MODEL = process.env.NEMOTRON_THANKS_MODEL || "nvidia/llama-3.3-nemotron-super-49b-v1";
 
 // A brand-OS superpower: an on-brand, soulful thank-you the founder can send to a
 // sponsor as a voice e-card (via BlessOut). Nemotron writes it; the brand rules
