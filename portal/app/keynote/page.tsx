@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SlideNav from "./SlideNav";
 import Presenter from "./Presenter";
+import AutoDemo from "./AutoDemo";
 
 export const metadata: Metadata = {
   title: "The Agentic Brand Universe — a gift to AITX",
@@ -29,7 +30,7 @@ function Slide({
       <div className="mx-auto w-full max-w-5xl">{children}</div>
       {n != null && (
         <div className="pointer-events-none absolute bottom-6 right-8 font-body text-xs tracking-widest text-[color:var(--muted)]">
-          {String(n).padStart(2, "0")} / 15
+          {String(n).padStart(2, "0")} / 16
         </div>
       )}
     </section>
@@ -56,7 +57,7 @@ function H({ children, className = "" }: { children: React.ReactNode; className?
 export default function Keynote() {
   return (
     <main className="h-screen snap-y snap-mandatory overflow-y-scroll font-body text-[color:var(--ink)]">
-      <SlideNav count={15} />
+      <SlideNav count={16} />
       <Presenter />
 
 
@@ -190,7 +191,7 @@ export default function Keynote() {
             </p>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/keynote/robot.jpg" alt="The AITX brand agent" className="mx-auto w-full max-w-[240px]" />
+          <img src="/assets/keynote/robot.jpg" alt="Chip, the AITX brand czar" className="mx-auto w-full max-w-[240px]" />
         </div>
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           {[
@@ -263,24 +264,33 @@ export default function Keynote() {
 
       {/* 11 — THE BRAND AGENT (Michael & Jake) */}
       <Slide n={11}>
-        <Eyebrow>Who does the work now</Eyebrow>
+        <Eyebrow>Meet the brand czar</Eyebrow>
         <div className="grid items-center gap-8 sm:grid-cols-[1.1fr_1fr]">
           <div>
-            <H className="text-4xl sm:text-5xl">Michael and Jake don't call me anymore. They talk to their <span style={{ color: OR }}>agent</span>.</H>
+            <H className="text-4xl sm:text-5xl">Michael and Jake don't call me anymore. They talk to <span style={{ color: OR }}>Chip</span>.</H>
             <p className="mt-6 text-lg text-[color:var(--muted)]">
-              Yesterday we built the AITX brand DNA together. Now, when they need something, they don't
-              need a designer or a favor. "Write NVIDIA a thank-you." "Make the meetup flyer." Done, on
-              brand, in their voice. The steward stays in charge of taste. The agent does the making.
+              Chip is the AITX brand czar: he holds the canon, the goldens, and the rules, and makes
+              anything on brand. "Write NVIDIA a thank-you." "Make the meetup flyer." Done, in the AITX
+              voice. Michael and Jake stay in charge of taste. Chip does the making.
             </p>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/keynote/robot.jpg" alt="The AITX brand agent"
+          <img src="/assets/keynote/robot.jpg" alt="Chip, the AITX brand czar"
             className="mx-auto w-full max-w-[300px]" />
         </div>
       </Slide>
 
-      {/* 12 — A SPONSOR THANK-YOU (soul) */}
-      <Slide n={12} bg="#f2ead9">
+      {/* 12 — LIVE DEMO: Chip learns, on stage */}
+      <Slide n={12}>
+        <Eyebrow>Live · watch it learn</Eyebrow>
+        <H className="mb-6 text-3xl sm:text-5xl">
+          And it gets sharper every time. <span style={{ color: OR }}>Watch.</span>
+        </H>
+        <AutoDemo />
+      </Slide>
+
+      {/* 13 — A SPONSOR THANK-YOU (soul) */}
+      <Slide n={13} bg="#f2ead9">
         <Eyebrow>On-brand deliverables, with soul</Eyebrow>
         <div className="grid items-center gap-8 sm:grid-cols-2">
           <div>
@@ -308,8 +318,8 @@ export default function Keynote() {
         </div>
       </Slide>
 
-      {/* 13 — THE LIVING STORY */}
-      <Slide n={13}>
+      {/* 14 — THE LIVING STORY */}
+      <Slide n={14}>
         <Eyebrow>The story keeps moving</Eyebrow>
         <div className="grid items-center gap-8 sm:grid-cols-2">
           <div className="grid grid-cols-2 gap-3">
@@ -335,8 +345,8 @@ export default function Keynote() {
         </div>
       </Slide>
 
-      {/* 14 — CRISPR / VERSION CONTROL + recursive */}
-      <Slide n={14} bg="#f2ead9">
+      {/* 15 — CRISPR / VERSION CONTROL + recursive */}
+      <Slide n={15} bg="#f2ead9">
         <Eyebrow>Version-control your brand</Eyebrow>
         <H className="text-4xl sm:text-6xl">
           CRISPR + GitHub for your brand <span style={{ color: OR }}>DNA</span>.
@@ -352,8 +362,8 @@ export default function Keynote() {
         </a>
       </Slide>
 
-      {/* 15 — THESIS + OFFER */}
-      <Slide n={15}>
+      {/* 16 — THESIS + OFFER */}
+      <Slide n={16}>
         <Eyebrow>The takeaway</Eyebrow>
         <H className="text-4xl sm:text-6xl">
           In 2026, every serious company should have an <span style={{ color: OR }}>agentic brand universe</span>.
