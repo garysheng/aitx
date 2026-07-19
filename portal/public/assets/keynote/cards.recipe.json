@@ -7,6 +7,7 @@
   "cards": {
     "card-canon.png": "a clean orange hardcover brand book with the AITX open-arms mark embossed on the cover + bookmark ribbon (the brand bible / source of truth). Replaced the earlier binder version.",
     "card-goldens.png": "a framed on-brand print on an easel with a golden star seal (a blessed golden asset)",
-    "card-agent.png": "the AITX helper robot presenting a small glowing asset it made (ref: universe/reference/aitx-agent/gabr-aitx-agent.png)"
-  }
+    "card-agent.png": "the AITX helper robot (ref: gabr-aitx-agent) presenting a glowing card; chest mark + card mark are the real AITX mark (ref: _ref-aitx-mark-clean)"
+  },
+  "fix_2026-07-19": "Regenerated card-canon + card-agent PASSING the real AITX mark reference (explorations/mascot/_ref-aitx-mark-clean.png). First pass drew a generic arms-up figure instead of the real split-arrowhead mark. Rule: never render the logo without passing the logo."
 }
