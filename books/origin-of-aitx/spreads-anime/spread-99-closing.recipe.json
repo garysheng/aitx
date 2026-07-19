@@ -1,0 +1,15 @@
+{
+  "model": "gpt-image-2",
+  "prompt": "ANIME REGISTER (locked, identical across the whole book): render this as a modern cinematic cel-shaded anime illustration in the polished style of a high-end seinen anime film's key art. Bold, clean, confident linework; flat cel shading with crisp shadow shapes; luminous warm golden-hour lighting; richly painted atmospheric anime backgrounds with real depth; expressive but grounded, realistically-proportioned adult faces (NOT chibi, NOT super-deformed, no oversized eyes). Warm AITX orange (#ff4201) is the single signature accent color. Consistent medium line weight and soft rim-lighting throughout so every page reads as one coherent edition. Keep the faces faithful to the provided character reference images.\n\nSCENE: Closing plate, portrait, TEXTLESS. Just the warm orange AITX open-arms mark, simple and glowing, centered on a clean warm ground with soft golden light. Minimal, iconic, no people, no words.\n\nCHARACTER LIKENESS: The AITX mark is a stylized orange (#ff4201) person with open arms: a solid round head above two upward-and-outward arrow-like arms. Render it cleanly and correctly wherever it appears.\n\nNO user interface anywhere: no windows, menu bars, buttons, icons, toolbars, panels, form fields, or cursors; any screen shows only soft glow or vague painterly shapes. Devices are anatomically correct: a laptop's glowing display is on the screen side facing its user, never on the lid's outer shell. No garbled text; any incidental signage is clean and minimal. No extra fingers, no distorted faces.",
+  "size": "1024x1536",
+  "quality": "high",
+  "register": "anime",
+  "references": [
+    {
+      "path": "/Users/garysheng/Documents/github-repos/aitx/universe/reference/aitx-mark/aitx-logo.png",
+      "role": "AITX open-arms mark + wordmark",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1"
+    }
+  ],
+  "renderedAt": "2026-07-19T20:20:46Z"
+}

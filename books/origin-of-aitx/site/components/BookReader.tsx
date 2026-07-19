@@ -58,11 +58,35 @@ function pageForValue(v: number): number {
   if (v >= SEEK_MAX) return LAST_PAGE;
   return v * 2 - 1;
 }
-function thumbForValue(v: number): string {
-  if (v <= 0) return "/spreads/spread-00-cover.webp";
+// Art-style editions. Each swaps the whole image set (halves, cover, back,
+// thumbnails) to a parallel public/ directory. Comic is the default.
+type ArtStyle = "comic" | "anime";
+const STYLE_KEY = "aitx-book-style";
+const STYLE_DIRS: Record<ArtStyle, { pages: string; art: string; thumbs: string }> = {
+  comic: { pages: "/pages", art: "/art", thumbs: "/spreads" },
+  anime: { pages: "/pages-anime", art: "/art-anime", thumbs: "/spreads-anime" },
+};
+function thumbForValueStyle(v: number, style: ArtStyle): string {
+  const dir = STYLE_DIRS[style].thumbs;
+  if (v <= 0) return `${dir}/spread-00-cover.webp`;
   const s = v >= SEEK_MAX ? SPREADS.length + 1 : v;
-  return `/spreads/spread-${String(s).padStart(2, "0")}.webp`;
+  return `${dir}/spread-${String(s).padStart(2, "0")}.webp`;
 }
+// recipe key for the currently open spread (anime edition provenance)
+function recipeKeyForSpread(s: number): string {
+  if (s <= 0) return "spread-00-cover";
+  if (s > SPREADS.length) return "spread-99-closing";
+  return `spread-${String(s).padStart(2, "0")}`;
+}
+type Recipe = {
+  model: string;
+  prompt: string;
+  size: string;
+  quality: string;
+  register: string;
+  references: { path: string; role: string; sha256: string }[];
+  renderedAt: string;
+};
 function labelForValue(v: number): string {
   if (v <= 0) return "Cover";
   if (v >= SEEK_MAX) return "The end";
@@ -72,7 +96,12 @@ function labelForValue(v: number): string {
 export default function BookReader() {
   const bookRef = useRef<FlipBookHandle | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const stageRef = useRef<HTMLDivElement | null>(null);
   const [page, setPage] = useState(0);
+  const [style, setStyle] = useState<ArtStyle>("comic");
+  const [showPrompt, setShowPrompt] = useState(false);
+  const [recipe, setRecipe] = useState<Recipe | null>(null);
+  const [recipeLoading, setRecipeLoading] = useState(false);
   const [shared, setShared] = useState(false);
   const [listening, setListening] = useState(false);
   const [rate, setRate] = useState(1);
@@ -80,6 +109,38 @@ export default function BookReader() {
   const [seeking, setSeeking] = useState(false);
   const [showGrid, setShowGrid] = useState(false);
   const [showSeek, setShowSeek] = useState(false);
+
+  const thumbFor = useCallback(
+    (v: number) => thumbForValueStyle(v, style),
+    [style]
+  );
+
+  // restore persisted art-style choice on mount
+  useEffect(() => {
+    const s = localStorage.getItem(STYLE_KEY);
+    if (s === "anime" || s === "comic") setStyle(s);
+  }, []);
+
+  // Swap every spread image to the chosen edition IMPERATIVELY, without
+  // re-rendering the frozen StPageFlip subtree (re-rendering it mid-life
+  // triggers phantom auto-flips). We rewrite each img's src by its data-role.
+  useEffect(() => {
+    const root = stageRef.current;
+    if (root) {
+      const dirs = STYLE_DIRS[style];
+      root.querySelectorAll<HTMLImageElement>("img[data-role]").forEach((img) => {
+        const role = img.dataset.role;
+        const n = img.dataset.n;
+        let src: string | null = null;
+        if (role === "cover") src = `${dirs.art}/cover-painted.webp`;
+        else if (role === "back") src = `${dirs.art}/back-cover.webp`;
+        else if (role === "l") src = `${dirs.pages}/${n}-l.webp`;
+        else if (role === "r") src = `${dirs.pages}/${n}-r.webp`;
+        if (src && !img.src.endsWith(src)) img.src = src;
+      });
+    }
+    localStorage.setItem(STYLE_KEY, style);
+  }, [style]);
 
   const onFlip = useCallback((e: FlipEvent) => {
     setPage(e.data);
@@ -203,9 +264,9 @@ export default function BookReader() {
     const s = spreadForPage(page);
     for (let k = Math.max(0, s - 1); k <= Math.min(SEEK_MAX, s + 3); k++) {
       const img = new Image();
-      img.src = thumbForValue(k);
+      img.src = thumbFor(k);
     }
-  }, [page]);
+  }, [page, thumbFor]);
 
   // deep link: jump to the spread in the URL hash once the book exists
   useEffect(() => {
@@ -264,11 +325,37 @@ export default function BookReader() {
   const spread = spreadForPage(page);
   const atEnd = spread > SPREADS.length;
 
+  // Load the provenance recipe (anime edition) for the open spread while the
+  // "how this page was made" panel is showing.
+  useEffect(() => {
+    if (!showPrompt) return;
+    const key = recipeKeyForSpread(spread);
+    let cancelled = false;
+    setRecipeLoading(true);
+    fetch(`/recipes/anime/${key}.json`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data: Recipe | null) => {
+        if (!cancelled) {
+          setRecipe(data);
+          setRecipeLoading(false);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setRecipe(null);
+          setRecipeLoading(false);
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [showPrompt, spread]);
+
   const pages = useMemo(() => {
     const els = [
       <div className="page" key="cover">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/art/cover-painted.webp" alt="The Origin of the AITX Community" />
+        <img src="/art/cover-painted.webp" alt="The Origin of the AITX Community" data-role="cover" />
       </div>,
     ];
     for (const s of SPREADS) {
@@ -276,11 +363,11 @@ export default function BookReader() {
       els.push(
         <div className="page page--left" key={`${n}l`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={`/pages/${n}-l.webp`} alt="" loading="lazy" />
+          <img src={`/pages/${n}-l.webp`} alt="" loading="lazy" data-role="l" data-n={n} />
         </div>,
         <div className="page page--right" key={`${n}r`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={`/pages/${n}-r.webp`} alt="" loading="lazy" />
+          <img src={`/pages/${n}-r.webp`} alt="" loading="lazy" data-role="r" data-n={n} />
           <div
             className={`page-caption font-body page-caption--${s.pos ?? "bottom"}`}
           >
@@ -294,7 +381,7 @@ export default function BookReader() {
     els.push(
       <div className="page page--plate page--backcover" key="end">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/art/back-cover.webp" alt="" />
+        <img src="/art/back-cover.webp" alt="" data-role="back" />
         <div className="plate-inner plate-inner--backcover">
           <p
             className="font-body"
@@ -354,7 +441,33 @@ export default function BookReader() {
 
   return (
     <div className="flex w-full flex-col items-center gap-7">
-      <div className="book-shadow rise w-full" style={{ animationDelay: "0.25s", position: "relative" }}>
+      <div className="edition-bar rise" style={{ animationDelay: "0.15s" }}>
+        <div className="edition-toggle" role="group" aria-label="Art style">
+          <button
+            className={`edition-opt font-display${style === "comic" ? " edition-opt--on" : ""}`}
+            aria-pressed={style === "comic"}
+            onClick={() => setStyle("comic")}
+          >
+            Comic
+          </button>
+          <button
+            className={`edition-opt font-display${style === "anime" ? " edition-opt--on" : ""}`}
+            aria-pressed={style === "anime"}
+            onClick={() => setStyle("anime")}
+          >
+            Anime
+          </button>
+        </div>
+        <button
+          className={`prompt-btn font-display${showPrompt ? " prompt-btn--on" : ""}`}
+          aria-pressed={showPrompt}
+          aria-label="How this page was made"
+          onClick={() => setShowPrompt((v) => !v)}
+        >
+          <span aria-hidden>ⓘ</span> prompt
+        </button>
+      </div>
+      <div ref={stageRef} className="book-shadow rise w-full" style={{ animationDelay: "0.25s", position: "relative" }}>
         {book}
         {spread === 0 && (
           <button onClick={next} className="cta-hint cta-hint--open font-body" aria-label="Open the book">
@@ -414,7 +527,7 @@ export default function BookReader() {
                 className="seek-preview"
                 style={{ left: `${(seekVal / SEEK_MAX) * 100}%` }}
               >
-                <img src={thumbForValue(seekVal)} alt="" />
+                <img src={thumbFor(seekVal)} alt="" />
                 <span className="font-display">{labelForValue(seekVal)}</span>
               </div>
             )}
@@ -494,6 +607,77 @@ export default function BookReader() {
 
       </div>
 
+      {showPrompt && (
+        <div
+          className="prompt-overlay"
+          onClick={() => setShowPrompt(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="How this page was made"
+        >
+          <div className="prompt-panel" onClick={(e) => e.stopPropagation()}>
+            <div className="prompt-head">
+              <span className="font-display">
+                HOW THIS PAGE WAS MADE ·{" "}
+                {spread <= 0
+                  ? "COVER"
+                  : spread > SPREADS.length
+                  ? "CLOSING"
+                  : `SPREAD ${spread}`}
+              </span>
+              <button
+                onClick={() => setShowPrompt(false)}
+                aria-label="Close"
+                className="prompt-close"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="prompt-body">
+              {recipeLoading ? (
+                <p className="prompt-note">Loading recipe…</p>
+              ) : recipe ? (
+                <>
+                  {style === "comic" && (
+                    <p className="prompt-note">
+                      Showing the <strong>anime edition</strong> recipe. The comic
+                      edition predates provenance capture.
+                    </p>
+                  )}
+                  <div className="prompt-meta">
+                    <span className="prompt-tag">register: {recipe.register}</span>
+                    <span className="prompt-tag">model: {recipe.model}</span>
+                    <span className="prompt-tag">{recipe.size}</span>
+                    <span className="prompt-tag">quality: {recipe.quality}</span>
+                  </div>
+                  <div className="prompt-label font-display">PROMPT</div>
+                  <pre className="prompt-code">{recipe.prompt}</pre>
+                  <div className="prompt-label font-display">REFERENCES</div>
+                  <ul className="prompt-refs">
+                    {recipe.references.map((ref) => (
+                      <li key={ref.sha256}>
+                        <span className="prompt-ref-name">
+                          {ref.path.split("/").pop()}
+                        </span>
+                        <span className="prompt-ref-role">{ref.role}</span>
+                        <span className="prompt-ref-sha">
+                          {ref.sha256.slice(0, 12)}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <p className="prompt-note">
+                  Recipe available for the anime edition. Flip to a story spread to
+                  see how it was generated.
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
       {showGrid && (
         <div
           className="page-grid-overlay"
@@ -523,7 +707,7 @@ export default function BookReader() {
                   }}
                   className={`page-grid-item${spread === v ? " page-grid-item--current" : ""}`}
                 >
-                  <img src={thumbForValue(v)} alt="" loading="lazy" />
+                  <img src={thumbFor(v)} alt="" loading="lazy" />
                   <span className="font-display">
                     {v === 0 ? "Cover" : v === SEEK_MAX ? "End" : v}
                   </span>

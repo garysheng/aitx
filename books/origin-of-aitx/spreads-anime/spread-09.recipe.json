@@ -1,0 +1,20 @@
+{
+  "model": "gpt-image-2",
+  "prompt": "ANIME REGISTER (locked, identical across the whole book): render this as a modern cinematic cel-shaded anime illustration in the polished style of a high-end seinen anime film's key art. Bold, clean, confident linework; flat cel shading with crisp shadow shapes; luminous warm golden-hour lighting; richly painted atmospheric anime backgrounds with real depth; expressive but grounded, realistically-proportioned adult faces (NOT chibi, NOT super-deformed, no oversized eyes). Warm AITX orange (#ff4201) is the single signature accent color. Consistent medium line weight and soft rim-lighting throughout so every page reads as one coherent edition. Keep the faces faithful to the provided character reference images.\n\nSCENE: Michael alone, driving a rented car down a wide Texas highway, laptop bag on the passenger seat, the Austin skyline shrinking in the rear-view mirror and the Dallas skyline ahead on the horizon at golden hour. Determined, generous, a little funny. A small orange AITX glyph on the laptop bag.\n\nCHARACTER LIKENESS: Michael: lean and warm, olive skin, dark hair pulled into a low bun, thick dark mustache with light stubble, wearing a black AITX t-shirt (orange open-arms glyph + lowercase 'aitx' wordmark on the chest), black shorts, white sneakers.\n\nNO user interface anywhere: no windows, menu bars, buttons, icons, toolbars, panels, form fields, or cursors; any screen shows only soft glow or vague painterly shapes. Devices are anatomically correct: a laptop's glowing display is on the screen side facing its user, never on the lid's outer shell. No garbled text; any incidental signage is clean and minimal. No extra fingers, no distorted faces.",
+  "size": "1536x1024",
+  "quality": "high",
+  "register": "anime",
+  "references": [
+    {
+      "path": "/Users/garysheng/Documents/github-repos/aitx/universe/reference/michael-daigler/gabr-michael.png",
+      "role": "likeness: Michael Daigler (full-body)",
+      "sha256": "a85f8be4b1c5055c85fab6790805fe167757c641f6257a6189e71005b1b3527f"
+    },
+    {
+      "path": "/Users/garysheng/Documents/github-repos/aitx/universe/reference/michael-daigler/gabr-michael-face.png",
+      "role": "likeness: Michael Daigler (face)",
+      "sha256": "fce92d9303fdb1d8753141cd65b5ea2ab716c3265798153d924b2a862ea1be36"
+    }
+  ],
+  "renderedAt": "2026-07-19T20:20:46Z"
+}

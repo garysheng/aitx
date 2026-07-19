@@ -1,0 +1,20 @@
+{
+  "model": "gpt-image-2",
+  "prompt": "ANIME REGISTER (locked, identical across the whole book): render this as a modern cinematic cel-shaded anime illustration in the polished style of a high-end seinen anime film's key art. Bold, clean, confident linework; flat cel shading with crisp shadow shapes; luminous warm golden-hour lighting; richly painted atmospheric anime backgrounds with real depth; expressive but grounded, realistically-proportioned adult faces (NOT chibi, NOT super-deformed, no oversized eyes). Warm AITX orange (#ff4201) is the single signature accent color. Consistent medium line weight and soft rim-lighting throughout so every page reads as one coherent edition. Keep the faces faithful to the provided character reference images.\n\nSCENE: COVER, portrait. Michael (left) and Jake (right) stand together, warm and confident, at golden hour in front of a stylized Austin skyline with the Texas State Capitol dome and Lady Bird Lake behind them. The glowing orange AITX open-arms mark hovers in the sky above them like a rising sun.\n\nCHARACTER LIKENESS: Michael: lean and warm, olive skin, dark hair pulled into a low bun, thick dark mustache with light stubble, wearing a black AITX t-shirt (orange open-arms glyph + lowercase 'aitx' wordmark on the chest), black shorts, white sneakers. Jake: taller and athletic, short dark curly hair, neat short dark beard, wearing a navy quarter-zip pullover with a small orange aitx glyph on the chest, tan/khaki chinos, white sneakers. The AITX mark is a stylized orange (#ff4201) person with open arms: a solid round head above two upward-and-outward arrow-like arms. Render it cleanly and correctly wherever it appears.\n\nDIEGETIC TEXT: Bake in a large title 'The Origin of the AITX Community' with subtitle 'How two builders turned ten people in a room into the largest AI builder community in Texas.' Title in bold clean type, 'AITX COMMUNITY' emphasized in orange.\n\nNO user interface anywhere: no windows, menu bars, buttons, icons, toolbars, panels, form fields, or cursors; any screen shows only soft glow or vague painterly shapes. Devices are anatomically correct: a laptop's glowing display is on the screen side facing its user, never on the lid's outer shell. No garbled text; any incidental signage is clean and minimal. No extra fingers, no distorted faces.",
+  "size": "1024x1536",
+  "quality": "high",
+  "register": "anime",
+  "references": [
+    {
+      "path": "/Users/garysheng/Documents/github-repos/aitx/universe/reference/founders/founders-standing.png",
+      "role": "likeness: Michael + Jake together (full-body)",
+      "sha256": "76694a53539bda3b0b8385bffe0f76e9f3dc4be927cddda14cddfc3e80adb987"
+    },
+    {
+      "path": "/Users/garysheng/Documents/github-repos/aitx/universe/reference/aitx-mark/aitx-logo.png",
+      "role": "AITX open-arms mark + wordmark",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1"
+    }
+  ],
+  "renderedAt": "2026-07-19T20:20:46Z"
+}
