@@ -5,7 +5,7 @@ import { systemPrompt, flatten, OUTPUT_INSTRUCTION } from "@/lib/agent/knowledge
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 const BASE_URL = process.env.NIM_BASE_URL || "https://integrate.api.nvidia.com/v1";
 const MODEL = process.env.NEMOTRON_MODEL || "nvidia/nvidia-nemotron-nano-9b-v2";

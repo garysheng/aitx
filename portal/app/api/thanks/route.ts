@@ -5,7 +5,7 @@ import { SEED_LESSONS } from "@/lib/agent/knowledge";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 const BASE_URL = process.env.NIM_BASE_URL || "https://integrate.api.nvidia.com/v1";
 // Generation task -> route to the larger Nemotron for polished, on-voice copy.
