@@ -55,6 +55,7 @@ export async function POST(req: Request) {
     };
     return NextResponse.json({ imageBase64: b64, recipe });
   } catch (e) {
+    console.error("generate failed:", e);
     return NextResponse.json({ error: "Generation failed. Try again in a moment." }, { status: 500 });
   }
 }
