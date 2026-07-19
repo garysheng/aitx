@@ -87,15 +87,40 @@ Everything in the demo was generated from the AITX brand universe itself — inc
 
 ---
 
-# Suggested X/Twitter post
+# Suggested X/Twitter post (thread, in Gary's voice)
 
-I built an Agentic Brand Universe for @AITXCommunity — a version-controlled brand with an agent (Chip, the brand czar) that learns its voice and won't break it.
+1/
+I've been off X for a while, but I had to come back for this one.
 
-Powered by @NVIDIAAI Nemotron: it makes on-brand assets, critiques its own work against the rules, and gets sharper every run. No retraining.
+This weekend @AITXCommunity and @NVIDIAAI hosted a hackathon that genuinely inspired me. So I built something, and I think a lot of founders will want to see it.
 
-Everything (this keynote, my character, Chip) was made from the universe itself.
+2/
+It's called an Agentic Brand Universe. Your brand as a version-controlled system: its canon, its best work, its rules. Plus an agent (I named mine Chip) that makes anything on brand and gets sharper every time it runs.
 
-🎤 aitx-brand-os.vercel.app/keynote
+3/
+What I keep seeing: most teams use AI like a faster intern. One-off prompts, generic output, a brand that drifts a little more with every asset.
+
+But you don't really know your brand until you try things. Taste is discovered. So your brand should be a living thing, not a PDF.
+
+4/
+AI agents change the math. On-brand work that used to take weeks takes minutes now, and it gets better every run. Your brand can evolve as fast as your competition moves. If you're a founder, that's the part worth sitting with.
+
+5/
+Everything in the demo was made from the universe itself, including the keynote and Chip.
+
+Thank you @AITXCommunity and @NVIDIAAI. That was a good room.
+
+aitx-brand-os.vercel.app/keynote
+
+---
+
+## Alt: single tweet (if you don't want a thread)
+
+Been off X for a bit, but @AITXCommunity and @NVIDIAAI hosted a hackathon that inspired me, so here I am.
+
+I built an Agentic Brand Universe: your brand as a version-controlled system with an agent that makes anything on brand and gets sharper every run. On-brand work that took weeks now takes minutes, so your brand can evolve as fast as your competition moves.
+
+Thank you both. aitx-brand-os.vercel.app/keynote
 
 ---
 
