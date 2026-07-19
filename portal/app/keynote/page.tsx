@@ -3,6 +3,7 @@ import SlideNav from "./SlideNav";
 import Presenter from "./Presenter";
 import AutoDemo from "./AutoDemo";
 import ChipBubble from "./ChipBubble";
+import Explorer from "./Explorer";
 
 export const metadata: Metadata = {
   title: "The Agentic Brand Universe — a gift to AITX",
@@ -387,12 +388,15 @@ export default function Keynote() {
             This is just the beginning. Thank you, AITX. It has open arms.
           </p>
           <div className="mt-5 flex flex-wrap gap-4 font-body text-sm font-semibold" style={{ color: OR }}>
-            <a href="/agent">The living agent →</a>
+            <a href="#explore">Explore the Brand OS ↓</a>
             <a href="/platform">The platform →</a>
             <a href="https://aitx-origin.vercel.app" target="_blank" rel="noreferrer">The origin story →</a>
           </div>
         </div>
       </Slide>
+
+      {/* The Brand OS Explorer — the whole value, on one page */}
+      <Explorer />
     </main>
   );
 }
