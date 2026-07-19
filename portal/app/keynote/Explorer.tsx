@@ -70,6 +70,43 @@ export default function Explorer() {
         </div>
       </Band>
 
+      {/* provenance chain — real photos -> illustrated character */}
+      <Band>
+        <Eyebrow>Provenance · identity rides in real photos</Eyebrow>
+        <H className="mb-3 text-3xl sm:text-5xl">Every character starts from real reference photos.</H>
+        <p className="mb-8 max-w-2xl text-lg text-[color:var(--muted)]">
+          A character&apos;s look is locked as image data, not a text description, so the face never drifts.
+          Real photos in, one consistent illustrated character out, and every asset after that references it.
+          Shared with permission.
+        </p>
+        <div className="space-y-5">
+          {[
+            { name: "Michael", photos: ["/assets/provenance/michael-1.jpg", "/assets/provenance/michael-2.jpg"], master: "/assets/founders/michael.png" },
+            { name: "Jake", photos: ["/assets/provenance/jake-1.jpg", "/assets/provenance/jake-2.jpg"], master: "/assets/founders/jake.png" },
+            { name: "Mark Heaps", photos: ["/assets/provenance/mark-1.jpg", "/assets/provenance/mark-2.jpg"], master: "/assets/founders/mark.png" },
+          ].map((c) => (
+            <div key={c.name} className="flex items-center gap-4 rounded-2xl border bg-white p-4 shadow-sm sm:gap-6" style={{ borderColor: "#e0d6c2" }}>
+              <div className="flex gap-2">
+                {c.photos.map((p, i) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img key={i} src={p} alt={`${c.name} real photo`} className="h-16 w-16 rounded-lg object-cover sm:h-20 sm:w-20" />
+                ))}
+              </div>
+              <div className="flex flex-col items-center text-[color:var(--muted)]">
+                <span className="text-2xl" style={{ color: OR }}>→</span>
+                <span className="text-[10px] uppercase tracking-widest">locked</span>
+              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={c.master} alt={`${c.name} character`} className="h-20 w-16 rounded-lg object-cover object-top sm:h-24 sm:w-20" />
+              <div className="hidden sm:block">
+                <div className="font-display font-bold">{c.name}</div>
+                <div className="text-xs text-[color:var(--muted)]">real photos → one on-brand character</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Band>
+
       {/* goldens */}
       <Band>
         <Eyebrow>The goldens · the taste you keep</Eyebrow>
