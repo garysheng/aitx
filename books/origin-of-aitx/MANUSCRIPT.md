@@ -59,6 +59,10 @@ Ask him why any of it works, and he points at the same thing every time. You get
 That is how ten people in a borrowed room became the largest AI builder community in Texas. Not with a campaign. With three years of showing up.
 *Art: a wide, warm hero shot of a huge AITX crowd, hands raised, the orange open-arms mark large above them, Michael and Jake among the people. The payoff.*
 
+### Spread 13 (the expectant, forward-looking beat)
+And where is this going? AITX is becoming the room where Texas builders and the great tech companies meet. It is where people come to launch the future of their careers, and their lives.
+*Art: a bright, hopeful, forward-looking scene. Michael and Jake look ahead toward a glowing sunrise over a Texas skyline (Austin, a hint of Dallas), the orange open-arms mark rising like a sun on the horizon, a diverse crowd of builders and tech-company people facing the same bright future. Optimistic, cinematic.*
+
 ### Closing plate (portrait, TEXTLESS art)
-*Overlaid text: "So if you want to be in front of the right room of builders in Texas, there is a default answer. It has open arms." + the aitx logo.*
+*Overlaid text: "If you want to be in that room in Texas, there is a default answer, and it has open arms." + the aitx logo.*
 *Art: the orange AITX open-arms mark, warm and simple, on a clean ground. Textless (platform overlays the words + logo).*

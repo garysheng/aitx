@@ -1,0 +1,395 @@
+@import "tailwindcss";
+
+:root {
+  /* AITX palette: orange #ff4201 / black #010101 / white, warm neutrals */
+  --desk: #0e0c0b;
+  --desk-glow: #2a1409;
+  --paper: #fbf5ec;
+  --ink: #241c14;
+  --gold: #ff4201;
+  --gold-deep: #c2340a;
+  --wisp: #ffb890;
+}
+
+html, body { height: 100%; }
+
+body {
+  background-color: var(--desk);
+  color: var(--paper);
+  background-image: radial-gradient(ellipse 90% 65% at 50% 42%, var(--desk-glow) 0%, rgba(44,33,19,0.35) 45%, transparent 75%),
+    radial-gradient(ellipse 40% 25% at 50% 38%, rgba(255,233,184,0.10) 0%, transparent 70%);
+  background-attachment: fixed;
+}
+
+/* paper grain over the desk */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.font-display { font-family: var(--font-fraunces), Georgia, serif; }
+.font-body { font-family: var(--font-alegreya), Georgia, serif; }
+
+.book-shadow {
+  filter: drop-shadow(0 30px 45px rgba(0,0,0,0.55)) drop-shadow(0 6px 14px rgba(0,0,0,0.35));
+}
+
+.page { background: var(--paper); overflow: hidden; position: relative; container-type: inline-size; }
+.page img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.page--left::after, .page--right::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 7%; pointer-events: none;
+}
+.page--left::after { right: 0; background: linear-gradient(to right, transparent, rgba(46,42,36,0.16)); }
+.page--right::after { left: 0; background: linear-gradient(to left, transparent, rgba(46,42,36,0.16)); }
+
+/* StPageFlip stomps the page element's display with inline block/none,
+   so the centering lives on an inner wrapper it never touches. */
+.page--plate .plate-inner {
+  width: 100%; height: 100%; position: relative;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; color: var(--ink); padding: 9%; gap: 1.1rem;
+}
+
+.wisp-dot {
+  width: 9px; height: 9px; border-radius: 9999px;
+  background: radial-gradient(circle at 35% 35%, #fff3d1, var(--gold) 70%);
+  box-shadow: 0 0 14px 4px rgba(217,164,65,0.55);
+  animation: wisp-breathe 3.6s ease-in-out infinite;
+}
+@keyframes wisp-breathe {
+  0%, 100% { transform: translateY(0); opacity: 0.85; }
+  50% { transform: translateY(-4px); opacity: 1; }
+}
+
+.rise { opacity: 0; transform: translateY(14px); animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) forwards; }
+@keyframes rise { to { opacity: 1; transform: translateY(0); } }
+
+.caption-swap { animation: caption-in 0.55s ease forwards; }
+@keyframes caption-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-btn {
+  color: var(--gold-deep);
+  border: 1px solid rgba(194,161,92,0.35);
+  border-radius: 9999px;
+  width: 2.75rem; height: 2.75rem;
+  display: grid; place-items: center;
+  transition: background .25s ease, color .25s ease, border-color .25s ease;
+}
+.nav-btn:hover { background: rgba(217,164,65,0.12); color: var(--wisp); border-color: rgba(217,164,65,0.7); }
+
+/* ---- on-page caption plate ---- */
+.page-caption {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  z-index: 5;
+  background: rgba(250, 244, 232, 0.82);
+  border: 1px solid rgba(46, 42, 36, 0.14);
+  border-radius: 3px;
+  padding: 0.7em 0.9em;
+  color: var(--ink);
+  text-align: center;
+  /* proportional to the PAGE, not the viewport: 13.5px on a 480px-wide page */
+  font-size: clamp(9.5px, 1.3vw, 13.5px);
+  font-size: 2.8cqw;
+  line-height: 1.55;
+  box-shadow: 0 1px 8px rgba(46, 42, 36, 0.08);
+}
+.page-caption--bottom { bottom: 5%; }
+.page-caption--top { top: 5%; }
+.page-caption--center { top: 50%; transform: translateY(-50%); }
+.page-caption p + p { margin-top: 0.35em; }
+
+/* rotate-your-phone hint: only on small portrait screens */
+.rotate-hint {
+  display: none;
+  color: var(--gold-deep);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 1.1rem;
+  align-items: center;
+  gap: 0.5em;
+}
+.rotate-hint__icon {
+  display: inline-block;
+  font-size: 1.1em;
+  animation: hint-tilt 2.6s ease-in-out infinite;
+}
+@keyframes hint-tilt {
+  0%, 55%, 100% { transform: rotate(0deg); }
+  70%, 85% { transform: rotate(90deg); }
+}
+@media (max-width: 640px) and (orientation: portrait) {
+  .rotate-hint { display: flex; }
+}
+
+/* ---- landscape: the spread fills the screen; metadata + arrows are minimal
+   translucent overlays that float over the side/bottom margins, not layout rows
+   that steal height. The book is sized by its own 1.5 aspect off the viewport
+   height (or capped at 96vw on wide-short screens). ---- */
+@media (orientation: landscape) {
+  main {
+    max-width: none !important;
+    padding: 0.5rem 0 !important;
+  }
+  /* fill the height; only ~80px of vertical breathing room reserved */
+  .book-shadow { max-width: min(96vw, (100vh - 80px) * 1.5); }
+
+  /* the title lives on the cover; the footer is redundant here and just ate height */
+  footer { display: none; }
+
+  /* Pin the controls row as a floating bottom pill. CRITICAL: no transform,
+     filter, or backdrop-filter on .controls or its children, or they become the
+     containing block for the position:fixed arrows and trap them here instead of
+     the viewport edges (the AGENTS.md gotcha). Center with margin:auto instead. */
+  .controls {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    position: fixed;
+    left: 0; right: 0;
+    bottom: clamp(6px, 1.6vh, 16px);
+    width: fit-content;
+    margin: 0 auto !important;
+    z-index: 20;
+  }
+  /* counter + listen button: compact translucent pill, non-blocking */
+  .controls > div {
+    gap: 0.55rem !important;
+    background: rgba(22, 17, 11, 0.72);
+    border: 1px solid rgba(194, 161, 92, 0.28);
+    border-radius: 999px;
+    padding: 0.3rem 0.95rem;
+  }
+  .controls p, .controls .counter-slot { font-size: 0.7rem; opacity: 0.9; }
+  .controls .counter-slot { width: 7.5rem; }
+  .listen-btn { width: 2.5rem; height: 2.5rem; }
+
+  /* arrows flank the screen edges (fixed → viewport, since no transformed
+     ancestor); translucent backing so they overlap the page legibly */
+  .nav-btn--prev, .nav-btn--next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    background: rgba(22, 17, 11, 0.72);
+  }
+  .nav-btn--prev { left: clamp(10px, 2.5vw, 40px); }
+  .nav-btn--next { right: clamp(10px, 2.5vw, 40px); }
+}
+
+/* CTA hints (first page + final page) and restart control */
+.cta-hint {
+  display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+  max-width: 34ch; text-align: center; cursor: pointer;
+  background: none; border: none; padding: 0.2rem 0.6rem;
+  color: #ffffff; opacity: 0.95; font-size: 0.86rem; line-height: 1.5;
+}
+.cta-hint--share { color: #ffffff; }
+.cta-hint:hover { opacity: 1; }
+.cta-hint__action {
+  color: var(--gold-deep); letter-spacing: 0.18em; font-size: 0.8rem;
+  border-bottom: 1px solid rgba(217, 164, 65, 0.5); padding-bottom: 2px;
+}
+.cta-hint:hover .cta-hint__action { border-bottom-color: var(--gold-deep); }
+.restart-btn { background: none; border: none; cursor: pointer; }
+.restart-btn:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* painted back cover: verse floats in the quiet night sky */
+.page--backcover { position: relative; }
+.page--backcover > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.page--plate .plate-inner--backcover {
+  position: absolute; inset: 0; height: auto; width: auto;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+  gap: 0.9rem; padding: 12% 9% 9%;
+  color: var(--ink); text-align: center;
+  text-shadow: 0 1px 8px rgba(251, 245, 236, 0.95), 0 0 2px rgba(251, 245, 236, 0.95);
+}
+.plate-inner--backcover .font-display { color: var(--gold-deep); }
+
+/* listen-along toggle */
+.listen-btn {
+  color: var(--gold-deep);
+  border: 1px solid rgba(217, 164, 65, 0.45);
+  border-radius: 999px;
+  width: 2.4rem; height: 2.4rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; cursor: pointer; background: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.listen-btn:hover { background: rgba(217, 164, 65, 0.12); border-color: rgba(217, 164, 65, 0.8); }
+.listen-btn--on { background: rgba(217, 164, 65, 0.18); border-color: var(--gold-deep); }
+
+/* opening hint floats in the empty left half beside the closed cover */
+.cta-hint--open {
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38%;
+  max-width: 34ch;
+  z-index: 5;
+}
+@media (max-width: 640px) {
+  .cta-hint--open { width: 44%; left: 2%; font-size: 0.72rem; }
+}
+
+/* share CTA floats in the empty right half beside the closed back cover */
+.cta-hint--end {
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38%;
+  max-width: 34ch;
+  z-index: 5;
+}
+@media (max-width: 640px) {
+  .cta-hint--end { width: 44%; right: 2%; font-size: 0.72rem; }
+}
+
+/* --- page seek: scrubber + thumbnail preview + jump-to-page grid --- */
+.seek { display: flex; align-items: center; gap: 0.6rem; width: min(88vw, 30rem); }
+.seek-track-wrap { position: relative; flex: 1 1 auto; display: flex; align-items: center; }
+.seek-range { width: 100%; height: 1.1rem; margin: 0; cursor: pointer; accent-color: var(--gold); }
+.grid-btn {
+  flex: none; background: none; border: 1px solid rgba(217,164,65,0.5);
+  color: var(--gold-deep); border-radius: 8px; width: 1.9rem; height: 1.9rem;
+  cursor: pointer; font-size: 0.9rem; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.grid-btn:hover { background: rgba(217,164,65,0.14); border-color: rgba(217,164,65,0.8); }
+.seek-preview {
+  position: absolute; bottom: 1.5rem; transform: translateX(-50%);
+  pointer-events: none; z-index: 60; width: 128px; padding: 5px;
+  border-radius: 10px; background: var(--paper);
+  border: 1px solid rgba(217,164,65,0.55); box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+  text-align: center;
+}
+.seek-preview img { display: block; width: 100%; height: auto; border-radius: 5px; }
+.seek-preview span { display: block; margin-top: 3px; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-deep); }
+
+.page-grid-overlay {
+  position: fixed; inset: 0; z-index: 100; display: flex; align-items: center;
+  justify-content: center; padding: 4vmin; background: rgba(18,14,9,0.68);
+}
+.page-grid-panel {
+  display: flex; flex-direction: column; width: 100%; max-width: 940px;
+  max-height: 86vh; overflow: hidden; border-radius: 14px;
+  background: var(--paper); box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+}
+.page-grid-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.8rem 1.1rem; border-bottom: 1px solid rgba(46,42,36,0.12);
+}
+.page-grid-head span { font-size: 0.7rem; letter-spacing: 0.26em; color: var(--gold-deep); }
+.page-grid-close {
+  background: none; border: none; color: var(--ink); opacity: 0.6;
+  font-size: 1rem; cursor: pointer; line-height: 1; padding: 0.2rem 0.4rem;
+}
+.page-grid-close:hover { opacity: 1; }
+.page-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(116px, 1fr));
+  gap: 0.7rem; padding: 1rem; overflow-y: auto;
+}
+.page-grid-item {
+  display: flex; flex-direction: column; padding: 0; cursor: pointer;
+  background: none; border: 2px solid transparent; border-radius: 9px;
+}
+.page-grid-item img {
+  width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+  border-radius: 6px; background: rgba(46,42,36,0.06); display: block;
+}
+.page-grid-item span {
+  padding: 4px 0 2px; font-size: 0.62rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink); opacity: 0.65;
+}
+.page-grid-item:hover { border-color: rgba(217,164,65,0.6); }
+.page-grid-item--current { border-color: var(--gold-deep); }
+.page-grid-item--current span { color: var(--gold-deep); opacity: 1; }
+
+/* seek toggle lives in the controls pill and reveals/hides the scrubber row */
+.seek-toggle {
+  flex: none; width: 2.1rem; height: 2.1rem; border-radius: 999px;
+  background: none; border: 1px solid rgba(217,164,65,0.5); color: var(--gold-deep);
+  cursor: pointer; font-size: 1rem; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.seek-toggle:hover { background: rgba(217,164,65,0.12); border-color: rgba(217,164,65,0.8); }
+.seek-toggle--on { background: rgba(217,164,65,0.18); border-color: var(--gold-deep); }
+
+@media (orientation: landscape) {
+  /* the seek row is a .controls > div, so it inherits the floating dark pill; keep it slim */
+  .controls > .seek { gap: 0.55rem !important; padding: 0.35rem 0.7rem; width: min(70vw, 26rem); }
+}
+@media (max-width: 640px) {
+  .seek { width: 90vw; }
+  .seek-preview { width: 104px; }
+  .page-grid { grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); }
+}
+
+/* ---- stable playback controls (2026-07-10) ----
+   The center label swaps between the book title, "N OF M", and READ AGAIN.
+   A constant-width slot keeps the pill and the buttons from ever moving
+   mid-playback; tabular numerals stop digit wiggle. */
+.counter-slot {
+  flex: 0 0 auto;
+  width: 10rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-variant-numeric: tabular-nums;
+}
+/* portrait phones: tighter row, comfortable touch targets */
+@media (max-width: 700px) and (orientation: portrait) {
+  .controls > div { gap: 0.6rem !important; }
+  .counter-slot { width: 7rem; font-size: 0.72rem; }
+  .listen-btn, .seek-toggle { width: 2.75rem; height: 2.75rem; }
+}
+
+/* ---- playback speed cycler (2026-07-10) ----
+   Tap to step 1x -> 1.25x -> 1.5x -> 1.75x -> 2x -> 1x. Fixed-size circle so
+   the controls pill never resizes. */
+.rate-btn {
+  color: var(--gold-deep);
+  /* system sans: Playfair's lowercase x reads as a cap X at chip size (Gary, 2026-07-11) */
+  font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1; text-transform: none;
+  border: 1px solid rgba(217, 164, 65, 0.45);
+  border-radius: 999px;
+  width: 2.4rem; height: 2.4rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0; cursor: pointer; background: none;
+  font-variant-numeric: tabular-nums;
+  flex: 0 0 auto;
+}
+.rate-btn:hover { background: rgba(217, 164, 65, 0.12); border-color: rgba(217, 164, 65, 0.8); }
+.rate-btn--on { background: rgba(217, 164, 65, 0.18); border-color: var(--gold-deep); }
+@media (orientation: landscape) {
+  .rate-btn { width: 2.5rem; height: 2.5rem; }
+}
+@media (max-width: 700px) and (orientation: portrait) {
+  .rate-btn { width: 2.75rem; height: 2.75rem; }
+}
+
+/* counter: big lining numerals, small tracked OF (Gary, 2026-07-11) */
+.counter-slot .counter-num {
+  font-size: 1.5em; font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1; letter-spacing: 0.02em;
+}
+.counter-slot .counter-of {
+  font-size: 0.78em; letter-spacing: 0.2em; text-transform: uppercase;
+  opacity: 0.7; margin: 0 0.55em;
+}
