@@ -12,17 +12,23 @@
     "sheets": {
       "sheet": "reference/michael-daigler/gabr-michael.png",
       "face": "reference/michael-daigler/gabr-michael-face.png",
+      "back": "reference/michael-daigler/gabr-michael-back.png",
       "mic-speaking": "reference/michael-daigler/poses/mic-speaking.png",
       "open-arms": "reference/michael-daigler/poses/open-arms.png",
       "presenting": "reference/michael-daigler/poses/presenting.png",
       "candid-laugh": "reference/michael-daigler/poses/candid-laugh.png"
+    },
+    "wardrobe": {
+      "default": "Black AITX tee (FRONT: orange open-arms mark + 'aitx' wordmark) + dark shorts + white sneakers. Mustache + low man-bun.",
+      "back": "The BACK of the tee carries a LARGE orange silhouette of the STATE OF TEXAS with 'TEXAS LOVES AI' lettering integrated into it. Pass reference/michael-daigler/gabr-michael-back.png on any from-behind render."
     },
     "requiredForRender": [
       "sheet"
     ],
     "invariants": [
       "one-face-across-eras",
-      "real-likeness-from-photo-stack"
+      "real-likeness-from-photo-stack",
+      "tee-back-is-texas-loves-ai"
     ],
     "promptCraft": "Likeness locked from the 15-photo stack + gabr-michael master. Pass gabr-michael + gabr-michael-face on every render. Poses available as sheets. Real person: any PROPERTY featuring him stays gated on subject-approval (realPerson.approval) until Michael blesses the words + art, even though the art references now resolve."
   },

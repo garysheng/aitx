@@ -12,20 +12,35 @@
     "sheets": {
       "sheet": "reference/jake-oshea/gabr-jake.png",
       "face": "reference/jake-oshea/gabr-jake-face.png",
+      "back": "reference/jake-oshea/gabr-jake-back.png",
       "mic-speaking": "reference/jake-oshea/poses/mic-speaking.png",
       "open-arms": "reference/jake-oshea/poses/open-arms.png",
       "presenting": "reference/jake-oshea/poses/presenting.png",
       "candid-laugh": "reference/jake-oshea/poses/candid-laugh.png",
       "arms-crossed": "reference/jake-oshea/poses/arms-crossed.png"
     },
+    "altSheets": {
+      "casual-master": "reference/jake-oshea/gabr-jake-casual.png",
+      "casual-mic-speaking": "reference/jake-oshea/poses/mic-speaking-casual.png",
+      "casual-open-arms": "reference/jake-oshea/poses/open-arms-casual.png",
+      "casual-presenting": "reference/jake-oshea/poses/presenting-casual.png",
+      "casual-candid-laugh": "reference/jake-oshea/poses/candid-laugh-casual.png",
+      "casual-arms-crossed": "reference/jake-oshea/poses/arms-crossed-casual.png"
+    },
+    "wardrobe": {
+      "default": "VC/founder register: fitted charcoal-slate QUARTER-ZIP pullover with a SMALL orange AITX open-arms mark on the LEFT CHEST (no wordmark), tailored tan chino pants, white leather sneakers.",
+      "back": "The back of the quarter-zip is COMPLETELY PLAIN: no graphic, no logo, no text.",
+      "alt-casual": "Non-default alternate: black AITX tee (orange mark + 'aitx' wordmark) + dark shorts + white sneakers. Use altSheets/*casual* for this look."
+    },
     "requiredForRender": [
       "sheet"
     ],
-    "heightNote": "6 foot 4 (tall); Michael Daigler is 5 foot 4. A full foot taller. Honor this in any two-shot with Michael.",
+    "heightNote": "Jake 6 foot 4, Michael 5 foot 4. Jake reads noticeably taller, but keep it a believable ~one-foot gap: in a two-shot the TOP of Michael's head reaches about Jake's EYEBROWS (eye level near Jake's mouth). Do NOT exaggerate to Michael-reaches-Jake's-shoulder (too much). Prefer passing reference/founders/founders-standing.png as the two-shot anchor.",
     "invariants": [
       "one-face-across-eras",
       "real-likeness-from-photo-stack",
-      "reads-tall-next-to-michael"
+      "reads-tall-next-to-michael",
+      "quarter-zip-back-is-plain"
     ]
   },
   "realPerson": {
@@ -47,7 +62,7 @@
   },
   "prose": {
     "voice": "warm, easygoing, steady; the taller, clean-cut cofounder",
-    "lore": "Jake O'Shea, Michael's cofounder at AITX. Tall (6 foot 4), athletic, short dark-brown hair, a short well-groomed beard, warm friendly presence.",
-    "rules": "Real person: likeness from his photo stack, never invented. Any property featuring him stays GATED until he blesses words + art. Reads a full foot taller than Michael in two-shots."
+    "lore": "Jake O'Shea, Michael's cofounder at AITX. Tall (6 foot 4), athletic, short dark-brown hair, a short well-groomed beard, warm friendly presence. Default look is the VC/founder quarter-zip.",
+    "rules": "Real person: likeness from his photo stack, never invented. Any property featuring him stays GATED until he blesses words + art. Reads noticeably (but believably) taller than Michael, about a one-foot gap. Default wardrobe is the quarter-zip + chinos with a PLAIN back; casual tee+shorts is a preserved non-default alternate."
   }
 }
