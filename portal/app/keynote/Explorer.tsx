@@ -164,6 +164,32 @@ export default function Explorer() {
         </p>
         <p className="mt-2 text-center text-[color:var(--muted)]">Powered by NVIDIA Nemotron. Built entirely from the AITX universe. It has open arms.</p>
       </Band>
+
+      {/* the standard — AITX is one instance of a repeatable pattern */}
+      <Band bg="#141210">
+        <div className="mb-6 font-body text-xs font-semibold uppercase tracking-[0.22em]" style={{ color: OR }}>
+          Not a one-off · an open standard
+        </div>
+        <h2 className="font-display text-3xl font-bold leading-tight tracking-tight text-[#f4ede0] sm:text-5xl">
+          This is one <span style={{ color: OR }}>Agentic Brand Universe</span>. The pattern repeats for any brand.
+        </h2>
+        <p className="mt-6 max-w-3xl text-lg text-[#a99a83]">
+          A <strong className="text-[#f4ede0]">brand universe</strong> is the cartridge: a version-controlled canon plus its blessed goldens.
+          An <strong className="text-[#f4ede0]">agentic brand OS</strong> (what you just used) is the console that loads it and generates
+          anything on brand. What AITX did, a personal brand, a church, a company, or a franchise can do too.
+        </p>
+        <div className="mt-6 flex flex-wrap items-center gap-4 font-mono text-sm text-[#c9c9c9]">
+          <span className="rounded-lg border border-white/15 px-3 py-1.5">brand universe</span>
+          <span style={{ color: OR }}>→</span>
+          <span className="rounded-lg border border-white/15 px-3 py-1.5">agentic brand OS</span>
+          <span style={{ color: OR }}>→</span>
+          <span className="rounded-lg border border-white/15 px-3 py-1.5">book · flyer · merch · meme · thank-you · …</span>
+        </div>
+        <a href="https://agenticbranduniverse.com" target="_blank" rel="noreferrer"
+          className="mt-8 inline-block font-body text-sm font-semibold" style={{ color: OR }}>
+          The open standard → agenticbranduniverse.com
+        </a>
+      </Band>
     </>
   );
 }
