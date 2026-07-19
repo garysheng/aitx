@@ -34,3 +34,30 @@ Incremental save anchors for this workspace. Newest at the bottom.
 Checkpoint: see line below.
 
 2026-07-19T04:58:27Z · 2efb1cc · session save: book+goldens+portal shipped; pivot to rules-encoded generator + provenance captured as resume note
+
+---
+
+## 2026-07-19 (continued) — the generator, the SDK lab, and the live Studio
+
+Delta since 2efb1cc. Everything below is committed.
+
+**Built the generator + provenance spine** (`generator/`): `recipe.ts` (Recipe type, sha256, sidecar path, repo-relative helpers), `generateImageAsset` (injected render), `regenerate` (verifies reference hashes + model), `render-openai.ts` + `cli.ts`. Every generated asset ships a version-controlled recipe. Backfilled recipes for all 8 pre-provenance goldens.
+
+**Extensively tested the Claude Agent SDK** (`experiments/agent-sdk-lab/`, 16 experiments + `LAB-FINDINGS.md`): tools/routing/chaining, filesystem, permissions + hooks, structured output (json_schema), sessions (resume), model selection, the REAL generator integration (agent → gpt-image-2 → image + recipe), VOICE.md application (agent honors the voice), and merch/fashion design from one sentence. Verdict: the SDK is a capable, optional exploration layer over the deterministic generate calls.
+
+**Silver colorway** (`goldens/silver/`) + **all-in-one charger** redesign (built-in Lightning + USB-C + fold-out wall prongs, black + silver) per Gary's product insight.
+
+**Deterministic Remotion flyer template** (`generator/flyer-remotion/`, from Gary's AAS tip): code-defined, byte-reproducible flyers from zod-typed inputs, brand tokens, `<Still>`-per-variant + deterministic recipes.
+
+**AITX Studio — the portal generate experience, LIVE** at `aitx-brand-os.vercel.app`:
+- Stage 2a **Flyer Studio** (`/studio/flyer`): client-side, instant, free, no login — a plain-React FlyerLayout captured to PNG via html-to-image. Later made more legible (bigger mark + inline logistics) per Gary.
+- Stage 2b **AI Generate** (`/studio/create`): server route → gpt-image-2 with atoms + provenance recipe, gated by an access code (`AITX_GENERATE_CODE` = `aitx-open-arms`; `OPENAI_API_KEY` set on Vercel). Verified live end to end.
+
+Both stages built spec → plan → subagent-driven (all tasks reviewed clean). Reviewers caught two of MY plan bugs (a char-clamp inconsistency, an em dash) + a reproduced Vercel deploy-breaker (openai/zod peer → committed `portal/.npmrc`).
+
+**Tribal knowledge → `~/.agents/AGENTS.md`:** the `.npmrc` legacy-peer-deps Vercel gotcha; the Agent SDK permissions gotcha (allowedTools shadows canUseTool; use a PreToolUse hook; allowedTools = approval not availability); the deterministic-client-side-render technique (React + html-to-image, capture the true-size node).
+
+**Specs/plans added:** `docs/superpowers/specs/2026-07-18-aitx-asset-generator-provenance.md`, `2026-07-19-aitx-studio-generate.md`; `docs/superpowers/plans/2026-07-19-*` (generator spine, flyer studio, AI generate).
+
+**Resume-here (open thread):** Stage 2c — replace the access-code gate with Firebase Google sign-in + roles (viewer/creator/admin). The access code is a real, safe gate today, so 2c is hardening, not a new capability. Spec: `docs/superpowers/specs/2026-07-19-aitx-studio-generate.md` (Stage 2c section). Also outstanding since earlier: wire `invitation.dawsoncarroll.com` DNS for the Dawson site.
+2026-07-19T10:24:15Z · d82d7d8 · session save: generator spine + Agent SDK lab (16 exp) + silver/charger + Remotion flyer template + AITX Studio LIVE (flyer + AI generate). Resume: Stage 2c Firebase auth.
