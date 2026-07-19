@@ -83,3 +83,39 @@ Delta since 051a8b6. All committed.
 2. **Dangling wiki page** — `supersuit-repos/appliedai-wiki/docs/concepts/golden.md` was written (HARD definition of "golden" + significance) but is UNCOMMITTED and unpublished: still needs its mandatory hero comic + `pnpm build` + explicit publish. Not touched by this save (public-surface = explicit ask only).
 3. **NOW PIVOTED to the AITX x NVIDIA Claw Agent Hackathon** (Gary is competing; code freeze Sun 11am). Goal: win a prize by swapping the Claude Agent SDK for **Nemotron** (served via **vLLM**/NIM) and framing the compounding golden library as a Recursive Intelligence entry. Brand work resumes after.
 2026-07-19T13:41:10Z · 0322509 · brand rules (never mix logos, golden=human-approved) + clean merch goldens + Notion meme; pivoting to Nemotron hackathon. Resume: co-brand A/B, wiki golden.md, then hackathon.
+
+---
+
+## 2026-07-19 (session 4) — the hackathon build marathon: studios, self-serve keynote, and Chip filing real PRs
+
+Delta since 0322509. All committed. This session turned the submission from "a keynote + a demo" into a full, self-serve, working brand OS.
+
+**The keynote is now the one self-serve page that has everything** (`portal/app/keynote/`):
+- Chip narrates all 16 slides in his own ElevenLabs Texan voice; "▶ Play the tour with Chip" auto-advances when each clip ends (Presenter.tsx). 15 static clips in `public/assets/keynote/audio/`.
+- Embeds the AITX origin book (iframe) on the page; the story flows into an embedded **Brand OS Explorer** (Explorer.tsx): the cast, the goldens, the rules, the provenance chain, and cards into every live tool.
+- **Provenance chain**: real photos (shared with Michael/Jake/Mark's consent) → locked illustrated character. Mark Heaps added as a canon character ("trusted partner, head of developer community at NVIDIA").
+
+**Two new generative studios (live, working systems):**
+- **Meme Studio** (`/studio/memes`): pick cast (Michael/Jake/Chip) + template + caption → gpt-image-2, gated by the access code, provenance recipe.
+- **Event Flyer Studio** (`/studio/events`): the AITX Luma golden as a **deterministic version-controlled template** — meetup/co-working/hackathon/hack-fair/free-form, per-city skylines (Austin/Houston/Dallas, generated + keyed), sponsor select + upload, html-to-image download.
+
+**Provenance-first home page** (`/`, GoldenGallery.tsx + generated `lib/goldens.ts`): all 26 goldens, uniform aligned cards, each with a **slide-out provenance sidebar** (model + exact prompt + hash-pinned references, generated from the real recipes).
+
+**Chip files real pull requests (the honesty win):** `/agent`'s "Make it permanent" button calls `app/api/learn-pr/route.ts`, which opens a real GitHub PR adding the learned rule to `universe/brand-os/LEARNED-RULES.md`. A human merges it (the golden gate). Verified end-to-end (PR #1 opened + closed). Also added an honest per-session-persistence note to `/agent` so we don't overclaim to judges.
+
+**Assets:** the "jagged frontier" thesis golden; the Loom-feedback comic strip (`explorations/comics/`, for Gary's LinkedIn); transparent default logo (keyed white out).
+
+**Submission doc** (`hackathon/SUBMISSION.md`): humanized single-post X copy (VOICE.md applied), Descript demo link, repo link, the full Nemotron bounty answer, and the ⚠️ don't-pick-NemoClaw note.
+
+**Tribal knowledge worth remembering (not yet in a skill):**
+- ElevenLabs: a fresh **professional** voice clone (Gary's `yffqtNJ84E8Jjz7BeGaF`) returns `voice_not_fine_tuned` until fine-tuning completes (hours); instant clones work with `eleven_multilingual_v2`, pro clones need to finish training. Chip uses `OjnJBCejJlol0Ps2wkAK` + `eleven_v3`.
+- gpt-image-2 does NOT support `--background transparent` on the edit endpoint (400). To get a transparent asset, render on a solid bg and chroma-key, or render on the exact target bg color.
+- Sponsor-logo whitening for dark/mauve grounds: key the white bg to transparent, keep dark content, then CSS `filter: brightness(0) invert(1)`. SVG wordmarks that render invisible usually have explicit `fill="white"` (or inherit `fill="none"` from the root) — sed those to a dark fill before rasterizing.
+- The agent's "learns/compounds" claim MUST be honest for technical judges: the browser demo KB is per-session; real persistence is the PR → human-merge → committed file. Overclaiming silent GitHub auto-updates reads as a scam; a PR that a human merges IS the golden gate.
+
+**Resume-here (open threads):**
+1. Two background sub-agents may still be finishing (or were stopped): the "agentic brand universe ends slop" story book on the garysheng-books platform. Check for a completion notification / the live URL.
+2. `/thanks` sponsor-logo option (add a logo/image to the thank-you card) — not yet built.
+3. Wire all sponsor logos into the brand OS on-demand (Apify added; Featherless/Supabase still missing files).
+4. Gary's pro voice clone: swap Chip (or add a Gary-narrated track) once `yffqtNJ84E8Jjz7BeGaF` finishes fine-tuning.
+5. `/meta-coherence-check` was requested at the end of this session — run it as the next task.

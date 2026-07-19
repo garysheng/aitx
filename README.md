@@ -2,15 +2,19 @@
 
 ### AITX × NVIDIA Claw Agent Hackathon submission
 
-> **A version-controlled home for a brand, with an agent (Chip, the brand czar) that learns its voice and never breaks it.** Powered by **NVIDIA Nemotron via NIM**, Chip generates anything on-brand *and gets sharper the more it runs*: it critiques its own output against the brand's rules, and when it slips it writes itself a new rule and remembers it. No model retraining. Every asset carries full provenance, so nothing is a mystery and everything is reproducible.
+> **A version-controlled home for a brand, with an agent (Chip, the brand czar) that learns its voice and never breaks it.** Powered by **NVIDIA Nemotron via NIM**, Chip generates anything on-brand *and gets sharper the more it runs*: it critiques its own output against the brand's rules, and when it slips it distills a new rule and **opens a pull request** to add it to the version-controlled brand. A human merges it (the golden gate). No model retraining, no silent commits. Every asset carries full provenance, so nothing is a mystery and everything is reproducible.
 
 **Track:** Recursive Intelligence · **Bounties:** Best Use of Nemotron · Most Commercializable (Antler)
 
 ## For judges
 
-- **Try the working system (2 min):** [aitx-brand-os.vercel.app/agent](https://aitx-brand-os.vercel.app/agent) — click an example, watch Nemotron's first try go off-brand, teach it once, watch it fix itself and remember the rule. This is live Nemotron, not a mockup.
-- **Watch the ~5-min demo:** the co-presented keynote, [aitx-brand-os.vercel.app/keynote](https://aitx-brand-os.vercel.app/keynote).
-- **The engineering** is the [recursive-intelligence loop](#how-it-works-the-recursive-intelligence-loop) below: Nemotron generates, a deterministic critic scores, and the agent distills each mistake into a version-controlled rule it reads next time. Try it on `/agent` — the same task goes off-brand blind, then clean once it has learned the rule.
+- **Try the working system (2 min):** [aitx-brand-os.vercel.app/agent](https://aitx-brand-os.vercel.app/agent) — click an example, watch Nemotron's first try go off-brand, teach it once, watch it fix itself. Then hit **"Make it permanent"** and Chip **opens a real pull request** with the rule it learned. Live Nemotron, real PRs, not a mockup.
+- **Take the self-serve tour:** the [keynote](https://aitx-brand-os.vercel.app/keynote) is narrated end-to-end by Chip in his own voice (hit "Play the tour with Chip"). It flows into an embedded **Brand OS Explorer**: the cast, the goldens, the rules, and every live tool, on one page.
+- **Browse the provenance:** the [home gallery](https://aitx-brand-os.vercel.app) shows all 26 goldens; click "How it was made" on any of them for a slide-out sidebar with the exact model, prompt, and hash-pinned references.
+- **The engineering** is the [recursive-intelligence loop](#how-it-works-the-recursive-intelligence-loop) below: Nemotron generates, a deterministic critic scores, the agent distills each mistake into a rule, and opens a PR to persist it. Code map at the bottom.
+
+### Honest note on persistence
+In the live `/agent` demo, the in-browser knowledge base sharpens as you use it and resets on refresh — it shows the *mechanism* live. The **real** persistence path is the pull request: Chip proposes the rule, a human reviews and merges, and it becomes a committed file in the version-controlled brand OS (`universe/brand-os/LEARNED-RULES.md`). Every rule the agent ever learned is a git diff. No overclaiming.
 
 ## ▶ Start here: [aitx-brand-os.vercel.app/keynote](https://aitx-brand-os.vercel.app/keynote)
 
@@ -40,11 +44,14 @@ Chip holds the canon, the blessed "goldens," and the rules. Michael and Jake don
 
 ### See it live
 
-- 🎤 **[The keynote](https://aitx-brand-os.vercel.app/keynote)** — start here. The full argument, co-presented by Gary + Chip.
-- 🤖 **[The learning agent](https://aitx-brand-os.vercel.app/agent)** — give it a task, watch it slip off-brand, teach it once, watch it fix itself. Real Nemotron, live.
+- 🏠 **[The Brand OS home](https://aitx-brand-os.vercel.app)** — all 26 goldens, each with a provenance sidebar (model + exact prompt + hash-pinned refs).
+- 🎤 **[The keynote](https://aitx-brand-os.vercel.app/keynote)** — the self-serve tour, narrated by Chip, ending in the embedded Brand OS Explorer.
+- 🤖 **[The learning agent](https://aitx-brand-os.vercel.app/agent)** — teach it a rule; it opens a real pull request. Live Nemotron.
+- 🎟️ **[Event Flyer Studio](https://aitx-brand-os.vercel.app/studio/events)** — the AITX Luma flyer as a version-controlled template: pick event, city (per-city skylines), and sponsors, download deterministically.
+- 😂 **[Meme Studio](https://aitx-brand-os.vercel.app/studio/memes)** — make a meme with Michael, Jake, and Chip (gpt-image-2, provenance recipe).
+- 💌 **[Sponsor thank-yous](https://aitx-brand-os.vercel.app/thanks)** — Chip writes them; you record them in your voice.
 - 💼 **[The platform / business](https://aitx-brand-os.vercel.app/platform)** — GitHub for brand universes.
-- 💌 **[On-brand sponsor thank-yous](https://aitx-brand-os.vercel.app/thanks)** — Chip writes them; you record them in your voice.
-- 📖 **Proof — books Chip made in ~30 min each:** [Show Up (Michael)](https://show-up-book.vercel.app) · [Do All The Things (Mark Heaps of NVIDIA)](https://do-all-the-things-book.vercel.app) · [AITX origin story](https://aitx-origin.vercel.app)
+- 📖 **Proof — books made in ~30 min each:** [Show Up (Michael)](https://show-up-book.vercel.app) · [Do All The Things (Mark Heaps of NVIDIA)](https://do-all-the-things-book.vercel.app) · [AITX origin story](https://aitx-origin.vercel.app) · reproduce one yourself: [`docs/HOW-TO-REPRODUCE-A-COMIC-BOOK.md`](docs/HOW-TO-REPRODUCE-A-COMIC-BOOK.md)
 
 ### How it works (the recursive-intelligence loop)
 
@@ -56,13 +63,14 @@ flowchart LR
     G --> C["Deterministic<br/>brand-rule critic<br/>(turns 'on-brand'<br/>into a score)"]
     C -->|clean| OUT["On-brand asset<br/>+ provenance recipe<br/>(model, prompt,<br/>hash-pinned refs)"]
     C -->|violation| D["Nemotron distills<br/>the mistake into a<br/>general, reusable rule"]
-    D --> KB[("Version-controlled<br/>knowledge base<br/>(grows over time)")]
+    D --> PR["Opens a PULL REQUEST<br/>to the brand OS repo"]
+    PR -->|human merges<br/>(the golden gate)| KB[("Version-controlled<br/>knowledge base<br/>LEARNED-RULES.md")]
     KB -->|grounds every<br/>future request| G
 ```
 
-- **Nemotron does two jobs:** generate the asset, and (when the critic flags it) distill the specific mistake into a durable rule.
+- **Nemotron does two jobs:** generate the asset, and (when the critic flags it) distill the specific mistake into a durable, general rule.
 - **The critic is deterministic** — it turns "on-brand" into a number the agent optimizes against, so improvement is *measured*, not claimed.
-- **The knowledge base is the intelligence.** It's version-controlled and compounds: the more the agent runs, the higher the floor. No model retraining.
+- **The knowledge base is the intelligence, and it persists honestly.** The agent does not silently commit — it opens a pull request; a human merges it. From then on it's a version-controlled file, and every rule it ever learned is a git diff. No model retraining.
 - **Every asset is reproducible** — its recipe pins the model, exact prompt, and the references by hash.
 
 ### Where the Nemotron code lives
@@ -70,9 +78,14 @@ flowchart LR
 | Path | What |
 |---|---|
 | `portal/app/api/agent/route.ts` | Nemotron (NIM) generation + self-critique + the learning step |
+| `portal/app/api/learn-pr/route.ts` | Chip opens a real GitHub pull request with a learned rule (the golden gate) |
 | `portal/lib/agent/` | the deterministic brand-rule critic (the metric) + the knowledge base |
+| `portal/app/studio/events` + `lib/events` | the deterministic event-flyer template (Luma golden fork) |
+| `portal/app/studio/memes` + `app/api/meme` | the founder + Chip meme generator (gpt-image-2 + provenance) |
+| `portal/lib/goldens.ts` + `components/GoldenGallery.tsx` | the provenance gallery, generated from the real recipes |
 | `hackathon/brand-agent/` | the CLI + the measured recursive-intelligence delta (`demo.py`) + full writeup |
 | `generator/` | the provenance spine — every asset ↔ its exact recipe |
+| `docs/HOW-TO-REPRODUCE-A-COMIC-BOOK.md` | the reproducible comic-book pipeline |
 | `hackathon/SUBMISSION.md` | the hackathon submission answers |
 
 ### Run the demo yourself
