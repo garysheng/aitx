@@ -1,0 +1,7 @@
+{
+  "name": "agent-sdk-lab",
+  "private": true,
+  "type": "module",
+  "dependencies": { "@anthropic-ai/claude-agent-sdk": "latest", "zod": "^4.0.0" },
+  "devDependencies": { "tsx": "latest" }
+}
