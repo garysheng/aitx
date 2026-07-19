@@ -141,6 +141,32 @@ export function RecipeToMany() {
   );
 }
 
+/* Slide 11 — Michael & Jake stay in charge of taste; Chip does the making. */
+export function FoundersToChip() {
+  return (
+    <div className="rounded-2xl border p-5" style={{ borderColor: LINE, background: "#fffdf8" }}>
+      <div className="overflow-hidden rounded-xl">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/assets/founders/founders-candid.png" alt="Michael and Jake, the AITX founders" className="w-full object-cover" />
+      </div>
+      <div className="mt-2 text-center font-body text-sm font-semibold" style={{ color: INK }}>
+        Michael &amp; Jake <span style={{ color: MUTED }}>· stay in charge of taste</span>
+      </div>
+      <div className="my-2 flex items-center justify-center gap-2 font-body text-xs" style={{ color: OR }}>
+        <span className="h-px w-8" style={{ background: LINE }} /> they just talk to <span className="text-base">↓</span> <span className="h-px w-8" style={{ background: LINE }} />
+      </div>
+      <div className="flex items-center gap-3 rounded-xl p-3" style={{ background: "#fff4e2" }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/assets/keynote/chip-joy.jpg" alt="Chip, the AITX brand czar" className="h-16 w-16 shrink-0 object-contain" />
+        <div>
+          <div className="font-display text-lg font-bold" style={{ color: ORD }}>Chip</div>
+          <div className="font-body text-sm" style={{ color: MUTED }}>the brand czar. holds the canon, the goldens, the rules. does the making.</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* Slide 15 — version control your brand DNA: an edit propagates forward. */
 export function BrandDNA() {
   const Node = ({ label, on, sub }: { label: string; on?: boolean; sub?: string }) => (

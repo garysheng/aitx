@@ -42,7 +42,9 @@ export default function Presenter() {
     setIndex(i);
     document.getElementById(`s${i + 1}`)?.scrollIntoView({ behavior: "smooth" });
     const beat = SCRIPT[i];
-    const advance = () => play(i + 1);
+    // a slight breath between slides so Chip's narration doesn't run one clip
+    // straight into the next
+    const advance = () => { timer.current = setTimeout(() => play(i + 1), 650); };
 
     if (beat.audio && beat.audio !== "inline") {
       const a = new Audio(beat.audio);
@@ -98,8 +100,9 @@ export default function Presenter() {
           <span className="px-1 font-mono text-sm tabular-nums text-neutral-600">{index + 1} / {SCRIPT.length}</span>
           <button onClick={() => jump(index + 1)} className="rounded-full px-3 py-1 text-lg text-neutral-600 hover:text-neutral-900" aria-label="Next">›</button>
           <button onClick={() => setLoop((l) => !l)} title="Loop the tour (kiosk mode)"
-            className="rounded-full px-2.5 py-1 text-sm" style={{ color: loop ? "#c2340a" : "#9a9a9a" }}>
-            🔁
+            className="rounded-full px-3 py-1 text-sm font-semibold"
+            style={{ background: loop ? "#ff420122" : "transparent", color: loop ? "#c2340a" : "#8a8a8a" }}>
+            🔁 Loop{loop ? " on" : ""}
           </button>
           <button onClick={stop} className="rounded-full px-3 py-1.5 text-sm text-neutral-500 hover:text-neutral-800">Exit</button>
         </>

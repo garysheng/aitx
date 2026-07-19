@@ -5,7 +5,7 @@ import AutoDemo from "./AutoDemo";
 import ChipBubble from "./ChipBubble";
 import ChipSubtitles from "./ChipSubtitles";
 import Explorer from "./Explorer";
-import { MaximizeMeter, AdditiveVsMultiplicative, TryAndBless, RecipeToMany, BrandDNA } from "./Diagrams";
+import { MaximizeMeter, AdditiveVsMultiplicative, TryAndBless, RecipeToMany, BrandDNA, FoundersToChip } from "./Diagrams";
 
 export const metadata: Metadata = {
   title: "The Agentic Brand Universe — a gift to AITX",
@@ -301,9 +301,7 @@ export default function Keynote() {
               voice. Michael and Jake stay in charge of taste. Chip does the making.
             </p>
           </div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/keynote/chip-joy.jpg" alt="Chip, the AITX brand czar"
-            className="mx-auto w-full max-w-[300px]" />
+          <FoundersToChip />
         </div>
       </Slide>
 
