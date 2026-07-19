@@ -9,8 +9,9 @@ export const metadata: Metadata = {
     description:
       "Watch an NVIDIA Nemotron agent learn a brand's rules from its own mistakes, live.",
     type: "website",
+    images: [{ url: "/assets/og-site.png", width: 1200, height: 630, alt: "The AITX Brand OS" }],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/assets/og-site.png"] },
 };
 
 export default function AgentLayout({ children }: { children: React.ReactNode }) {

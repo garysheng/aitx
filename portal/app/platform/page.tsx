@@ -8,8 +8,9 @@ export const metadata: Metadata = {
     title: "Brand Universes — a marketplace for living brands",
     description: "Create a brand universe once. Fork it, rent it, generate unlimited on-brand content.",
     type: "website",
+    images: [{ url: "/assets/og-site.png", width: 1200, height: 630, alt: "The AITX Brand OS" }],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/assets/og-site.png"] },
 };
 
 const NV = "#76b900";

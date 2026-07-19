@@ -4,8 +4,8 @@ import FlyerStudio from "@/components/events/FlyerStudio";
 export const metadata: Metadata = {
   title: "AITX Event Flyer Studio",
   description: "Make an on-brand AITX event flyer in seconds. Monthly meetup, co-working, hackathon, hack fair, or free-form. Pick a city, add sponsors, download. Forked from the AITX Luma golden, fully reproducible.",
-  openGraph: { title: "AITX Event Flyer Studio", description: "On-brand AITX event flyers in seconds.", type: "website" },
-  twitter: { card: "summary_large_image" },
+  openGraph: { title: "AITX Event Flyer Studio", description: "On-brand AITX event flyers in seconds.", type: "website", images: [{ url: "/assets/og-site.png", width: 1200, height: 630, alt: "The AITX Brand OS" }] },
+  twitter: { card: "summary_large_image", images: ["/assets/og-site.png"] },
 };
 
 export default function EventsPage() {
