@@ -1,0 +1,22 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/collabs/nvidia-aitx/meme-guest-of-honor-nvidia.png",
+  "createdAt": "2026-07-19T10:37:06.808Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "A tall, clean single-panel meme, warm paper white background (#fffdf7), premium and minimal. Centered illustration of a long communal Texas meetup table with mismatched chairs, one chair pulled out slightly with a small reserved card on it. The reserved card reads exactly 'GUEST OF HONOR' in black, with a small NVIDIA wordmark rendered in NVIDIA green #76b900 beneath it. Above the table, the orange AITX open-arms mark hovers warmly like a welcome banner in AITX orange #ff4201. Big friendly black headline at the top reads exactly: 'NVIDIA pulled up. We saved them the good seat.' Soft warm lighting, hand-drawn cozy style, plenty of negative space, print-quality. Small 'AITX x NVIDIA' lockup at the bottom, AITX in orange #ff4201, NVIDIA in green #76b900.",
+  "params": {
+    "size": "1024x1536",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    }
+  ]
+}

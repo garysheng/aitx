@@ -1,0 +1,22 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/collabs/nvidia-aitx/sticker-built-slow-yall.png",
+  "createdAt": "2026-07-19T10:37:06.810Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "A die-cut vinyl sticker on a plain neutral background, isolated with clean white die-cut border and soft drop shadow, studio product shot. Design is a rounded badge in AITX orange #ff4201 shaped like a Texas-friendly seal. Inside, bold black stacked text reads exactly: 'BUILT THE SLOW WAY' on top and 'Y'ALL' large below it, with a small line under it reading 'loyalty. reputation. good vibes.' A thin ring border in NVIDIA green #76b900 circles the badge, with a tiny 'AITX x NVIDIA' at the bottom of the ring, NVIDIA wordmark in green #76b900. The small orange AITX open-arms mark sits at the top center of the badge. Flat vector, glossy vinyl finish, warm paper white background inside the badge, clean and premium.",
+  "params": {
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    }
+  ]
+}
