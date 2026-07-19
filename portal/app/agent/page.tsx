@@ -65,6 +65,9 @@ export default function AgentPage() {
   const [teaching, setTeaching] = useState(false);
   const [err, setErr] = useState("");
   const [history, setHistory] = useState<{ before: number; after: number }[]>([]);
+  const [lastLesson, setLastLesson] = useState<string | null>(null);
+  const [filing, setFiling] = useState(false);
+  const [prUrl, setPrUrl] = useState<string | null>(null);
 
   const agg = useMemo(() => {
     if (!history.length) return null;
@@ -87,17 +90,34 @@ export default function AgentPage() {
 
   async function teach() {
     if (!blind || !blind.violations.length || teaching) return;
-    setTeaching(true); setErr("");
+    setTeaching(true); setErr(""); setPrUrl(null);
     try {
       const { lessons: distilled } = await callAgent({ action: "learn", request, violations: blind.violations });
       const fresh = (distilled as string[]).filter((l) => l && !lessons.includes(l));
       const next = fresh.length ? [...lessons, ...fresh] : lessons;
-      if (fresh.length) { setLessons(next); setNewIdx(next.map((_, i) => i).slice(lessons.length)); }
+      if (fresh.length) { setLessons(next); setNewIdx(next.map((_, i) => i).slice(lessons.length)); setLastLesson(fresh[0]); }
       const f = await callAgent({ action: "generate", request, useKnowledge: true, lessons: next });
       setFixed(f);
       setHistory((h) => [...h, { before: blind.score, after: f.score }]);
     } catch (e: any) { setErr(e.message || "could not learn"); }
     finally { setTeaching(false); }
+  }
+
+  // Chip opens a PULL REQUEST with the learned rule — a human merges it (the golden gate).
+  async function filePR() {
+    if (!lastLesson || filing) return;
+    setFiling(true); setErr("");
+    try {
+      const res = await fetch("/api/learn-pr", {
+        method: "POST",
+        headers: { "content-type": "application/json", "x-aitx-code": "aitx-open-arms" },
+        body: JSON.stringify({ rule: lastLesson, request }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error || "could not open the PR");
+      setPrUrl(data.url);
+    } catch (e: any) { setErr(e.message || "could not open the PR"); }
+    finally { setFiling(false); }
   }
 
   return (
@@ -198,6 +218,27 @@ export default function AgentPage() {
                 </div>
                 <AssetBody asset={fixed.asset} />
                 <p className="mt-3 text-xs text-[color:var(--muted)]">It won't make that mistake again. No retraining.</p>
+
+                {/* make it permanent: Chip opens a PR with the rule; a human merges it */}
+                {lastLesson && (
+                  <div className="mt-4 rounded-xl border p-3" style={{ borderColor: "#e0d6c2", background: "#fffdf9" }}>
+                    {prUrl ? (
+                      <p className="text-sm">
+                        ✅ Chip opened a pull request with this rule.{" "}
+                        <a href={prUrl} target="_blank" rel="noreferrer" className="font-semibold underline" style={{ color: "#c2340a" }}>Review it on GitHub →</a>
+                        <span className="mt-1 block text-xs text-[color:var(--muted)]">A human merges it (the golden gate). Then it's version-controlled and every future run obeys it.</span>
+                      </p>
+                    ) : (
+                      <>
+                        <button onClick={filePR} disabled={filing}
+                          className="rounded-lg px-4 py-2 text-sm font-semibold text-white disabled:opacity-50" style={{ background: "#24292f" }}>
+                          {filing ? "Opening a pull request…" : "⑃ Make it permanent — open a pull request"}
+                        </button>
+                        <span className="mt-1 block text-xs text-[color:var(--muted)]">Chip proposes the rule as a PR to the brand OS repo. A human merges it. No silent commits.</span>
+                      </>
+                    )}
+                  </div>
+                )}
               </div>
             )}
           </div>
