@@ -20,7 +20,7 @@ const DESCRIPTION =
   "How two builders turned ten people in a room into the largest AI builder community in Texas. An illustrated origin story of AITX.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://origin-of-aitx.vercel.app"),
+  metadataBase: new URL("https://aitx-origin.vercel.app"),
   title: TITLE,
   description: DESCRIPTION,
   openGraph: {
