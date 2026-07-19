@@ -1,0 +1,33 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/memes/pov-found-aitx.png",
+  "createdAt": "2026-07-19T03:10:37.125Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "Square wholesome, funny internet MEME in the AITX comic brand style, AITX orange + black + white. Image: Michael Daigler (stocky, mustache + low man-bun, black AITX tee; match the face reference) with warm open arms welcoming, a small orange AITX open-arms mark (from the logo reference) in the scene. Meme text baked in the classic top/bottom bold white caption style with black outline: TOP: 'POV: YOU JUST FOUND THE LARGEST'. BOTTOM: 'AI BUILDER COMMUNITY IN TEXAS'. Light, wholesome, shareable. Text crisp and correctly spelled.",
+  "params": {
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/michael-daigler/gabr-michael.png",
+      "sha256": "a85f8be4b1c5055c85fab6790805fe167757c641f6257a6189e71005b1b3527f",
+      "role": "character:michael"
+    },
+    {
+      "path": "universe/reference/michael-daigler/gabr-michael-face.png",
+      "sha256": "fce92d9303fdb1d8753141cd65b5ea2ab716c3265798153d924b2a862ea1be36",
+      "role": "face:michael"
+    },
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    }
+  ],
+  "notes": "Recipe reconstructed from the build session (pre-provenance); prompt is faithful to what was used, createdAt is the file mtime."
+}

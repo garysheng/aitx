@@ -1,0 +1,21 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/silver/power-bank-silver.png",
+  "createdAt": "2026-07-19T09:16:40.026Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "Premium studio product shot of an AITX power bank in brushed SILVER anodized aluminum with polished chrome edges, three-quarter hero angle, a subtle embossed orange AITX open-arms mark (from the reference) centered, USB-C port, four white LED indicators, clean light-grey studio background, soft shadow. Premium silver tier merch.",
+  "params": {
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1"
+    }
+  ]
+}

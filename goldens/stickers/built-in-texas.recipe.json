@@ -1,0 +1,23 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/stickers/built-in-texas.png",
+  "createdAt": "2026-07-19T03:10:36.553Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "A single die-cut VINYL STICKER, product shot, centered on a plain light neutral background, glossy sticker look with a clean white die-cut border and soft drop shadow. The sticker art: a round badge with the AITX open-arms mark (from the logo reference, exact orange #ff4201 mark) at the center and the text 'BUILT IN TEXAS' curving around the badge. ONE sticker only, no sheet. Crisp, correctly spelled.",
+  "params": {
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    }
+  ],
+  "notes": "Recipe reconstructed from the build session (pre-provenance); prompt is faithful to what was used, createdAt is the file mtime."
+}

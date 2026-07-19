@@ -1,0 +1,33 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/memes/uncle-sam-submit.png",
+  "createdAt": "2026-07-19T04:17:29.920Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "SQUARE meme poster, classic 'Uncle Sam, I Want YOU' recruitment-poster composition, AITX comic brand style, orange #ff4201 + black + white, orange sunburst background. LAYOUT: the headline 'I WANT YOU' is a CLEAN bold horizontal band across the VERY TOP, with clear space beneath it; BELOW it, with a clear gap, Michael Daigler as Uncle Sam (mustache + low man-bun; match the face reference) points his index finger DIRECTLY at the viewer. He wears a PLAIN orange-and-white striped top hat with NO logo and a black AITX tee (the ONLY logo in the image is the aitx mark + wordmark on the tee). Bottom band: 'TO SUBMIT BEFORE THE DEADLINE'. No other text, no footer. Correctly spelled.",
+  "params": {
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/michael-daigler/gabr-michael.png",
+      "sha256": "a85f8be4b1c5055c85fab6790805fe167757c641f6257a6189e71005b1b3527f",
+      "role": "character:michael"
+    },
+    {
+      "path": "universe/reference/michael-daigler/gabr-michael-face.png",
+      "sha256": "fce92d9303fdb1d8753141cd65b5ea2ab716c3265798153d924b2a862ea1be36",
+      "role": "face:michael"
+    },
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    }
+  ],
+  "notes": "Recipe reconstructed from the build session (pre-provenance); prompt is faithful to what was used, createdAt is the file mtime."
+}

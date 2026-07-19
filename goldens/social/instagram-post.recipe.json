@@ -1,0 +1,38 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/social/instagram-post.png",
+  "createdAt": "2026-07-19T03:12:12.094Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "Square Instagram post, AITX brand style: bold, punchy, AITX orange #ff4201 + black + white, comic-illustration + clean type. The two AITX founders (use the FIRST reference two-shot for correct heights/faces/wardrobe: Michael shorter with mustache + low bun + black AITX tee; Jake taller with short beard + charcoal quarter-zip + tan chinos) standing confident, the orange AITX open-arms mark (from the logo reference) above/beside them as the real mark. Bold baked headline: 'THE LARGEST AI BUILDER COMMUNITY IN TEXAS'. Small handle '@aitx' in a corner. Crisp correctly-spelled text, Instagram-ready composition.",
+  "params": {
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/founders/founders-standing.png",
+      "sha256": "76694a53539bda3b0b8385bffe0f76e9f3dc4be927cddda14cddfc3e80adb987",
+      "role": "founders-two-shot"
+    },
+    {
+      "path": "universe/reference/michael-daigler/gabr-michael-face.png",
+      "sha256": "fce92d9303fdb1d8753141cd65b5ea2ab716c3265798153d924b2a862ea1be36",
+      "role": "face:michael"
+    },
+    {
+      "path": "universe/reference/jake-oshea/gabr-jake-face.png",
+      "sha256": "80895f0f78b32253436175231afe7d0aa3b7728d783e72f34f76c173cfd6113b",
+      "role": "face:jake"
+    },
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    }
+  ],
+  "notes": "Recipe reconstructed from the build session (pre-provenance); prompt is faithful to what was used, createdAt is the file mtime."
+}

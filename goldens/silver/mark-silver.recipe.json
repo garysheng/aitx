@@ -1,0 +1,21 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/silver/mark-silver.png",
+  "createdAt": "2026-07-19T09:16:37.373Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "The AITX open-arms mark (use the reference for the EXACT shape) rendered in brushed metallic SILVER / polished chrome with soft realistic reflections and a subtle bevel, premium and clean, centered on a deep charcoal-to-black gradient background. Same exact mark geometry as the reference but in silver metal instead of orange. Product/branding hero render.",
+  "params": {
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1"
+    }
+  ]
+}

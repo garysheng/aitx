@@ -1,0 +1,28 @@
+{
+  "recipeVersion": 1,
+  "asset": "goldens/flyers/hackathon.png",
+  "createdAt": "2026-07-19T03:11:22.471Z",
+  "generator": {
+    "kind": "image-model",
+    "tool": "aitx-generator@0.1.0"
+  },
+  "model": "openai:gpt-image-2",
+  "prompt": "Bold event POSTER / flyer, portrait, in the AITX brand style: energetic modern poster design, AITX orange #ff4201 + black + white, clean strong hierarchy, comic-illustration meets graphic poster. HEADLINE (baked, big, legible): 'AITX HACKATHON'. Subhead: 'Build the future in a weekend'. A lively hackathon scene at the Antler office (use the venue reference) with builders at laptops and orange energy behind the type. The AITX open-arms mark (from the logo reference) rendered as the real mark, prominent. Details block at the bottom: 'ANTLER, AUSTIN, TX' / 'REGISTER ON LUMA' and a small sponsor strip feel. Make all text crisp and correctly spelled.",
+  "params": {
+    "size": "1024x1536",
+    "quality": "high"
+  },
+  "references": [
+    {
+      "path": "universe/reference/aitx-mark/aitx-logo.png",
+      "sha256": "b9a9e4ce7136b454150181521657bea1acc0a9bde493e0112365195b706b4ea1",
+      "role": "logo"
+    },
+    {
+      "path": "universe/reference/antler/alcove-live-1.png",
+      "sha256": "8c13e93fe466243789820e330f10c08fd6d20ed1d4b7ef88a3acdde873e92239",
+      "role": "venue:antler"
+    }
+  ],
+  "notes": "Recipe reconstructed from the build session (pre-provenance); prompt is faithful to what was used, createdAt is the file mtime."
+}
