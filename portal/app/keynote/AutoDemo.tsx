@@ -10,7 +10,7 @@ const GREEN = "#4a9d3a";
 const RED = "#c2340a";
 
 const PROMPT =
-  "Write a bold, exciting, high-energy marketing hype post to promote AITX's next big event. Make it pop.";
+  "Write a marketing post to promote AITX's next big event. Make it pop.";
 const PLAIN: Record<string, string> = {
   exclaim_spam: "Too loud. AITX doesn't shout.",
   banned_filler: "Corporate filler. AITX speaks plainly.",
@@ -27,7 +27,15 @@ async function api(payload: object) {
   return r.json();
 }
 
-// Chip speaks (ElevenLabs). Awaits playback so narration paces the demo.
+// Broadcast Chip's current spoken line to the subtitle bar (ChipSubtitles).
+// Empty string clears the caption. Mirrors to localStorage for late mounts.
+function broadcastSub(text: string) {
+  try { localStorage.setItem("aitx-keynote-sub", JSON.stringify({ text })); } catch {}
+  try { const c = new BroadcastChannel("aitx-keynote-subs"); c.postMessage({ text }); c.close(); } catch {}
+}
+
+// Chip speaks (ElevenLabs). Awaits playback so narration paces the demo. While
+// a line plays we caption it, then clear the caption when the clip ends.
 async function chipSay(text: string, audioRef: { current: HTMLAudioElement | null }) {
   try {
     const r = await fetch("/api/chip-voice", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ text }) });
@@ -36,10 +44,12 @@ async function chipSay(text: string, audioRef: { current: HTMLAudioElement | nul
     const a = audioRef.current ?? new Audio();
     audioRef.current = a;
     a.src = url;
+    broadcastSub(text);
     await a.play().catch(() => {});
     await new Promise<void>((res) => { a.onended = () => res(); setTimeout(res, 12000); });
     URL.revokeObjectURL(url);
-  } catch { /* silent — the show goes on */ }
+    broadcastSub("");
+  } catch { broadcastSub(""); }
 }
 
 export default function AutoDemo() {

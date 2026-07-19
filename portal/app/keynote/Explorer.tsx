@@ -190,7 +190,7 @@ export default function Explorer() {
           <span style={{ color: OR }}>→</span>
           <span className="rounded-lg border border-white/15 px-3 py-1.5">book · flyer · merch · meme · thank-you · …</span>
         </div>
-        <a href="https://agenticbranduniverse.com" target="_blank" rel="noreferrer"
+        <a href="https://www.agenticbranduniverse.com/" target="_blank" rel="noreferrer"
           className="mt-8 inline-block font-body text-sm font-semibold" style={{ color: OR }}>
           The open standard → agenticbranduniverse.com
         </a>

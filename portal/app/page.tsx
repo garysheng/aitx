@@ -40,7 +40,7 @@ export default function Home() {
         </p>
         <p className="mt-3">
           This is one Agentic Brand Universe. The pattern repeats for any brand — the open standard is at{" "}
-          <a href="https://agenticbranduniverse.com" target="_blank" rel="noreferrer" className="font-semibold" style={{ color: "var(--orange-deep)" }}>agenticbranduniverse.com</a>.
+          <a href="https://www.agenticbranduniverse.com/" target="_blank" rel="noreferrer" className="font-semibold" style={{ color: "var(--orange-deep)" }}>agenticbranduniverse.com</a>.
         </p>
       </footer>
     </main>

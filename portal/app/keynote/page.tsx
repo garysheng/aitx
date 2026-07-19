@@ -3,6 +3,7 @@ import SlideNav from "./SlideNav";
 import Presenter from "./Presenter";
 import AutoDemo from "./AutoDemo";
 import ChipBubble from "./ChipBubble";
+import ChipSubtitles from "./ChipSubtitles";
 import Explorer from "./Explorer";
 
 export const metadata: Metadata = {
@@ -62,6 +63,7 @@ export default function Keynote() {
       <SlideNav count={16} />
       <Presenter />
       <ChipBubble />
+      <ChipSubtitles />
 
 
       {/* 1 — GRATITUDE / TITLE */}
