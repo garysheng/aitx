@@ -1,8 +1,8 @@
-# AITX Brand Agent — AITX × NVIDIA Claw Agent Hackathon submission
+# Agentic Brand Universe — AITX × NVIDIA Claw Agent Hackathon submission
 
-> **Chip, the AITX brand czar: an agent that learns your brand's voice and never breaks it.**
-> A version-controlled brand universe (canon + blessed goldens + rules) with an agent, powered by
-> **NVIDIA Nemotron via NIM**, that generates anything on-brand *and gets sharper the more it runs* —
+> **A version-controlled home for a brand, with an agent (Chip, the brand czar) that learns its voice and never breaks it.**
+> Canon + blessed goldens + rules, plus an agent powered by
+> **NVIDIA Nemotron via NIM** that generates anything on-brand *and gets sharper the more it runs* —
 > it critiques its own output against the brand rules, and when it slips it writes itself a new rule
 > and remembers it. No model retraining. Every asset carries full provenance (model + prompt +
 > hash-pinned references), so nothing is a mystery and everything is reproducible.

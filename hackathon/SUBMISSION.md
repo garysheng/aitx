@@ -4,9 +4,13 @@ Copy-paste each field into the submission form. Fields marked **[YOU]** need you
 
 ---
 
+## Project Name
+
+Agentic Brand Universe
+
 ## Submission Description
 
-AITX Brand Agent (Chip): a brand czar that learns your voice and never breaks it. Most teams use generative AI as a faster intern — one-off prompts, generic output, a brand that drifts a little more with every asset. Chip is different: an agentic brand universe where the brand is a version-controlled system of canon, blessed "golden" assets, and rules, plus an agent that generates anything on-brand and gets sharper the more it runs. Powered by NVIDIA Nemotron (via NIM), Chip generates a piece, critiques its own output against the brand's rules, and when it slips it writes itself a new rule and remembers it — measurably fewer violations run over run, no model retraining. We built a real, working universe for the AITX community: a narrated origin book, a full merch line, memes, sponsor thank-yous in Chip's own voice, and two more books spun up in about 30 minutes each. Every asset carries full provenance (model + prompt + the exact references, hash-pinned) so nothing is a mystery and everything is reproducible. Live at aitx-brand-os.vercel.app.
+Agentic Brand Universe: a version-controlled home for a brand, with an agent that learns its voice and never breaks it. Most teams use generative AI as a faster intern — one-off prompts, generic output, a brand that drifts a little more with every asset. An Agentic Brand Universe is different: the brand is a version-controlled system of canon, blessed "golden" assets, and rules, plus an agent (we call ours Chip, the brand czar) that generates anything on-brand and gets sharper the more it runs. Powered by NVIDIA Nemotron (via NIM), the agent generates a piece, critiques its own output against the brand's rules, and when it slips it writes itself a new rule and remembers it — measurably fewer violations run over run, no model retraining. We built a real, working universe for the AITX community: a narrated origin book, a full merch line, memes, sponsor thank-yous in the agent's own voice, and two more books spun up in about 30 minutes each. Every asset carries full provenance (model + prompt + the exact references, hash-pinned) so nothing is a mystery and everything is reproducible. Live at aitx-brand-os.vercel.app.
 
 ---
 
@@ -59,11 +63,11 @@ Everything in the demo was generated from the AITX brand universe itself — inc
 
 # Suggested X/Twitter post
 
-I built Chip, a brand czar for @AITXCommunity — an agent that learns a brand's voice and won't break it.
+I built an Agentic Brand Universe for @AITXCommunity — a version-controlled brand with an agent (Chip, the brand czar) that learns its voice and won't break it.
 
 Powered by @NVIDIAAI Nemotron: it makes on-brand assets, critiques its own work against the rules, and gets sharper every run. No retraining.
 
-Everything (this keynote, my character, Chip) was made from the AITX universe.
+Everything (this keynote, my character, Chip) was made from the universe itself.
 
 🎤 aitx-brand-os.vercel.app/keynote
 
