@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SlideNav from "./SlideNav";
+import Presenter from "./Presenter";
 
 export const metadata: Metadata = {
   title: "The Agentic Brand Universe — a gift to AITX",
@@ -56,6 +57,7 @@ export default function Keynote() {
   return (
     <main className="h-screen snap-y snap-mandatory overflow-y-scroll font-body text-[color:var(--ink)]">
       <SlideNav count={15} />
+      <Presenter />
 
 
       {/* 1 — GRATITUDE / TITLE */}
@@ -64,12 +66,14 @@ export default function Keynote() {
           <div>
             <div className="flex items-center gap-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/logo/aitx-wordmark.png" alt="aitx" className="h-8 w-auto" />
+              <img src="/assets/logo/aitx-wordmark.png" alt="aitx" className="h-8 w-auto" style={{ mixBlendMode: "multiply" }} />
               <span className="text-xl text-[color:var(--muted)]">×</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/keynote/nvidia-logo.png" alt="NVIDIA" className="h-7 w-auto" />
+              <img src="/assets/keynote/nvidia-logo.png" alt="NVIDIA" className="h-8 w-auto" style={{ mixBlendMode: "multiply" }} />
             </div>
-            <Eyebrow>Claw Agent Hackathon</Eyebrow>
+            <div className="mt-10">
+              <Eyebrow>Claw Agent Hackathon</Eyebrow>
+            </div>
             <H className="text-5xl sm:text-7xl">
               Thank you,<br />AITX and NVIDIA.
             </H>
@@ -173,15 +177,21 @@ export default function Keynote() {
 
       {/* 7 — THE UNIVERSE */}
       <Slide n={7}>
-        <Eyebrow>The new standard</Eyebrow>
-        <H className="text-4xl sm:text-6xl">
-          The <span style={{ color: OR }}>agentic brand universe</span>.
-        </H>
-        <p className="mt-7 max-w-3xl text-xl text-[color:var(--muted)]">
-          A version-controlled home for your brand: its canon, its characters, its rules, and the best
-          assets you've ever made. Plus an agent that can generate anything you need from it, on brand,
-          on demand.
-        </p>
+        <div className="grid items-center gap-8 sm:grid-cols-[1.4fr_1fr]">
+          <div>
+            <Eyebrow>The new standard</Eyebrow>
+            <H className="text-4xl sm:text-6xl">
+              The <span style={{ color: OR }}>agentic brand universe</span>.
+            </H>
+            <p className="mt-7 max-w-2xl text-xl text-[color:var(--muted)]">
+              A version-controlled home for your brand: its canon, its characters, its rules, and the
+              best assets you've ever made. Plus an agent that can generate anything you need from it, on
+              brand, on demand.
+            </p>
+          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/assets/keynote/robot.jpg" alt="The AITX brand agent" className="mx-auto w-full max-w-[240px]" />
+        </div>
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           {[
             ["Canon", "The truth of your brand: who, what, the look, the voice."],
@@ -264,8 +274,8 @@ export default function Keynote() {
             </p>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/keynote/founders.jpg" alt="Michael and Jake, AITX founders"
-            className="w-full rounded-2xl object-cover shadow-sm" />
+          <img src="/assets/keynote/robot.jpg" alt="The AITX brand agent"
+            className="mx-auto w-full max-w-[300px]" />
         </div>
       </Slide>
 
@@ -329,7 +339,7 @@ export default function Keynote() {
       <Slide n={14} bg="#f2ead9">
         <Eyebrow>Version-control your brand</Eyebrow>
         <H className="text-4xl sm:text-6xl">
-          CRISPR for your brand <span style={{ color: OR }}>DNA</span>.
+          CRISPR + GitHub for your brand <span style={{ color: OR }}>DNA</span>.
         </H>
         <p className="mt-7 max-w-3xl text-xl text-[color:var(--muted)]">
           Edit the DNA and every future asset inherits the change. The system even learns your rules from
@@ -353,10 +363,9 @@ export default function Keynote() {
           better every time. That is the standard now.
         </p>
         <div className="mt-10 rounded-3xl border border-[color:var(--muted)]/20 bg-white/60 p-8">
-          <div className="font-display text-2xl font-bold">AITX, I'd love to build yours. Pro bono.</div>
+          <div className="font-display text-2xl font-bold">Everything in this deck was made from your universe.</div>
           <p className="mt-2 text-[color:var(--muted)]">
-            You'd be the first. Everything in this deck was made from your universe. Thank you, AITX. It
-            has open arms.
+            This is just the beginning. Thank you, AITX. It has open arms.
           </p>
           <div className="mt-5 flex flex-wrap gap-4 font-body text-sm font-semibold" style={{ color: OR }}>
             <a href="/agent">The living agent →</a>

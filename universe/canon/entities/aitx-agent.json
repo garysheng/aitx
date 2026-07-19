@@ -1,0 +1,19 @@
+{
+  "id": "aitx-agent",
+  "kind": "character",
+  "originStory": "origin-of-aitx",
+  "fictional": true,
+  "status": "locked",
+  "authority": { "lockedBy": "gary", "lockedOn": null },
+  "structured": {
+    "sheets": { "sheet": "reference/aitx-agent/gabr-aitx-agent.png" },
+    "wardrobe": { "default": "Friendly cream-white helper robot with AITX orange (#ff4201) accent seams, kind glowing screen-face, orange open-arms mark on chest, open-arms welcoming posture." },
+    "requiredForRender": ["sheet"],
+    "invariants": [
+      "same-illustrated-style-as-the-founders",
+      "open-arms-mark-on-chest",
+      "warm-and-friendly-never-menacing"
+    ],
+    "promptCraft": "The AITX brand agent, personified: a soulful helper mascot. Illustrated in the same comic style as gabr-michael / gabr-gary. Pass gabr-aitx-agent on every render. Arms open, echoing the AITX open-arms mark."
+  }
+}
