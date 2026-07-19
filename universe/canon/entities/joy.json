@@ -1,0 +1,21 @@
+{
+  "id": "joy",
+  "name": "Joy",
+  "kind": "character",
+  "fictional": true,
+  "status": "locked",
+  "authority": { "lockedBy": "gary", "lockedOn": "2026-07-19" },
+  "structured": {
+    "sheets": { "sheet": "reference/joy/joy-master.png" },
+    "wardrobe": { "default": "The AITX open-arms mark brought to life: a round head with a joyful closed-eye smile and a wide open grin, two rounded arms raised up and out in a celebratory welcome, and a lower body that IS the AITX split mark (two mirrored orange arrowhead legs with a clean vertical split straight down the middle). Solid AITX orange #ff4201. A small heart often floats above the head." },
+    "requiredForRender": ["sheet"],
+    "invariants": [
+      "is-the-aitx-open-arms-mark-personified",
+      "split-two-piece-lower-body-and-legs",
+      "joyful-closed-eye-smile",
+      "arms-raised-up-and-out",
+      "solid-aitx-orange"
+    ],
+    "promptCraft": "Joy is the AITX logo as an animated character, an 'animated logo', not a separate-species mascot. ALWAYS keep the mark's split two-piece construction in the lower body and legs plus the round head; the character read comes only from the joyful face and the raised welcoming arms. Distinct from Chip (the brand agent and czar): Chip does the making, Joy is the animated face of the mark. Pass reference/joy/joy-master on every render. Whether Joy becomes the official mascot is an open brand question (see the keynote)."
+  }
+}

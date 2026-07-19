@@ -1,0 +1,26 @@
+{
+  "asset": "universe/reference/joy/joy-master.png",
+  "entity": "joy",
+  "sha256": "8a04038259683b8348f01e381266072917a65bd615dd07bd77ccdb9bdf93ce1c",
+  "blessed": { "by": "gary", "on": "2026-07-19", "note": "\"g4-hero-joy-longlegs-c is it\" — chosen as Joy, the AITX animated logo." },
+  "model": "openai:gpt-image-2",
+  "size": "1024x1024",
+  "quality": "high",
+  "lineage": [
+    {
+      "stage": "1 — direction Michael loved",
+      "references": [
+        "explorations/mascot/_ref-michael-liked-2.png (the look Michael loved: joyful face, raised welcoming arms, split-mark lower body)",
+        "explorations/mascot/_ref-aitx-mark-clean.png (cropped from the real AITX mark, for the split two-piece geometry)"
+      ],
+      "prompt": "AITX MASCOT — a joyful cartoon character built on the AITX open-arms logo. Reference image 1 is the exact look to match: gleeful expression, raised-arms pose, split-mark lower body. Construction: a round HEAD with a big gleeful face (closed happy eyes and a wide open smile), two rounded cartoon ARMS raised up and out in a celebratory welcome, and a LOWER BODY that IS the AITX mark (image 2) — two mirrored orange arrowhead shapes pointing down-and-outward with a clear VERTICAL SPLIT straight down the middle (two legs). Warm hand-drawn comic style, bold clean outlines, slight inked texture and soft shading. Solid AITX orange #ff4201 on cream #fbf5ec. Single centered character, no text. Faithful hero take with a small heart floating above the head.",
+      "output": "explorations/mascot/g3-hero-joy.png"
+    },
+    {
+      "stage": "2 — chosen refinement (slightly longer legs)",
+      "references": ["explorations/mascot/g3-hero-joy.png (keep identical, only change the legs)"],
+      "prompt": "Keep this exact character identical in every way — same joyful closed-eye happy face and wide open smile, same two arms raised up and out, same little heart floating above with the small emphasis marks, same warm hand-drawn comic style with slight texture and bold clean outline, same solid AITX orange #ff4201 on cream #fbf5ec, centered. Make only one change: extend the two bottom legs (the split lower-body, the two mirrored arrowhead legs) to be slightly longer so the character stands a little taller, keeping the clean vertical split straight down the middle. Do not change the face, arms, heart, color, outline, or style.",
+      "output": "explorations/mascot/g4-hero-joy-longlegs-c.png (blessed as joy-master)"
+    }
+  ]
+}
