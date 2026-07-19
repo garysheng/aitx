@@ -67,34 +67,35 @@ export default function Keynote() {
       <ChipSubtitles />
 
 
-      {/* 1 — GRATITUDE / TITLE */}
+      {/* 1 — WHAT THIS IS (informative hero for a first-time visitor) */}
       <Slide n={1}>
         <div className="grid items-center gap-10 sm:grid-cols-[1.35fr_1fr]">
           <div>
-            <div className="flex items-center gap-4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/logo/aitx-wordmark.png" alt="aitx" className="h-8 w-auto" style={{ mixBlendMode: "multiply" }} />
-              <span className="text-xl text-[color:var(--muted)]">×</span>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/keynote/nvidia-logo.png" alt="NVIDIA" className="h-8 w-auto" style={{ mixBlendMode: "multiply" }} />
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/logo/aitx-wordmark.png" alt="aitx" className="h-8 w-auto" style={{ mixBlendMode: "multiply" }} />
             <div className="mt-10">
-              <Eyebrow>Claw Agent Hackathon</Eyebrow>
+              <Eyebrow>AITX Brand OS · built at the NVIDIA Claw Agent Hackathon</Eyebrow>
             </div>
             <H className="text-5xl sm:text-7xl">
-              Thank you,<br />AITX and NVIDIA.
+              The whole AITX brand, as a <span style={{ color: OR }}>universe its agent generates from</span>.
             </H>
             <p className="mt-7 max-w-xl text-xl text-[color:var(--muted)]">
-              I came to this hackathon solo. What follows is my gift back: the one idea I most want
-              every founder in this room to take home.
+              Its canon, characters, voice, rules, and best assets, version-controlled in one place,
+              plus Chip, an agent that makes anything on brand from it in minutes, every asset
+              reproducible. Runs on NVIDIA Nemotron. Everything on this page was made from that
+              universe, so scroll to see how it works, or jump straight in.
             </p>
+            <div className="mt-8 flex flex-wrap gap-3 font-body text-sm font-semibold">
+              <a href="#s2" className="rounded-lg px-5 py-2.5 text-white" style={{ background: OR }}>See how it works ↓</a>
+              <a href="/agent" className="rounded-lg border px-5 py-2.5" style={{ borderColor: "var(--muted)", color: "var(--ink)" }}>Watch the agent learn, live →</a>
+            </div>
           </div>
           <div className="flex flex-col items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/keynote/gary-hackathon.jpg" alt="Gary loving the hackathon at Antler"
+            <img src="/assets/keynote/gary-hackathon.jpg" alt="A real photo rendered into the AITX universe"
               className="w-full rounded-2xl object-cover shadow-md" />
             <span className="font-body text-xs uppercase tracking-widest text-[color:var(--muted)]">
-              me, this weekend, rendered into the AITX universe
+              a real photo, rendered by the same system that made everything here
             </span>
           </div>
         </div>
