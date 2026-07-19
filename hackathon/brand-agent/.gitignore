@@ -1,0 +1,6 @@
+.env
+queue.jsonl
+runs.jsonl
+LESSONS.md
+RESULTS.md
+__pycache__/
