@@ -28,7 +28,7 @@ function Slide({
   return (
     <section
       id={n != null ? `s${n}` : undefined}
-      className="relative flex min-h-screen snap-start flex-col justify-center px-6 py-20 sm:px-12"
+      className="relative flex min-h-screen snap-start flex-col justify-start px-6 pb-28 pt-16 sm:px-12 sm:pt-20"
       style={{ background: bg }}
     >
       <div className="mx-auto w-full max-w-5xl">{children}</div>
