@@ -60,18 +60,20 @@ export default function Keynote() {
 
       {/* 1 — GRATITUDE / TITLE */}
       <Slide n={1}>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/logo/aitx-mark-transparent.png" alt="AITX" className="h-10 w-auto" />
-          <span className="font-display text-2xl font-semibold">aitx</span>
+          <img src="/assets/logo/aitx-wordmark.png" alt="aitx" className="h-8 w-auto" />
+          <span className="text-xl text-[color:var(--muted)]">×</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/assets/keynote/nvidia-logo.png" alt="NVIDIA" className="h-7 w-auto" />
         </div>
-        <Eyebrow>AITX × NVIDIA · Claw Agent Hackathon</Eyebrow>
+        <Eyebrow>Claw Agent Hackathon</Eyebrow>
         <H className="text-5xl sm:text-7xl">
-          Thank you for<br />having us.
+          Thank you,<br />AITX and NVIDIA.
         </H>
         <p className="mt-7 max-w-2xl text-xl text-[color:var(--muted)]">
-          It has been a joy to build alongside this community. What follows is a small gift back: the
-          one idea I most want every founder in this room to take home.
+          I came to this hackathon solo. What follows is my gift back: the one idea I most want every
+          founder in this room to take home.
         </p>
       </Slide>
 
@@ -341,8 +343,8 @@ export default function Keynote() {
         <div className="mt-10 rounded-3xl border border-[color:var(--muted)]/20 bg-white/60 p-8">
           <div className="font-display text-2xl font-bold">AITX, I'd love to build yours. Pro bono.</div>
           <p className="mt-2 text-[color:var(--muted)]">
-            You'd be the first. Everything in this deck was made from your universe. Thank you for having
-            us. It has open arms.
+            You'd be the first. Everything in this deck was made from your universe. Thank you, AITX. It
+            has open arms.
           </p>
           <div className="mt-5 flex flex-wrap gap-4 font-body text-sm font-semibold" style={{ color: OR }}>
             <a href="/agent">The living agent →</a>
