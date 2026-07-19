@@ -71,3 +71,46 @@ runner, sitting on top of a rule-encoded generate call. **The vision works.**
   of `allowedTools`; everything else is auto-approved. Clean, enforceable.
 - **Keep it optional.** None of this is required for the deterministic generate
   calls themselves — the SDK is the exploration layer ON TOP, exactly as scoped.
+
+## Round 2 — deeper capabilities
+
+| # | Capability | Result |
+|---|---|---|
+| **09** | **agent drives the REAL generator spine** | ✅ **one sentence → real gpt-image-2 render (with the AITX mark ref) → real on-brand sticker + a full provenance recipe** |
+| 10 | `PreToolUse` hook gating | ✅ hook DENIES a tool even when it's in `allowedTools` (the robust gate) |
+| 11 | `settingSources: []` isolation | ✅ loads no user settings (no global CLAUDE.md/AGENTS.md inheritance) |
+| 12 | structured output (`outputFormat: json_schema`) | ✅ returns clean parseable JSON matching the schema |
+| 13 | multi-turn via `resume` | ✅ turn 2 recalls turn 1 ("Texas Loves AI") |
+| 14 | model override (`model`) | ✅ runs on Haiku; ~$0.04/task vs ~$1 on Opus (≈25x cheaper) |
+
+### The full stack, proven (09)
+
+From "generate a round AITX sticker" the agent called the REAL
+`generateImageAsset` (the spine we built), which passed the actual AITX mark as
+a reference, rendered a real on-brand sticker via gpt-image-2, and wrote a
+recipe capturing the exact prompt + model + the reference as a **repo-relative
+path + sha256 + role**. Natural language → rule-encoded generate call →
+reproducible asset. The whole thesis, working end to end.
+
+### More gotchas (round 2)
+
+6. **Two ways to gate an action, use the hook for real safety.** `canUseTool`
+   is shadowed by `allowedTools` (round 1). A **`PreToolUse` hook** is NOT — it
+   blocks a tool even when auto-approved (experiment 10). So: gate
+   publish/commit/spend with a PreToolUse hook (belt), and/or keep them out of
+   `allowedTools` (suspenders).
+7. **`allowedTools` controls auto-APPROVAL, not AVAILABILITY.** Built-in
+   read/search tools (Read, Grep, Glob, Bash) are available even when not
+   listed — in experiment 10's first run the agent went filesystem-spelunking
+   for a flyer. To restrict what the agent CAN do, use `disallowedTools` (or the
+   `tools` allowlist), not `allowedTools`.
+8. **Structured output is reliable.** `outputFormat: { type: "json_schema",
+   schema }` gives back clean JSON matching the schema — good for having the
+   agent return inputs/recipes as data.
+9. **Cheap models for cheap tasks.** `model: "claude-haiku-4-5-..."` cut cost
+   ~25x on a trivial task. Route by task: Haiku for routing/extraction, a bigger
+   model only for the hard creative calls.
+10. **When generating, output INTO the repo.** Experiment 09 wrote to `/tmp`, so
+    the recipe's `asset` path became an ugly `../../../../../tmp/...`. Reference
+    paths were clean repo-relative; asset paths only normalize well when the
+    output lives inside the repo.
