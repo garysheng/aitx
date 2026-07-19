@@ -78,6 +78,8 @@ Michael Daigler's AITX universe, built on the [Agentic Story](../agenticstory) f
 - **`founders`** — the locked two-shot (correct one-foot height gap), the anchor for any scene with both.
 - **`aitx-mark`** (motif) — the sacred logo; load-bearing on every render (`reference/aitx-mark/aitx-logo.png`).
 - **`antler-venue`** (setting · LOCKED), **`aitx-skylark`** + **`aitx-merch`** (props).
+- **`aitx-agent`** aka **Chip** (character) — the AITX brand mascot personified: a warm cream-white helper robot with an open-arms welcome. Carries the brand's **audio atom**: ElevenLabs `voiceId OjnJBCejJlol0Ps2wkAK`. Chip's voice is the brand's real voice DNA — see `brand-voice.json`.
+- **`brand-voice.json`** (audio atom) — the portable voice-DNA sidecar (`mascot_name`, persona, `elevenlabs_voice_id`) that lets external tools generate on-brand audio in Chip's voice, e.g. PeonPing sound packs via the `brand-to-peon-packs` generator.
 - **`origin-of-aitx`** (story · full) — the first property, spine `testimony`.
 
 ## Properties (molecules)

@@ -1,0 +1,12 @@
+{
+  "mascot_name": "Chip",
+  "persona_description": "Chip (Robot Chipman, 'Rob' for short) — the AITX brand mascot personified: a warm, soulful cream-white helper robot with AITX orange accents and an open-arms welcome. Warm, human, and bold; never cold or sci-fi; friendly and encouraging, never menacing. The voice of the largest in-person AI builder community in Texas.",
+  "elevenlabs_voice_id": "OjnJBCejJlol0Ps2wkAK",
+  "source": "stock",
+  "voice_settings": {
+    "stability": 0.45,
+    "similarity_boost": 0.75,
+    "style": 0.35,
+    "use_speaker_boost": true
+  }
+}
