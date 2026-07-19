@@ -1,0 +1,14 @@
+{
+  "name": "aitx-generator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --import tsx --test *.test.ts"
+  },
+  "devDependencies": {
+    "tsx": "latest",
+    "@types/node": "^20",
+    "typescript": "^5"
+  }
+}
