@@ -227,13 +227,17 @@ export default function Keynote() {
         </div>
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           {[
-            ["Canon", "The truth of your brand: who, what, the look, the voice."],
-            ["Goldens", "The A+ assets you've blessed. The taste you keep."],
-            ["The agent", "Talks plain language. Makes anything, from the canon and goldens."],
-          ].map(([h, b]) => (
-            <div key={h} className="rounded-2xl border border-[color:var(--muted)]/20 bg-white/60 p-6">
-              <div className="font-display text-xl font-bold" style={{ color: OR }}>{h}</div>
-              <p className="mt-2 text-[color:var(--muted)]">{b}</p>
+            ["Canon", "The truth of your brand: who, what, the look, the voice.", "/assets/keynote/card-canon.png"],
+            ["Goldens", "The A+ assets you've blessed. The taste you keep.", "/assets/keynote/card-goldens.png"],
+            ["The agent", "Talks plain language. Makes anything, from the canon and goldens.", "/assets/keynote/card-agent.png"],
+          ].map(([h, b, img]) => (
+            <div key={h} className="overflow-hidden rounded-2xl border border-[color:var(--muted)]/20 bg-white/60">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img} alt={h} className="aspect-square w-full object-cover" />
+              <div className="p-6">
+                <div className="font-display text-xl font-bold" style={{ color: OR }}>{h}</div>
+                <p className="mt-2 text-[color:var(--muted)]">{b}</p>
+              </div>
             </div>
           ))}
         </div>

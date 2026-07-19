@@ -1,0 +1,10 @@
+{
+  "purpose": "slide-7 card toppers on the keynote (Canon / Goldens / The agent)",
+  "model": "openai:gpt-image-2", "size": "1024x1024", "quality": "high",
+  "style": "clean iconic square, warm hand-drawn comic, bold outline, cream #fbf5ec, orange #ff4201 accent, no text",
+  "cards": {
+    "card-canon.png": "an open brand binder with the AITX open-arms mark on a page + palette swatches + note lines (source of truth)",
+    "card-goldens.png": "a framed on-brand print on an easel with a golden star seal (a blessed golden asset)",
+    "card-agent.png": "the AITX helper robot presenting a small glowing asset it made (ref: universe/reference/aitx-agent/gabr-aitx-agent.png)"
+  }
+}
