@@ -19,9 +19,12 @@ function broadcast(index: number, speaking: boolean) {
 export default function Presenter() {
   const [on, setOn] = useState(false);
   const [paused, setPaused] = useState(false);
+  const [loop, setLoop] = useState(false);
   const [index, setIndex] = useState(0);
   const audio = useRef<HTMLAudioElement | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const loopRef = useRef(false);
+  loopRef.current = loop;
 
   const stopMedia = () => {
     if (audio.current) { audio.current.pause(); audio.current.onended = null; audio.current = null; }
@@ -31,7 +34,11 @@ export default function Presenter() {
   // play slide i's narration; when it finishes, advance to i+1 (chaining the tour)
   const play = useCallback((i: number) => {
     stopMedia();
-    if (i >= SCRIPT.length) { setOn(false); broadcast(i - 1, false); return; }
+    if (i >= SCRIPT.length) {
+      // kiosk/loop mode: restart the tour from the top and keep playing
+      if (loopRef.current) { window.scrollTo({ top: 0, behavior: "smooth" }); play(0); return; }
+      setOn(false); broadcast(i - 1, false); return;
+    }
     setIndex(i);
     document.getElementById(`s${i + 1}`)?.scrollIntoView({ behavior: "smooth" });
     const beat = SCRIPT[i];
@@ -72,9 +79,16 @@ export default function Presenter() {
   return (
     <div className="fixed bottom-5 left-1/2 z-50 flex -translate-x-1/2 items-center gap-2 rounded-full border border-neutral-400/50 bg-white/90 px-3 py-2 shadow-md backdrop-blur">
       {!on ? (
-        <button onClick={start} className="flex items-center gap-2 rounded-full px-5 py-1.5 text-sm font-semibold text-white" style={{ background: "#ff4201" }}>
-          ▶ Play the tour with Chip
-        </button>
+        <>
+          <button onClick={start} className="flex items-center gap-2 rounded-full px-5 py-1.5 text-sm font-semibold text-white" style={{ background: "#ff4201" }}>
+            ▶ Play the tour with Chip
+          </button>
+          <button onClick={() => setLoop((l) => !l)} title="Loop the tour (kiosk mode)"
+            className="rounded-full px-3 py-1.5 text-sm font-semibold"
+            style={{ background: loop ? "#ff420122" : "transparent", color: loop ? "#c2340a" : "#8a8a8a" }}>
+            🔁 Loop{loop ? " on" : ""}
+          </button>
+        </>
       ) : (
         <>
           <button onClick={() => jump(index - 1)} className="rounded-full px-3 py-1 text-lg text-neutral-600 hover:text-neutral-900" aria-label="Back">‹</button>
@@ -83,6 +97,10 @@ export default function Presenter() {
           </button>
           <span className="px-1 font-mono text-sm tabular-nums text-neutral-600">{index + 1} / {SCRIPT.length}</span>
           <button onClick={() => jump(index + 1)} className="rounded-full px-3 py-1 text-lg text-neutral-600 hover:text-neutral-900" aria-label="Next">›</button>
+          <button onClick={() => setLoop((l) => !l)} title="Loop the tour (kiosk mode)"
+            className="rounded-full px-2.5 py-1 text-sm" style={{ color: loop ? "#c2340a" : "#9a9a9a" }}>
+            🔁
+          </button>
           <button onClick={stop} className="rounded-full px-3 py-1.5 text-sm text-neutral-500 hover:text-neutral-800">Exit</button>
         </>
       )}

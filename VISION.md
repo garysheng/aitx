@@ -17,6 +17,13 @@ generating consistent assets from it.*
 > Analogy: **cartridge (universe) + console (OS) → anything you want (deliverables).** Chip is the
 > agent persona of an Agentic Brand OS instance (the brand czar). This ontology should propagate into
 > the agenticstory SPEC (the cartridge format) as its framing.
+>
+> **Spec status (be honest about this).** The **cartridge** — the Agentic Brand Universe format — is
+> the part that is spec'd today (that's the `agentic-brand-universe` repo's `SPEC.md`, née Agentic
+> Story). The **engine** — the Agentic Brand OS itself, the portable runtime that loads a universe and
+> generates from it — is still being figured out. AITX Brand OS is an early, working instance, but the
+> OS is NOT yet spec'd. It will be. Step one was the cartridge; step two is speccing the engine. Do
+> not claim the OS is a finished standard.
 
 This is the spec behind the AITX universe. It is deliberately broader than a
 "brand guide": the **story** encapsulates everything you would want in one

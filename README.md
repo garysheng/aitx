@@ -6,6 +6,8 @@
 
 **Track:** Recursive Intelligence · **Bounties:** Best Use of Nemotron · Most Commercializable (Antler)
 
+> AITX is one **Agentic Brand Universe** (the cartridge) run by an **Agentic Brand OS** (the console). It's built on an open standard — the pattern repeats for any brand: a personal brand, a church, a company, a franchise. The standard's home: **[agenticbranduniverse.com](https://agenticbranduniverse.com)**.
+
 ## For judges
 
 - **Try the working system (2 min):** [aitx-brand-os.vercel.app/agent](https://aitx-brand-os.vercel.app/agent) — click an example, watch Nemotron's first try go off-brand, teach it once, watch it fix itself. Then hit **"Make it permanent"** and Chip **opens a real pull request** with the rule it learned. Live Nemotron, real PRs, not a mockup.

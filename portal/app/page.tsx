@@ -33,9 +33,15 @@ export default function Home() {
       <GoldenGallery />
 
       <footer className="mt-16 border-t border-black/10 pt-6 text-sm text-[color:var(--muted)]">
-        Every golden here is version-controlled and carries a provenance recipe: the model, the exact
-        prompt, and every reference pinned by hash. Nothing is a mystery. You get a better sense of a
-        person in person.
+        <p>
+          Every golden here is version-controlled and carries a provenance recipe: the model, the exact
+          prompt, and every reference pinned by hash. Nothing is a mystery. You get a better sense of a
+          person in person.
+        </p>
+        <p className="mt-3">
+          This is one Agentic Brand Universe. The pattern repeats for any brand — the open standard is at{" "}
+          <a href="https://agenticbranduniverse.com" target="_blank" rel="noreferrer" className="font-semibold" style={{ color: "var(--orange-deep)" }}>agenticbranduniverse.com</a>.
+        </p>
       </footer>
     </main>
   );

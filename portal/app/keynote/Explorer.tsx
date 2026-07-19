@@ -178,6 +178,11 @@ export default function Explorer() {
           An <strong className="text-[#f4ede0]">agentic brand OS</strong> (what you just used) is the console that loads it and generates
           anything on brand. What AITX did, a personal brand, a church, a company, or a franchise can do too.
         </p>
+        <p className="mt-4 max-w-3xl text-sm text-[#7d7263]">
+          Honest status: the cartridge — the brand-universe format — is a real, spec&apos;d standard today. The
+          engine, the agentic brand OS itself, is still being figured out (AITX Brand OS is an early,
+          working one). It isn&apos;t fully spec&apos;d yet. It will be.
+        </p>
         <div className="mt-6 flex flex-wrap items-center gap-4 font-mono text-sm text-[#c9c9c9]">
           <span className="rounded-lg border border-white/15 px-3 py-1.5">brand universe</span>
           <span style={{ color: OR }}>→</span>
