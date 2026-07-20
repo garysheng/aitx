@@ -181,3 +181,24 @@ All aitx work through **414282a** (+ cross-repo). A second Claude session edited
 5. DNS to add: soulsoftech.com, agenticbranduniverse.com. Swap Gary's pro voice clone (yffqtNJ84E8Jjz7BeGaF) into Chip once fine-tuned.
 
 2026-07-19T21:40:41Z · 414282a · session 6: Joy the animated logo + slide 17, OS spec v0.1, anime edition + reader toggle, keynote polish (hero/slop/cards/OG), Michael provenance fix, prompt-factory rule. Coherence sweep running; SoT books uncommitted + blessing pending.
+
+### Session 6 cont. — coherence sweep, shareability, licenses, Souls of Tech live
+
+Since 414282a, all pushed:
+- **Coherence sweep** (5 parallel report-only audits) → clean fixes: aitx reconciled to **v0.4 + agenticbranduniverse.com** (validator confirms aitx is a v0.4 universe; the current engine rejects it under v0.5's changed `approval` schema, so v0.4 is the honest claim; standard itself is v0.5); `BRAND-OS-SPEC.md` dead ref removed + site now links the OS spec; appliedai.wiki `agentic-brand-os` def-line aligned to the console/runtime ontology (was still calling the OS "the machine-consumable package" = the cartridge) + em dash.
+- **universe.md generator** (`generator/universe-md.py` → `universe/UNIVERSE.md`), wired in README, reads `prose.lore` so every entity renders a description.
+- **Site-wide OG shareability**: every aitx page now serves `og-site.png` (6 pages were blank; Next.js replaces-not-merges openGraph, so each page defining its own needed the image added). Verified live.
+- **README honesty**: softened the "hash-pinned references" sidebar claim (sidebar shows names; recipes pin by hash).
+- **MIT LICENSE** on the standard repo + aitx (PeonPing already had one).
+- **Souls of Tech honesty pass** (Jordan + Will personally blessed, relayed by Gary): their story `subjectApproval` → "approved (relayed by Gary)"; landing banner now discloses these are AI-rendered tributes to real people shared with each subject's blessing; committed 8615b87 + **deployed live to soulsoftech.com** (repo has NO git remote — deployed Vercel-direct).
+- **reallife.wiki** "Build from first principles" page shipped (on-style illustrations via the locked render-page.sh pipeline). NOTE: the whole wiki is behind Vercel deployment protection (401 to all) — deployed but not public.
+- **Mobile keynote polish** (nav rail / Chip bubble / Explorer rows fixed on phones).
+- **Validation**: aitx submission fully live, all assets resolve, live Nemotron generation+critic loop works.
+
+**Resume-here (updated):**
+1. **souls-of-tech has no git remote** — deployed Vercel-direct; give it a GitHub remote + git-connect so changes deploy on push. Decide public vs private (holds real-people dossiers).
+2. **reallife.wiki is behind Vercel deploy protection** (not public) — flip when ready.
+3. Deferred: strengthen the critic to catch off-brand palette (a behavioral change to the judged demo — hold until post-judging or on Gary's go).
+4. Open: Joy mascot decision; keynote mobile body 20→18px (Gary's taste).
+
+2026-07-20T00:19:43Z · 4a19678 · session 6 cont.: coherence fixes, OG shareability, universe.md, MIT licenses, Souls of Tech honesty live, reallife page, mobile keynote. Submission validated live + Nemotron working.
