@@ -17,6 +17,7 @@ type Sub = { text?: string };
 export default function ChipSubtitles() {
   const [tourText, setTourText] = useState("");
   const [inlineText, setInlineText] = useState("");
+  const [capsOn, setCapsOn] = useState(true);
 
   useEffect(() => {
     const applyState = (s: State | null) => {
@@ -44,16 +45,31 @@ export default function ChipSubtitles() {
     return () => { stateCh?.close(); subCh?.close(); window.removeEventListener("storage", onStorage); };
   }, []);
 
+  // captions on/off, shared with the Presenter control bar's CC toggle
+  useEffect(() => {
+    const read = () => setCapsOn(localStorage.getItem("aitx-captions") !== "off");
+    read();
+    window.addEventListener("aitx-captions-change", read);
+    const onCapStore = (e: StorageEvent) => { if (e.key === "aitx-captions") read(); };
+    window.addEventListener("storage", onCapStore);
+    return () => { window.removeEventListener("aitx-captions-change", read); window.removeEventListener("storage", onCapStore); };
+  }, []);
+
+  const dismiss = () => {
+    try { localStorage.setItem("aitx-captions", "off"); } catch {}
+    window.dispatchEvent(new Event("aitx-captions-change"));
+  };
+
   const text = (inlineText || tourText).trim();
-  const shown = text.length > 0;
+  const shown = capsOn && text.length > 0;
 
   return (
     <div
-      className="pointer-events-none fixed inset-x-0 bottom-24 z-40 flex justify-center px-4"
+      className="pointer-events-none fixed inset-x-0 bottom-24 z-40 flex justify-center px-3 sm:px-4"
       aria-live="polite"
     >
       <div
-        className="flex max-w-[40rem] items-baseline gap-2.5 rounded-2xl px-5 py-3 text-left transition-all duration-300"
+        className="flex max-w-[40rem] items-start gap-2 rounded-2xl px-3.5 py-2.5 text-left transition-all duration-300 sm:gap-2.5 sm:px-5 sm:py-3"
         style={{
           background: "rgba(20,18,16,0.86)",
           boxShadow: "0 12px 34px rgba(0,0,0,.30)",
@@ -61,20 +77,28 @@ export default function ChipSubtitles() {
           WebkitBackdropFilter: "blur(6px)",
           opacity: shown ? 1 : 0,
           transform: shown ? "translateY(0)" : "translateY(8px)",
+          visibility: shown ? "visible" : "hidden",
         }}
       >
         <span
-          className="shrink-0 translate-y-[1px] text-[11px] font-bold uppercase tracking-[0.16em]"
+          className="shrink-0 translate-y-[2px] text-[10px] font-bold uppercase tracking-[0.16em] sm:text-[11px]"
           style={{ color: "#7ec96b" }}
         >
           Chip
         </span>
         <span
-          className="font-medium"
-          style={{ color: "#f7f1e7", fontSize: "20px", lineHeight: 1.4, textWrap: "balance" as React.CSSProperties["textWrap"] }}
+          className="font-medium text-[15px] leading-snug sm:text-xl sm:leading-normal"
+          style={{ color: "#f7f1e7", textWrap: "balance" as React.CSSProperties["textWrap"] }}
         >
           {text}
         </span>
+        <button
+          onClick={dismiss}
+          aria-label="Hide captions"
+          className="pointer-events-auto -mr-1 -mt-0.5 shrink-0 rounded-full px-1.5 text-lg leading-none text-white/45 hover:text-white/90"
+        >
+          ×
+        </button>
       </div>
     </div>
   );
