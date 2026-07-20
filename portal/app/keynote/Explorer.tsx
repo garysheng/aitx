@@ -194,7 +194,7 @@ export default function Explorer() {
           anything on brand. What AITX did, a personal brand, a church, a company, or a franchise can do too.
         </p>
         <p className="mt-4 max-w-3xl text-sm text-[#7d7263]">
-          Honest status: the cartridge — the brand-universe format — is a real, spec&apos;d standard today. The
+          Honest status: the cartridge, the brand-universe format, is a real, spec&apos;d standard today. The
           engine, the agentic brand OS itself, is still being figured out (AITX Brand OS is an early,
           working one). It isn&apos;t fully spec&apos;d yet. It will be.
         </p>

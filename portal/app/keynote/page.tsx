@@ -361,7 +361,7 @@ export default function Keynote() {
               and GPUs. Seeing our community bring projects to life with them was pure magic. Come build
               the future with us.
             </p>
-            <div className="mt-4 font-display font-bold sm:mt-5">— The AITX Community</div>
+            <div className="mt-4 font-display font-bold sm:mt-5">The AITX Community</div>
             <div className="text-sm text-[color:var(--muted)]">it has open arms</div>
           </div>
         </div>

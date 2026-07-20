@@ -1,0 +1,49 @@
+{
+  "batch": "aitx-mascot-explorations",
+  "created": "2026-07-19",
+  "status": "EXPLORATION \u2014 candidates, not blessed. Human picks a direction, then it gets rendered clean + blessed into goldens.",
+  "model": "openai:gpt-image-2",
+  "size": "1024x1024",
+  "quality": "high",
+  "reference": "_ref-michael-liked.png (the mascot Michael liked; AITX open-arms mark personified)",
+  "character_dna": "MASCOT CHARACTER: a chunky, rounded orange humanoid figure that is the AITX 'open arms' emblem brought to life \u2014 a round head with a big warm smile and two simple dot eyes, short rounded arms, stubby legs, solid AITX orange (#ff4201) with a slightly darker orange outline. Keep it the SAME character as the reference image (same friendly proportions and open-arms vibe). Warm, wholesome AI-builder-community energy. Isolate the single character on a clean cream paper-white background (#fbf5ec) with generous margin \u2014 do NOT include the cropped comic panel, background people, or any text from the reference.",
+  "variations": {
+    "v1-hero-welcome": "front-facing open-arms welcome + floating heart, comic style",
+    "v2-waving": "waving hello, comic style",
+    "v3-builder-laptop": "builder at work with laptop + idea-spark, comic style",
+    "v4-community-huddle": "three mascots group huddle, community moment",
+    "v5-sticker-sheet": "die-cut sticker sheet, 5 poses",
+    "v6-flat-vector": "clean flat minimal vector / app-icon version"
+  },
+  "gen2_correction": {
+    "note": "v1 was wrong: solid single-blob body. Correction (Gary, 2026-07-19): the AITX mark body is SPLIT into two mirrored halves + separate round head. Regenerated faithful to real logo geometry.",
+    "geometry_reference": "_ref-aitx-mark-clean.png (cropped from the real AITX mark)",
+    "warmth_reference": "_ref-michael-liked.png",
+    "model": "openai:gpt-image-2",
+    "size": "1024x1024",
+    "quality": "high",
+    "variations": {
+      "g2-faithful-clean": "flat clean solid-orange, cute face, true to logo",
+      "g2-heart-welcome": "+ floating heart, welcoming",
+      "g2-dimensional": "subtle soft 3D depth, split kept obvious",
+      "g2-comic-inked": "warm hand-drawn comic style, correct split body",
+      "g2-sticker": "die-cut sticker with white border"
+    }
+  },
+  "gen3_michael-liked-direction": {
+    "note": "Direction Michael loved (2nd ref): joyful cartoon character (closed ^_^ eyes, raised welcoming arms, heart) with the AITX split-mark as the LOWER body/legs. Warmer/more expressive than the stiff-logo gen2. Comic-inked.",
+    "primary_reference": "_ref-michael-liked-2.png",
+    "geometry_reference": "_ref-aitx-mark-clean.png",
+    "model": "openai:gpt-image-2",
+    "size": "1024x1024",
+    "quality": "high",
+    "variations": {
+      "g3-hero-joy": "faithful hero + heart",
+      "g3-big-hug": "arms wide hug",
+      "g3-waving": "waving hello",
+      "g3-celebrate": "celebration + confetti",
+      "g3-sticker-sheet": "die-cut sticker sheet",
+      "g3-clean-vector": "clean flat vector"
+    }
+  }
+}

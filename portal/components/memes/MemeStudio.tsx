@@ -11,8 +11,11 @@ export default function MemeStudio() {
   const [templateId, setTemplateId] = useState(TEMPLATES[0].id);
   const [caption, setCaption] = useState(TEMPLATES[0].defaultCaption);
   const [img, setImg] = useState<string | null>(null);
+  const [recipe, setRecipe] = useState<unknown>(null);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
+  const [blessing, setBlessing] = useState(false);
+  const [pr, setPr] = useState<{ url: string; number: number } | null>(null);
 
   const template = TEMPLATES.find((t) => t.id === templateId)!;
 
@@ -27,7 +30,7 @@ export default function MemeStudio() {
   async function generate() {
     if (busy) return;
     if (cast.length === 0) { setErr("Pick at least one character."); return; }
-    setErr(""); setBusy(true); setImg(null);
+    setErr(""); setBusy(true); setImg(null); setRecipe(null); setPr(null);
     try {
       const res = await fetch("/api/meme", {
         method: "POST",
@@ -37,8 +40,25 @@ export default function MemeStudio() {
       const data = await res.json();
       if (!res.ok) throw new Error(data?.error || "failed");
       setImg(`data:image/png;base64,${data.imageBase64}`);
+      setRecipe(data.recipe ?? null);
     } catch (e: any) { setErr(e.message || "something went wrong"); }
     finally { setBusy(false); }
+  }
+
+  async function makeGolden() {
+    if (blessing || !img) return;
+    setErr(""); setBlessing(true);
+    try {
+      const res = await fetch("/api/golden-pr", {
+        method: "POST",
+        headers: { "content-type": "application/json", "x-aitx-code": code },
+        body: JSON.stringify({ imageBase64: img, recipe, category: "memes", name: `${templateId}-${caption}` }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error || "failed");
+      setPr({ url: data.url, number: data.number });
+    } catch (e: any) { setErr(e.message || "could not open the PR"); }
+    finally { setBlessing(false); }
   }
 
   return (
@@ -106,9 +126,22 @@ export default function MemeStudio() {
           <div className="flex w-full flex-col items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={img} alt="Your AITX meme" className="w-full max-w-[420px] rounded-xl shadow-md" />
-            <a href={img} download="aitx-meme.png" className="rounded-xl border px-4 py-2 text-sm font-semibold hover:border-neutral-500" style={{ borderColor: "#c9bda3" }}>
-              ↓ Download
-            </a>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <a href={img} download="aitx-meme.png" className="rounded-xl border px-4 py-2 text-sm font-semibold hover:border-neutral-500" style={{ borderColor: "#c9bda3" }}>
+                ↓ Download
+              </a>
+              {pr ? (
+                <a href={pr.url} target="_blank" rel="noreferrer" className="rounded-xl px-4 py-2 text-sm font-semibold text-white" style={{ background: "#4a9d3a" }}>
+                  ✓ PR #{pr.number} opened →
+                </a>
+              ) : (
+                <button onClick={makeGolden} disabled={blessing}
+                  className="rounded-xl px-4 py-2 text-sm font-semibold text-white disabled:opacity-50" style={{ background: OR }}>
+                  {blessing ? "Opening a PR…" : "★ Love it — make it a golden"}
+                </button>
+              )}
+            </div>
+            {pr && <p className="text-center text-xs text-[color:var(--muted)]">A human merges the PR to bless it into the brand universe.</p>}
           </div>
         ) : (
           <p className="text-center text-[color:var(--muted)]">Pick your cast, a template, and a caption. Your meme shows up here.</p>
