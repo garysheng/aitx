@@ -30,6 +30,11 @@ def descriptor(d):
     w = st.get("wardrobe", {})
     if isinstance(w, dict) and w.get("default"):
         return w["default"]
+    prose = d.get("prose")
+    if isinstance(prose, dict) and prose.get("lore"):
+        return prose["lore"]
+    if isinstance(prose, str) and prose:
+        return prose
     for k in ("summary", "note", "description"):
         if d.get(k):
             return d[k]

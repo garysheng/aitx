@@ -13,6 +13,7 @@
 ## The community
 
 ### AITX
+AITX is the largest in-person AI community in Texas. Austin home base, expanding to Houston and Dallas. Monthly meetups, hackathons, workshops. Warm, human, energetic, community-first: a place where AI builders actually…
 
 ## Cast · recurring characters
 
@@ -49,20 +50,24 @@ Black AITX tee (FRONT: orange open-arms mark + 'aitx' wordmark) + dark shorts + 
 ## Settings
 
 ### Antler Venue  <sub>🔒 locked</sub>
+Antler VC's Austin venue, the home base for AITX events (monthly meetups, the NVIDIA hackathon). Comic-book register matching the character art.
 
 ## Motifs
 
 ### AITX Mark  <sub>🔒 locked</sub>
+The AITX mark: an orange figure with open arms (a person reaching out) beside the lowercase 'aitx' wordmark. It means connection and welcome, the community's whole posture in one glyph.
 
 `reference/aitx-mark/aitx-logo.png`
 
 ## Props
 
 ### AITX Merch  <sub>🔒 locked</sub>
+AITX branded merch: cap, tote, tumbler, hoodie (plus the Skylark shoe as its own prop). Stickers are made ONE AT A TIME (not a sheet).
 
 `reference/products/merch/aitx-cap.png`
 
 ### AITX Skylark  <sub>🔒 locked</sub>
+The AITX Skylark: a custom AITX-branded chunky molded-EVA-foam recovery shoe. Two silhouettes (open-toe slide, closed-toe clog/mule) in four colorways (black, orange #ff4201, white, black/orange two-tone). AITX merch de…
 
 `reference/products/skylark/opt-1-black.png`
 
