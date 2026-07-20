@@ -1,13 +1,28 @@
 // The AITX Brand OS Explorer, embedded into the keynote so the whole value of a
 // brand universe lives on one page: the cast, the goldens library, the rules,
 // and the live tools. Everything here was generated from the universe itself.
+//
+// These bands are numbered slides too (s20..s26) and are narrated by the tour —
+// the whole scroll is playable, not just the first 19. Their `n` continues the
+// deck's sequence; the counter + nav dots + auto-advance all derive from it.
+import { SCRIPT } from "./script";
 
 const OR = "#ff4201";
+const TOTAL = SCRIPT.length;
 
-function Band({ children, bg = "#fbf5ec", id }: { children: React.ReactNode; bg?: string; id?: string }) {
+function Band({ children, bg = "#fbf5ec", n }: { children: React.ReactNode; bg?: string; n?: number }) {
   return (
-    <section id={id} className="flex min-h-screen snap-start flex-col justify-center px-6 py-20 sm:px-12" style={{ background: bg }}>
+    <section
+      id={n != null ? `s${n}` : undefined}
+      className="relative flex min-h-screen snap-start flex-col justify-center px-5 pb-20 pt-14 sm:px-12 sm:pb-20 sm:pt-20"
+      style={{ background: bg }}
+    >
       <div className="mx-auto w-full max-w-5xl">{children}</div>
+      {n != null && (
+        <div className="pointer-events-none absolute bottom-5 right-5 font-body text-[11px] tracking-widest text-[color:var(--muted)] sm:bottom-6 sm:right-8 sm:text-xs">
+          {String(n).padStart(2, "0")} / {String(TOTAL).padStart(2, "0")}
+        </div>
+      )}
     </section>
   );
 }
@@ -42,8 +57,8 @@ const TOOLS = [
 export default function Explorer() {
   return (
     <>
-      {/* intro */}
-      <Band id="explore">
+      {/* intro — s20 */}
+      <Band n={20}>
         <Eyebrow>Now explore the actual thing</Eyebrow>
         <H className="text-4xl sm:text-6xl">This is the AITX <span style={{ color: OR }}>Brand OS</span>. It is all right here.</H>
         <p className="mt-7 max-w-2xl text-xl text-[color:var(--muted)]">
@@ -52,8 +67,8 @@ export default function Explorer() {
         </p>
       </Band>
 
-      {/* cast */}
-      <Band bg="#f2ead9">
+      {/* cast — s21 */}
+      <Band bg="#f2ead9" n={21}>
         <Eyebrow>The cast · version-controlled characters</Eyebrow>
         <H className="mb-8 text-3xl sm:text-5xl">Recurring characters that always look like themselves.</H>
         <div className="grid grid-cols-2 gap-5 sm:grid-cols-4">
@@ -70,8 +85,8 @@ export default function Explorer() {
         </div>
       </Band>
 
-      {/* provenance chain — real photos -> illustrated character */}
-      <Band>
+      {/* provenance chain — real photos -> illustrated character — s22 */}
+      <Band n={22}>
         <Eyebrow>Provenance · identity rides in real photos</Eyebrow>
         <H className="mb-3 text-3xl sm:text-5xl">Every character starts from real reference photos.</H>
         <p className="mb-8 max-w-2xl text-lg text-[color:var(--muted)]">
@@ -107,8 +122,8 @@ export default function Explorer() {
         </div>
       </Band>
 
-      {/* goldens */}
-      <Band>
+      {/* goldens — s23 */}
+      <Band n={23}>
         <Eyebrow>The goldens · the taste you keep</Eyebrow>
         <H className="mb-8 text-3xl sm:text-5xl">Blessed assets. Every new thing rides on these.</H>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -120,8 +135,8 @@ export default function Explorer() {
         <p className="mt-5 text-sm text-[color:var(--muted)]">Merch, memes, books, flyers. Each one carries a provenance recipe: the model, the prompt, the exact references.</p>
       </Band>
 
-      {/* rules */}
-      <Band bg="#141210">
+      {/* rules — s24 */}
+      <Band bg="#141210" n={24}>
         <div className="mb-6 font-body text-xs font-semibold uppercase tracking-[0.22em]" style={{ color: OR }}>The rules · plain language, version-controlled</div>
         <h2 className="font-display text-3xl font-bold tracking-tight text-[#f4ede0] sm:text-5xl">The brand knows its own rules. So does the agent.</h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -144,8 +159,8 @@ export default function Explorer() {
         </div>
       </Band>
 
-      {/* tools */}
-      <Band bg="#f2ead9">
+      {/* tools — s25 */}
+      <Band bg="#f2ead9" n={25}>
         <Eyebrow>Try it yourself · live tools</Eyebrow>
         <H className="mb-8 text-3xl sm:text-5xl">Everything the agent can do, you can do right now.</H>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -165,8 +180,8 @@ export default function Explorer() {
         <p className="mt-2 text-center text-[color:var(--muted)]">Powered by NVIDIA Nemotron. Built entirely from the AITX universe. It has open arms.</p>
       </Band>
 
-      {/* the standard — AITX is one instance of a repeatable pattern */}
-      <Band bg="#141210">
+      {/* the standard — AITX is one instance of a repeatable pattern — s26 */}
+      <Band bg="#141210" n={26}>
         <div className="mb-6 font-body text-xs font-semibold uppercase tracking-[0.22em]" style={{ color: OR }}>
           Not a one-off · an open standard
         </div>

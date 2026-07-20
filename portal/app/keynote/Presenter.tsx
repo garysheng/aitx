@@ -10,8 +10,8 @@ import { SCRIPT } from "./script";
 const CH = "aitx-keynote";
 const KEY = "aitx-keynote-state";
 
-function broadcast(index: number, speaking: boolean) {
-  const payload = { index, speaker: "chip", playing: speaking, at: 0 };
+function broadcast(index: number, speaking: boolean, speaker: "gary" | "chip" = "chip") {
+  const payload = { index, speaker, playing: speaking, at: 0 };
   try { localStorage.setItem(KEY, JSON.stringify(payload)); } catch {}
   try { const c = new BroadcastChannel(CH); c.postMessage(payload); c.close(); } catch {}
 }
@@ -49,7 +49,7 @@ export default function Presenter() {
     if (i >= SCRIPT.length) {
       // kiosk/loop mode: restart the tour from the top and keep playing
       if (loopRef.current) { play(0); return; }
-      setOn(false); broadcast(i - 1, false); return;
+      setOn(false); broadcast(i - 1, false, SCRIPT[i - 1]?.speaker); return;
     }
     setIndex(i);
     scrollToSlide(i + 1);
@@ -61,20 +61,20 @@ export default function Presenter() {
     if (beat.audio && beat.audio !== "inline") {
       const a = new Audio(beat.audio);
       audio.current = a;
-      broadcast(i, true);
+      broadcast(i, true, beat.speaker);
       a.onended = advance;
       a.play().catch(() => { timer.current = setTimeout(advance, beat.seconds * 1000); });
     } else {
       // inline slide (the live demo narrates itself) — advance on its fallback timer
-      broadcast(i, true);
+      broadcast(i, true, beat.speaker);
       timer.current = setTimeout(advance, beat.seconds * 1000);
     }
   }, []);
 
   const start = () => { setOn(true); setPaused(false); play(0); };
-  const pause = () => { stopMedia(); setPaused(true); broadcast(index, false); };
+  const pause = () => { stopMedia(); setPaused(true); broadcast(index, false, SCRIPT[index]?.speaker); };
   const resume = () => { setPaused(false); play(index); };
-  const stop = () => { stopMedia(); setOn(false); setPaused(false); broadcast(index, false); };
+  const stop = () => { stopMedia(); setOn(false); setPaused(false); broadcast(index, false, SCRIPT[index]?.speaker); };
   const jump = (i: number) => { const n = Math.min(Math.max(i, 0), SCRIPT.length - 1); play(n); setPaused(false); };
 
   useEffect(() => () => stopMedia(), []);
@@ -108,7 +108,7 @@ export default function Presenter() {
       {!on ? (
         <>
           <button onClick={start} className="flex items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-1.5 text-sm font-semibold text-white sm:px-5" style={{ background: "#ff4201" }}>
-            ▶ Play the tour<span className="hidden sm:inline">&nbsp;with Chip</span>
+            ▶ Play the tour<span className="hidden sm:inline">&nbsp;with Gary &amp; Chip</span>
           </button>
           <button onClick={() => setLoop((l) => !l)} title="Loop the tour (kiosk mode)" aria-label="Loop"
             className="rounded-full px-2.5 py-1.5 text-sm font-semibold sm:px-3"

@@ -17,12 +17,14 @@ type Sub = { text?: string };
 export default function ChipSubtitles() {
   const [tourText, setTourText] = useState("");
   const [inlineText, setInlineText] = useState("");
+  const [speaker, setSpeaker] = useState<"gary" | "chip">("chip");
   const [capsOn, setCapsOn] = useState(true);
 
   useEffect(() => {
     const applyState = (s: State | null) => {
-      const speaking = !!s && s.speaker === "chip" && !!s.playing;
+      const speaking = !!s && !!s.speaker && !!s.playing;
       const i = s?.index ?? -1;
+      if (speaking && s?.speaker) setSpeaker(s.speaker);
       setTourText(speaking && i >= 0 && i < SCRIPT.length ? SCRIPT[i].line : "");
     };
     const applySub = (raw: string | null) => {
@@ -82,9 +84,9 @@ export default function ChipSubtitles() {
       >
         <span
           className="shrink-0 translate-y-[2px] text-[10px] font-bold uppercase tracking-[0.16em] sm:text-[11px]"
-          style={{ color: "#7ec96b" }}
+          style={{ color: speaker === "gary" ? "#ff9d5c" : "#7ec96b" }}
         >
-          Chip
+          {speaker === "gary" ? "Gary" : "Chip"}
         </span>
         <span
           className="font-medium text-[15px] leading-snug sm:text-xl sm:leading-normal"
