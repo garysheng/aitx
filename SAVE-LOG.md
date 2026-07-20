@@ -202,3 +202,12 @@ Since 414282a, all pushed:
 4. Open: Joy mascot decision; keynote mobile body 20→18px (Gary's taste).
 
 2026-07-20T00:19:43Z · 4a19678 · session 6 cont.: coherence fixes, OG shareability, universe.md, MIT licenses, Souls of Tech honesty live, reallife page, mobile keynote. Submission validated live + Nemotron working.
+
+### PLANNED (deferred, 2026-07-19) — remove Nemotron / NVIDIA
+
+Hackathon is over (did not win); Gary wants Nemotron OUT. Brainstorm done, execution deferred ("save it for the future").
+- **Separate two things:** (A) Nemotron the MODEL/inference — small, clean swap: `portal/app/api/agent/route.ts`, `portal/app/api/thanks/route.ts`, `hackathon/brand-agent/*.py`. The recursive-intelligence LOOP is model-agnostic; only the inference call is NVIDIA. (B) "NVIDIA" as event/sponsor/Mark's employer — threaded through README (16), SUBMISSION.md (12), keynote (page 8, script 3 incl. chip-01/13/14 AUDIO that thanks NVIDIA — needs re-recording), platform, agent page.
+- **Recommendation:** swap inference to **Claude** as default + reframe the Brand OS as **model-agnostic** (strengthens the open-standard story). Image gen (gpt-image-2) + Chip's voice (ElevenLabs) are NOT NVIDIA — they stay.
+- **Also de-hackathon it:** drop "submission / track / bounty" framing, archive SUBMISSION.md, make it evergreen (just the AITX Brand OS + the standard).
+- **Two decisions needed before executing:** (1) Claude as replacement + model-agnostic framing — yes? (2) keep the honest history + Mark, scrub only the model + product branding — or full NVIDIA scrub?
+- Biggest lift = the keynote (copy on slides 1/13/14 + re-recording chip-01/13/14 in Chip's ElevenLabs voice).
